@@ -423,22 +423,25 @@ infoButton.addEventListener("click", hideEverything);
         }
     }
 
-    let buttons = document.querySelectorAll('.sub-button');
-    buttons.forEach(function (button) {
-        if (button.textContent.includes("Info")) {
-            button.addEventListener('click', function () {
-                let mapContainer = document.getElementById('map-container');
-                if (mapContainer.style.display === "none" || mapContainer.style.display === "") {
-                    mapContainer.style.display = "block";
-                    initializeMap(); // Initialize the map when showing it
-                } else {
-                    mapContainer.style.display = "none";
-                }
-            });
-        }
-    });
+  let buttons = document.querySelectorAll('.sub-button');
+buttons.forEach(function(button) {
+    if (button.textContent.includes("Info")) {
+        button.addEventListener('click', function() {
+            let mapContainer = document.getElementById('map-container');
+           let openingTimesWidget = document.getElementById('opening-times-widget');
+             if (mapContainer.style.display === "none" || mapContainer.style.display === "") {
+                mapContainer.style.display = "block";
+                openingTimesWidget.style.display = "block"; // show the widget
+                initializeMap(); // Initialize the map when showing it
+            } else {
+                mapContainer.style.display = "none";
+                openingTimesWidget.style.display = "none"; // hide the widget
+            }
+        });
+    }
+});
 
-}); 
+});
  </script>
 </body>
 </html>
