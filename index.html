@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Hawker Website</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
- <style>
-	body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hawker Website</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+			body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -172,24 +171,12 @@ button:active {
 .image-wrapper:nth-of-type(7){
  border: 9px solid green;
   }
-.map-container {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 10;
-    margin-top: 400px;
-}
 .opening-times-widget {
     display: none; /* Hidden by default */
     position: absolute;
     top: 10%;
     left: 50%;
-    margin-top: 120px;
+    margin-top: 80px;
     transform: translateX(-50%);
     padding: 20px;
     background-color: #ff8c00;
@@ -198,10 +185,88 @@ button:active {
     width: 200px; /* Adjust as necessary */
     text-align: center; /* Center the text */
     border-radius: 10px; /* Rounded corners */
-}	 
-</style>
- </head>
- 
+  }
+ .map-and-overlay-wrapper {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    gap: 20px;
+    width: 800px;  /* Adjust this value as desired */
+    height: 550px; /* Adjust this value as desired */
+}  
+.overlay {
+            display: none;
+            flex: 1; 
+            grid-template-columns: repeat(2, 1fr); /* creates 2 equal-width columns */
+          row-gap: 0px;
+          column-gap: 10px;
+            justify-content: center; /* center the grid items horizontally */
+            align-items: center;
+            position: relative;
+            background-size: cover;
+            padding: 20px;
+            height: 550px; 
+            left: 70%; 
+        }
+.map-container {
+    display: none;
+    flex: 1; 
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+     width: 650px;  /* Adjust to your desired width */
+    height: 500px;
+    top: 0; 
+    left: 70%; 
+    transform: none; 
+    margin-top: 0; 
+    z-index: 10;
+}
+        .info-box {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 5px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            width: 300px;   /* Add a fixed width */
+            height: 215px;  /* Add a fixed height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            }
+        .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+           margin-bottom: 10px;
+           font-size: 30px;
+}
+.icon-location {
+    background-image: url('https://i.imgur.com/NB50Mzo.png');
+}
+.icon-phonenumber {
+    background-image: url('https://i.imgur.com/WlUQyNK.png');
+}
+.icon-payment {
+    background-image: url('https://i.imgur.com/lTZP01s.png');
+}
+.icon-mail {
+    background-image: url('https://i.imgur.com/G2MvpfW.png');
+}
+		
+
+	
+		  </style>
+</head>
 <body>
     <div class="container">
     <div class="background-container"></div>
@@ -212,7 +277,7 @@ button:active {
       <button class="sub-button">Konzept</button>
       <button class="sub-button" id="street-food-button">Street Food</button>
       <button class="sub-button">Team Hawker</button>
-      <button class="sub-button">Info</button>
+      <button class="sub-button" id="info-button">Info</button>
     </div>
     <button id="live-button" class="live-button-class">LIVE</button>
     <div class="switch-container" id="switch-container">
@@ -237,7 +302,7 @@ button:active {
             <div class="description">Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
        </div>
            <div class="image-wrapper">
-         <img src="https://i.imgur.com/KaFBEyi.jpg" alt="Image Larb Gai" class="food-image">
+         <img src="https://i.imgur.com/cc2QMZ2.jpg" alt="Image Larb Gai" class="food-image">
               <div class="description">Hühnerbrustfilet, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
        </div>
         <div class="image-wrapper">
@@ -245,7 +310,7 @@ button:active {
               <div class="description">Schweinehack, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
        </div>
              <div class="image-wrapper">
-         <img src="https://i.imgur.com/uVL99i1.jpg" alt="Image Thai Red Curry Chicken" class="food-image">
+         <img src="https://i.imgur.com/jx69cEj.jpg" alt="Image Thai Red Curry Chicken" class="food-image">
                              <div class="description">Kaffir Lime Leaves, Palmsugar, Fischsoße, Chili Rot, Hühnerfond, Thai Basil, Kokosmilch, Bambus, Thai Aubergine, Curry Paste Red, Hühnerbrustfilet</div>
       </div>
                <div class="image-wrapper">
@@ -261,7 +326,7 @@ button:active {
                       <div class="description">Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen</div>
       </div>
                            <div class="image-wrapper">
-        <img src="https://i.imgur.com/3l2DPF9.jpg" alt="Image Fried Pork Belly" class="food-image">
+        <img src="https://i.imgur.com/wp318nF.jpg" alt="Image Fried Pork Belly" class="food-image">
                         <div class="description">Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke</div>
      </div>
                      <div class="image-wrapper">
@@ -285,16 +350,43 @@ button:active {
                                 <div class="description">Weizenmehl 550, Milch 3,5 %, Zucker (weiß), Backpulver, Eier, Salz, Pandan, Filling, Kokosmilch, Maisstärke, Zucker (weiß), Eier</div>
     </div>
   </div>
-  <div class="map-container" id="map-container">
-            <div id="map" style="width: 425px; height: 350px;"></div>
+    <div class="map-and-overlay-wrapper">
+       <div class="overlay" id="overlay">
+        <div class="info-box">
+            <div class="icon icon-location"></div>
+          <br>Bertoldstr. 4, 79187 Freiburg
         </div>
- <div class="opening-times-widget" id="opening-times-widget">
+        <div class="info-box">
+            <div class="icon icon-phonenumber"></div>
+           <br>187187187
+        </div>
+        <div class="info-box">
+            <div class="icon icon-payment"></div>
+            <br>EC, Kreditkarte, GPAY, ApplePay
+        </div>
+        <div class="info-box">
+            <div class="icon icon-mail"></div>
+            <br>test@hawker.com
+        </div>
+    </div>
+       <div class="map-container" id="map-container">
+    <div id="map" style="width: 425px; height: 350px;"></div>
+    </div>  
+</div>	
+    <div class="opening-times-widget" id="opening-times-widget">
     <strong>Opening Times:</strong><br>
     Monday-Friday:<br> 11:00 - 22:00
-</div>	    
 </div>
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script> document.addEventListener("DOMContentLoaded", function () {
+   
+</div>
+
+   <div class="map-container" id="map-container">
+            
+        </div>
+    </div>
+	 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
   const hawkerButton = document.getElementById("hawker-button");
   const buttonContainer = document.getElementById("button-container");
   const streetFoodButton = document.getElementById("street-food-button");
@@ -338,18 +430,17 @@ button:active {
 
 hawkerButton.addEventListener("click", function () {
    const computedStyle = getComputedStyle(buttonContainer);
-        const isButtonContainerVisible = computedStyle.display === "flex";
+   const isButtonContainerVisible = computedStyle.display === "flex";
         
-        buttonContainer.style.display = isButtonContainerVisible ? "none" : "flex";
-
-    
+    buttonContainer.style.display = isButtonContainerVisible ? "none" : "flex";
     // Hide everything else when showing buttonContainer
     switchContainer.style.display = "none";
     liveButton.style.display = "none"; 
     imageContainer.style.display = "none";   
    // Add this line to hide the map whenever Hawker is clicked.
     document.getElementById('map-container').style.display = "none";
- 	document.getElementById('opening-times-widget').style.display = "none";
+   document.getElementById('opening-times-widget').style.display = "none";
+    document.getElementById('overlay').style.display = "none";
 });
 
 streetFoodButton.addEventListener("click", function () {
@@ -367,7 +458,8 @@ if (switchContainer.style.display === "none" || switchContainer.style.display ==
   updateImageVisibility();
    // Add this line to hide the map whenever Street Food is clicked.
   document.getElementById('map-container').style.display = "none";
-	 document.getElementById('opening-times-widget').style.display = "none";
+   document.getElementById('opening-times-widget').style.display = "none";
+   document.getElementById('overlay').style.display = "none";
 });
 
 
@@ -394,7 +486,8 @@ indicator.style.left = `${currentStateIndex * 33.33}%`;
     liveButton.style.display = "none";
     imageContainer.style.display = "none";
     document.getElementById('map-container').style.display = "none"; // hide the map
-	document.getElementById('opening-times-widget').style.display = "none";  
+     document.getElementById('opening-times-widget').style.display = "none"; // hide the opening times widget
+      document.getElementById('overlay').style.display = "none"; // hide the opening times widget
 };
 
 const konzeptButton = buttonContainer.querySelector('button:nth-child(1)');
@@ -404,8 +497,7 @@ const infoButton = buttonContainer.querySelector('button:nth-child(4)');
 konzeptButton.addEventListener("click", hideEverything);
 teamHawkerButton.addEventListener("click", hideEverything);
 infoButton.addEventListener("click", hideEverything);
-  
- let mapInitialized = false; // Flag to ensure we only initialize the map once
+  let mapInitialized = false; // Flag to ensure we only initialize the map once
     function initializeMap() {
         if (!mapInitialized) {
             var map = L.map('map').setView([47.99495, 7.84919], 17);
@@ -422,26 +514,29 @@ infoButton.addEventListener("click", hideEverything);
             mapInitialized = true;
         }
     }
-
-  let buttons = document.querySelectorAll('.sub-button');
+ 
+ let buttons = document.querySelectorAll('.sub-button');
 buttons.forEach(function(button) {
     if (button.textContent.includes("Info")) {
         button.addEventListener('click', function() {
             let mapContainer = document.getElementById('map-container');
            let openingTimesWidget = document.getElementById('opening-times-widget');
-             if (mapContainer.style.display === "none" || mapContainer.style.display === "") {
+        let overlay = document.getElementById('overlay');     
+          if (mapContainer.style.display === "none" || mapContainer.style.display === "") {
                 mapContainer.style.display = "block";
                 openingTimesWidget.style.display = "block"; // show the widget
+              overlay.style.display = "grid";
                 initializeMap(); // Initialize the map when showing it
             } else {
                 mapContainer.style.display = "none";
                 openingTimesWidget.style.display = "none"; // hide the widget
+               overlay.style.display = "none";
             }
         });
     }
 });
-
 });
- </script>
+</script>
 </body>
 </html>
+
