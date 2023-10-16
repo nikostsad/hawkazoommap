@@ -179,10 +179,12 @@ button:active {
     margin-top: 80px;
     transform: translateX(-50%);
     padding: 20px;
-    background-color: #ff8c00;
+   background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     z-index: 1000; /* To make sure it appears above most other content */
-    width: 200px; /* Adjust as necessary */
+    width: 400px; /* Adjust as necessary */
+  height:100px;
+  font-size:20px;
     text-align: center; /* Center the text */
     border-radius: 10px; /* Rounded corners */
   }
@@ -192,7 +194,7 @@ button:active {
     justify-content: center;
     align-items: center;
     margin-top: 200px;
-    gap: 20px;
+    gap: 0px;
     width: 800px;  /* Adjust this value as desired */
     height: 550px; /* Adjust this value as desired */
 }  
@@ -200,15 +202,16 @@ button:active {
             display: none;
             flex: 1; 
             grid-template-columns: repeat(2, 1fr); /* creates 2 equal-width columns */
-          row-gap: 0px;
-          column-gap: 10px;
+            row-gap: 0px;
+            column-gap: 10px;
             justify-content: center; /* center the grid items horizontally */
             align-items: center;
             position: relative;
             background-size: cover;
-            padding: 20px;
+            padding: 10px;
             height: 550px; 
             left: 70%; 
+   top: 50px;
         }
 .map-container {
     display: none;
@@ -218,23 +221,24 @@ button:active {
     padding: 20px;
     border-radius: 10px;
      width: 650px;  /* Adjust to your desired width */
-    height: 500px;
+    height: 515px;
     top: 0; 
     left: 70%; 
     transform: none; 
-    margin-top: 0; 
+    margin-top: 135px; 
     z-index: 10;
 }
         .info-box {
             padding: 25px;
             background: rgba(255, 255, 255, 0.8);
-            margin: 5px;
+           margin-top: 15px; 
+        
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             font-size: 20px;
             width: 300px;   /* Add a fixed width */
-            height: 215px;  /* Add a fixed height */
+            height: 220px;  /* Add a fixed height */
             display: flex;
             flex-direction: column;
             justify-content: center;
