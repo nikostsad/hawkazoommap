@@ -267,17 +267,15 @@ button:active {
     background-image: url('https://i.imgur.com/G2MvpfW.png');
 }
 #map {
-    margin-top: 80px; /* Adjust this value to shift the map content upwards, bei gezoomter opensouremap */
+    margin-top: 80px; /* Adjust this value to shift the map content upwards */
 }
-.info-box a {
+	.info-box a {
     color: black; /* so the mail isn't blue because of the Link */
     text-decoration: none;
 }
 .info-box a:hover {
     text-decoration: underline; /* Optional: if you want the underline on hover */
-}	    
-	
-		
+}	
 
 	
 		  </style>
@@ -312,7 +310,7 @@ button:active {
       <img src="https://i.imgur.com/f2cpBiJ.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
            <div class="description">Schweinehack, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Dark Soy Sauce, Light Soy Sauce, Hühnerfond, Palmsugar, Rapsöl</div>
 </div>
-       <div class="image-wrapper">
+        <div class="image-wrapper">
          <img src="https://i.imgur.com/qQ1UzYa.jpg" alt="Image Fried Rice Shrimp" class="food-image">
             <div class="description">Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
        </div>
@@ -381,7 +379,7 @@ button:active {
         </div>
         <div class="info-box">
             <div class="icon icon-payment"></div>
-           <br>EC, Kreditkarte, <br>GooglePay, ApplePay
+             <br>EC, Kreditkarte, <br>GooglePay, ApplePay
         </div>
         <div class="info-box">
             <div class="icon icon-mail"></div>
@@ -400,8 +398,6 @@ button:active {
    
 </div>
 
-  
-    
 	 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -515,6 +511,23 @@ const infoButton = buttonContainer.querySelector('button:nth-child(4)');
 konzeptButton.addEventListener("click", hideEverything);
 teamHawkerButton.addEventListener("click", hideEverything);
 infoButton.addEventListener("click", hideEverything);
+  let mapInitialized = false; // Flag to ensure we only initialize the map once
+    function initializeMap() {
+        if (!mapInitialized) {
+            var map = L.map('map').setView([47.99495, 7.84919], 17);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([47.99495, 7.84919]).addTo(map)
+                .bindPopup('Hawker SJ')
+                .openPopup();
+
+            mapInitialized = true;
+        }
+    }
  
  let buttons = document.querySelectorAll('.sub-button');
 buttons.forEach(function(button) {
