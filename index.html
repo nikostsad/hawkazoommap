@@ -276,8 +276,94 @@ button:active {
 .info-box a:hover {
     text-decoration: underline; /* Optional: if you want the underline on hover */
 }	
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
 
-	
+.modal-content {
+  width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-content .close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  cursor: pointer;
+}
+	@media only screen and (max-width: 768px) {
+  .container {
+    margin-top: 50px;
+  }
+  
+  .switch-container {
+           margin-top: 89px; /* adjust this value for mobile */
+  }
+  .hawker-button button {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+
+  #live-button {
+    margin-top: 165px;
+    left: 30px;
+  }
+
+  #image-container {
+    gap: 20px;
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map-and-overlay-wrapper,
+  .overlay,
+  .map-container {
+    width: 100%;
+    height: auto;
+  }
+
+   .info-box {
+      width: 90%;
+    min-height: 150px; /* Set a minimum height for consistency */
+    display: flex;     /* Use flexbox for centering */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    padding: 5px;
+   margin: 10px auto;
+    font-size: 18px;
+ }
+  .opening-times-widget {
+    width: 100%;
+    margin-top: 60px;
+    height: auto;
+  }
+
+  
+
+  .modal-content {
+    width: 80%; /* making the modal wider on mobile */
+  }
+}
+
 		  </style>
 </head>
 <body>
@@ -287,7 +373,7 @@ button:active {
       <button class="sub-button" id="hawker-button">Hawker</button>
     </div>
     <div class="button-container" id="button-container">
-      <button class="sub-button">Konzept</button>
+      <button class="sub-button">Concept</button>
       <button class="sub-button" id="street-food-button">Street Food</button>
       <button class="sub-button">Team Hawker</button>
       <button class="sub-button" id="info-button">Info</button>
@@ -304,67 +390,82 @@ button:active {
     <div class="image-container" id="image-container">
        <div class="image-wrapper">
       <img src="https://i.imgur.com/W7oqYuc.jpg" alt="Image Pad Kra Pao Gai" class="food-image">
-           <div class="description">Hühnerbrustfilet, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Dark Soy Sauce, Light Soy Sauce, Hühnerfond, Palmsugar, Rapsöl</div>
+                    <div class="description">  <h3>Pad Kra Pao Gai</h3>
+Hühnerbrustfilet, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Dark Soy Sauce, Light Soy Sauce, Hühnerfond, Palmsugar, Rapsöl</div>
 </div>
         <div class="image-wrapper">
       <img src="https://i.imgur.com/f2cpBiJ.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
-           <div class="description">Schweinehack, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Dark Soy Sauce, Light Soy Sauce, Hühnerfond, Palmsugar, Rapsöl</div>
+                      <div class="description"><h3>Pad Kra Pao Moo</h3>
+                        Schweinehack, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Dark Soy Sauce, Light Soy Sauce, Hühnerfond, Palmsugar, Rapsöl</div>
 </div>
-        <div class="image-wrapper">
+         <div class="image-wrapper">
          <img src="https://i.imgur.com/qQ1UzYa.jpg" alt="Image Fried Rice Shrimp" class="food-image">
-            <div class="description">Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
+                       <div class="description"> <h3>Fried Rice Shrimp</h3>
+              Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
        </div>
         <div class="image-wrapper">
          <img src="https://i.imgur.com/qQ1UzYa.jpg" alt="Image Fried Rice Chicken" class="food-image">
-            <div class="description">Hühnerbrustfilet, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
+                      <div class="description"> <h3>Fried Rice Chicken</h3>
+                        Hühnerbrustfilet, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
        </div>
            <div class="image-wrapper">
          <img src="https://i.imgur.com/cc2QMZ2.jpg" alt="Image Larb Gai" class="food-image">
-              <div class="description">Hühnerbrustfilet, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
+                         <div class="description"> <h3>Larb Gai</h3>
+                           Hühnerbrustfilet, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
        </div>
         <div class="image-wrapper">
          <img src="https://i.imgur.com/dDJFaoG.jpg" alt="Image Larb Moo" class="food-image">
-              <div class="description">Schweinehack, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
+                        <div class="description"> <h3>Larb Moo</h3>
+                          Schweinehack, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
        </div>
              <div class="image-wrapper">
          <img src="https://i.imgur.com/jx69cEj.jpg" alt="Image Thai Red Curry Chicken" class="food-image">
-                             <div class="description">Kaffir Lime Leaves, Palmsugar, Fischsoße, Chili Rot, Hühnerfond, Thai Basil, Kokosmilch, Bambus, Thai Aubergine, Curry Paste Red, Hühnerbrustfilet</div>
+                                         <div class="description"><h3>Thai Red Curry Chicken</h3>
+                                           Kaffir Lime Leaves, Palmsugar, Fischsoße, Chili Rot, Hühnerfond, Thai Basil, Kokosmilch, Bambus, Thai Aubergine, Curry Paste Red, Hühnerbrustfilet</div>
       </div>
                <div class="image-wrapper">
          <img src="https://i.imgur.com/Y9Hq87m.jpg" alt="Image Thai Green Curry Chicken" class="food-image">
-                  <div class="description">Kaffir Lime Leaves, Palmsugar, Fischsoße, Chili Rot, Hühnerfond, Thai Basil, Kokosmilch, Bambus, Thai Aubergine, Curry Paste Green, Hühnerbrustfilet</div>
+                  <div class="description"> <h3>Thai Green Curry Chicken</h3>
+                    Kaffir Lime Leaves, Palmsugar, Fischsoße, Chili Rot, Hühnerfond, Thai Basil, Kokosmilch, Bambus, Thai Aubergine, Curry Paste Green, Hühnerbrustfilet</div>
      </div>
                  <div class="image-wrapper">
         <img src="https://i.imgur.com/Bp41HS6.jpg" alt="Image Pad Thai" class="food-image">
-                    <div class="description">Garnelen, Chilipulver, Tofu, Reisbandnudeln (5mm), Dried Shrimp, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmsugar, Wasser, Fischsoße, Tamarind</div>
+                    <div class="description"><h3>Pad Thai Chicken/Shrimp</h3>
+                      Hühnerbrustfilet/Garnelen, Chilipulver, Tofu, Reisbandnudeln (5mm), Dried Shrimp, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmsugar, Wasser, Fischsoße, Tamarind</div>
       </div>
                    <div class="image-wrapper">
        <img src="https://i.imgur.com/4AfIr0S.jpg" alt="Image Pan Eggs" class="food-image">
-                      <div class="description">Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen</div>
+                      <div class="description"> <h3>Pan Eggs</h3>
+                        Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen</div>
       </div>
                            <div class="image-wrapper">
         <img src="https://i.imgur.com/wp318nF.jpg" alt="Image Fried Pork Belly" class="food-image">
-                        <div class="description">Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke</div>
+                        <div class="description"><h3>Fried Pork Belly</h3>
+                          Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke</div>
      </div>
                      <div class="image-wrapper">
         <img src="https://i.imgur.com/GqMqPYb.jpg" alt="Image Chicken Wings" class="food-image">
-                        <div class="description">Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl</div>
+                        <div class="description"> <h3>Chicken Wings</h3>
+                          Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl</div>
      </div>
                        <div class="image-wrapper">
         <img src="https://i.imgur.com/X33Atck.jpg" alt="Image Sticky Pancakes" class="food-image">
-                          <div class="description">Glutinous Rice Flour, Frozen Banane, Kokosmilch, Kokosraspeln, Palmsugar, Salz, Kokosnussfleisch gefroren</div>
+                          <div class="description"><h3>Sticky Pancakes</h3>
+                            Glutinous Rice Flour, Frozen Banane, Kokosmilch, Kokosraspeln, Palmsugar, Salz, Kokosnussfleisch gefroren</div>
       </div>
                          <div class="image-wrapper">
         <img src="https://i.imgur.com/tTZoHUb.jpg" alt="Image Mango Sticky Rice" class="food-image">
-                            <div class="description">Mango, Sticky Rice, Kokosmilch, Salz, Wasser, Palmsugar, Mungbohnen</div>
+                            <div class="description"><h3>Mango Sticky Rice</h3>
+                              Mango, Sticky Rice, Kokosmilch, Salz, Wasser, Palmsugar, Mungbohnen</div>
       </div>
                            <div class="image-wrapper">
         <img src="https://i.imgur.com/gWHjl6X.jpg" alt="Image Fried Bananas" class="food-image">
-                              <div class="description">Reismehl, Kochbanane, Kokosraspeln, Salz, Rapsöl, Wasser, Zucker (weiß), Backpulver</div>
+                              <div class="description"><h3>Fried Bananas</h3>
+                                Reismehl, Kochbanane, Kokosraspeln, Salz, Rapsöl, Wasser, Zucker (weiß), Backpulver</div>
       </div>
                              <div class="image-wrapper">
         <img src="https://i.imgur.com/ZtkxYQJ.jpg" alt="Image Pandan Pancakes" class="food-image">
-                                <div class="description">Weizenmehl 550, Milch 3,5 %, Zucker (weiß), Backpulver, Eier, Salz, Pandan, Filling, Kokosmilch, Maisstärke, Zucker (weiß), Eier</div>
+                                <div class="description"> <h3>Pandan Pancakes</h3>Weizenmehl 550, Milch 3,5 %, Zucker (weiß), Backpulver, Eier, Salz, Pandan, Filling, Kokosmilch, Maisstärke, Zucker (weiß), Eier</div>
     </div>
   </div>
     <div class="map-and-overlay-wrapper">
@@ -379,12 +480,13 @@ button:active {
         </div>
         <div class="info-box">
             <div class="icon icon-payment"></div>
-             <br>EC, Kreditkarte, <br>GooglePay, ApplePay
+            <br>Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash
         </div>
         <div class="info-box">
             <div class="icon icon-mail"></div>
              <br>
            <a href="mailto:test@hawker.com">test@hawker.com</a>
+		   <br><br><a href="#" id="contactUsLink">Contact Us</a>
         </div>
     </div>
        <div class="map-container" id="map-container">
@@ -504,11 +606,11 @@ indicator.style.left = `${currentStateIndex * 33.33}%`;
       document.getElementById('overlay').style.display = "none"; // hide the opening times widget
 };
 
-const konzeptButton = buttonContainer.querySelector('button:nth-child(1)');
+const conceptButton = buttonContainer.querySelector('button:nth-child(1)');
 const teamHawkerButton = buttonContainer.querySelector('button:nth-child(3)');
 const infoButton = buttonContainer.querySelector('button:nth-child(4)');
 
-konzeptButton.addEventListener("click", hideEverything);
+conceptButton.addEventListener("click", hideEverything);
 teamHawkerButton.addEventListener("click", hideEverything);
 infoButton.addEventListener("click", hideEverything);
   let mapInitialized = false; // Flag to ensure we only initialize the map once
