@@ -37,8 +37,8 @@
   background-color: #ff8c00;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 5px 20px;
+  font-size: 28px;
   cursor: pointer;
   outline: none;
 }
@@ -56,10 +56,12 @@
   background-color: #ff8c00;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0px 0px;
+  font-size: 19px;
   margin: 0 10px;
   cursor: pointer;
+  width: 138px;
+  height: 50px;
 }
 
 #live-button {
@@ -70,14 +72,14 @@
   font-size: 16px;
   cursor: pointer;
   border: none;
-  margin-top: 100px;
+  margin-top: 110px;
   position: absolute;
   left: 200px;
 }
 
 .switch-container {
   display: none;
-  margin-top: 80px;
+  margin-top: 100px;
   position: absolute;
   width: 100%;
   justify-content: center;
@@ -277,6 +279,7 @@
   background-image: url('https://i.imgur.com/G2MvpfW.png');
 }
 
+
 #map {
     margin-top: 80px; /* Adjust this value to shift the map content upwards */
 }
@@ -339,9 +342,17 @@
   }
   .hawker-button button {
     padding: 8px 15px;
-    font-size: 16px;
+    font-size: 24px;
+    width: 130px;
   }
-
+  .button-container {
+    left: 0;
+  }
+  .sub-button {
+    font-size:16px;
+    margin: 0 2.53px;
+    width:100px;
+  }
   #live-button {
     margin-top: 165px;
     left: 30px;
@@ -353,22 +364,38 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .map-and-overlay-wrapper,
-  .overlay,
-  .map-container {
+  .map-and-overlay-wrapper {
+    flex-direction: column;
     width: 100%;
     height: auto;
   }
 
+  .overlay {
+    width: 100%;
+    height: auto;
+  }
+
+  .map-container {
+    order: 2; /* ensure it comes after the info-box */
+    width: 440px;
+    height: 515px;
+    margin-top: 20px; /* optional: add a little spacing */
+     left: 10%; /* Resetting left position */
+     padding: 10px;
+  }
+
    .info-box {
       width: 90%;
+      left: -255px;
+   position: relative;
     min-height: 150px; /* Set a minimum height for consistency */
     display: flex;     /* Use flexbox for centering */
     flex-direction: column; /* Stack content vertically */
     justify-content: center; /* Center content vertically */
     padding: 5px;
-   margin: 10px auto;
+   margin: 20px 0 50px;
     font-size: 18px;
+      order: 1;
  }
   .opening-times-widget {
     width: 100%;
@@ -378,6 +405,11 @@
   .modal-content {
     width: 80%; /* making the modal wider on mobile */
   }
+  .map-container iframe {
+  position: relative;
+  top: 12px;
+  left: 0;
+}
 }
 
 
