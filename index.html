@@ -282,6 +282,8 @@
 
 #map {
     margin-top: 80px; /* Adjust this value to shift the map content upwards */
+	width: 425px;
+	height: 350px;
 }
 
 .info-box a {
@@ -339,6 +341,7 @@
   
   .switch-container {
            margin-top: 89px; /* adjust this value for mobile */
+		   left: 0;
   }
   .hawker-button button {
     padding: 8px 15px;
@@ -373,43 +376,45 @@
   .overlay {
     width: 100%;
     height: auto;
+	left: 0%;
   }
 
   .map-container {
     order: 2; /* ensure it comes after the info-box */
-    width: 440px;
-    height: 515px;
-    margin-top: 20px; /* optional: add a little spacing */
-     left: 10%; /* Resetting left position */
-     padding: 10px;
+    width: 350px;
+    height: 340px;
+    margin-top: 30px; /* optional: add a little spacing */
+    left: 0%; /* Resetting left position */
+    padding: 10px;
+	padding-top: 0px;
   }
 
    .info-box {
-      width: 90%;
-      left: -255px;
-   position: relative;
+    width: 90%;
+    position: relative;
     min-height: 150px; /* Set a minimum height for consistency */
     display: flex;     /* Use flexbox for centering */
     flex-direction: column; /* Stack content vertically */
     justify-content: center; /* Center content vertically */
-    padding: 5px;
-   margin: 20px 0 50px;
+    padding: 10px;
+   margin: -10px 0 20px;
     font-size: 18px;
-      order: 1;
+    order: 1;
  }
   .opening-times-widget {
     width: 100%;
     margin-top: 60px;
     height: auto;
+	width: 90%;
   }
   .modal-content {
     width: 80%; /* making the modal wider on mobile */
   }
-  .map-container iframe {
-  position: relative;
-  top: 12px;
-  left: 0;
-}
+  #map {
+  width: 350px;
+  height: 330px;
+  margin-top:10px;
+  }
 }
 
 
