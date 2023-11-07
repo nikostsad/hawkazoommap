@@ -11,6 +11,7 @@
   padding: 0;
   font-family: Arial, sans-serif;
 }
+
 #fixed-background {
     position: fixed;
     top: 0;
@@ -22,64 +23,135 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    opacity: 0.87;
+    opacity: 0.95;
     pointer-events: none; /* Ensure it doesn't block interactions */
+}
+.language-toggle img {
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+	z-index:10;
+}
+.language-toggle {
+    display: none;
+	 position: absolute;
+    top: 105px; 
+    right: 300px; 
+    z-index: 10;
 }
 .container {
   position: relative;
   text-align: center;
-  margin-top: 100px;
+  top: 100px;
   padding: 20px;
   border-radius: 10px;
 }
+
 .hawker-button button {
-  background-color: #ff8c00;
-  color: #fff;
-  border: none;
-  padding: 5px 20px;
+  top:-100px;
+  margin: 10px;
+  position: relative;
+  right: -45.296%;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  padding: 0px 0px;
   font-size: 28px;
   cursor: pointer;
   outline: none;
+    background: transparent;   /* Makes the button's background transparent */
+    box-shadow: none;          /* Removes the shadow from the button */
+    border: none;              /* Removes any border */
+    padding: 0;                /* Removes any padding */
 }
-
+.hawker-logo {
+     width: 150px;    /* Ensure the image does not overflow the button */
+    height: auto;
+    display: block;   /* Makes the image a block-level element, removing extra space below it */
+    margin: 0 auto;   /* Centers the image horizontally */
+}
 .button-container {
   display: none;
-  margin-top: 20px;
-  position: absolute;
+  position: relative;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .sub-button {
-  background-color: #ff8c00;
-  color: #fff;
-  border: none;
   padding: 0px 0px;
   font-size: 19px;
-  margin: 0 10px;
   cursor: pointer;
   width: 138px;
   height: 50px;
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.sub-button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
+.sub-button:active {
+  transform: scale(0.95);
+}
 #live-button {
   display: none;
-  background-color: #ff8c00;
-  color: #fff;
   padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  margin-top: 110px;
-  position: absolute;
+  font-size: 19px;
+  top: 5px;
+  width:100px;
+  position: relative;
   left: 200px;
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .switch-container {
   display: none;
-  margin-top: 100px;
-  position: absolute;
+  top:-60px;
+  position: relative;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -90,17 +162,23 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  width: 300px;
+  width: 700px;
+  height:75px;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
+  font-weight: 700;
+  font-size:20px;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FFA65F 0%, #FFA65F  51%, #FFA65F  100%);
 }
 
 .indicator {
   position: absolute;
   height: 100%;
-  width: 33.33%;
-  background-color: #ff8c00;
+  width: 25%;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
   transition: left 0.3s ease-in-out;
   z-index: 1;
   left: 0;
@@ -116,7 +194,7 @@
 
 #image-container {
   display: none;
-  margin: 210px auto 0 auto;
+  margin: -10px auto 0 auto;
   grid-template-columns: repeat(4, 1fr);
   gap: 60px;
   max-width: 1700px;
@@ -133,15 +211,16 @@
 
 .description {
   position: absolute;
-  left: 10px;
+  width: 100%;  /* Set the width to 100% */
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 5px 0; /* Adjust the padding to only have top and bottom padding */
+  border-radius: 0; /* Set border-radius to 0 since it's spanning the entire width */
+  text-align: center;  /* Center the text */
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease;
-  bottom: 10px;
+  bottom: 0;
 }
 
 .image-wrapper:hover .description {
@@ -177,16 +256,15 @@
 
 .opening-times-widget {
   display: none;
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  margin-top: 80px;
+  position: relative;
+  left: 51.3%;
+  top: -730px;
   transform: translateX(-50%);
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  width: 400px;
+  width: 310px;
   height: 100px;
   font-size: 20px;
   text-align: center;
@@ -215,28 +293,27 @@
   background-size: cover;
   padding: 10px;
   height: 550px;
-  left: 70%;
-  top: 50px;
+  left: 65%;
+  top:-9%;
 }
 
 .map-container {
   display: none;
   flex: 1;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   width: 650px;
   height: 515px;
-  top: 0;
-  left: 70%;
-  margin-top: 135px;
+  top: -6%;
+  left: 65%;
   z-index: 10;
 }
 
 .info-box {
             padding: 25px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
            margin-top: 15px; 
         
             text-align: center;
@@ -334,19 +411,30 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
-    margin-top: 50px;
+ 
+	 .language-toggle {
+        right: 0px; /* Adjusting the position for mobile screens */
+        top: -80px;   /* You can adjust this value based on your needs */
+    }
+	.language-toggle img {
+    width: 50px;
+    height: 30px;
+}
+    .hawker-button button {
+   top:-110px;
+    width: 130px;
+	right: -28%;
   }
-  
   .switch-container {
-           margin-top: 89px; /* adjust this value for mobile */
+           top: -50px; /* adjust this value for mobile */
 		   left: 0;
   }
-  .hawker-button button {
-    padding: 8px 15px;
-    font-size: 24px;
-    width: 130px;
-  }
+  .switch {
+  width:100%;
+  font-size:16px;
+  font-weight: 300;
+}
+  
   .button-container {
     left: 0;
   }
@@ -356,16 +444,26 @@
     width:100px;
   }
   #live-button {
-    margin-top: 165px;
-    left: 30px;
+    top: 90px;
+    left: 35%;
+	
   }
 
   #image-container {
     gap: 20px;
-    max-width: 100%;
+	margin-top:20px;
+	max-width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
-
+  .description {
+  font-size: 11px;
+  }
+.opening-times-widget {
+    width: 100%; /* testen auf verschiedenen Geräten */
+   margin-top:-310px;
+    height: auto;
+	left:50%;
+  }
   .map-and-overlay-wrapper {
     flex-direction: column;
     width: 100%;
@@ -375,6 +473,7 @@
   .overlay {
     width: 100%;
     height: auto;
+	margin-top:-10px;
 	left: 0%;
   }
 
@@ -382,7 +481,7 @@
     order: 2; /* ensure it comes after the info-box */
     width: 350px;
     height: 340px;
-    margin-top: 30px; /* optional: add a little spacing */
+    top: -50px; /* optional: add a little spacing */
     left: 0%; /* Resetting left position */
     padding: 10px;
 	padding-top: 0px;
@@ -399,13 +498,9 @@
    margin: -10px 0 20px;
     font-size: 18px;
     order: 1;
+	top:-30px;
  }
-  .opening-times-widget {
-    width: 100%;
-    margin-top: 60px;
-    height: auto;
-	width: 90%;
-  }
+  
   .modal-content {
     width: 80%; /* making the modal wider on mobile */
   }
@@ -416,111 +511,133 @@
   }
 }
 
-
 		  </style>
 </head>
 <body>
 <div id="fixed-background"></div>
     <div class="container">
+	    <div class="language-toggle">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1920px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English" id="en" />
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png" alt="German" id="de" />
+</div>
       <div class="hawker-button">
-      <button class="sub-button" id="hawker-button">Hawker</button>
+     <button class="sub-button" id="hawker-button">
+	    <img src="https://i.imgur.com/3UGJpv8.png" alt="Hawker Logo" class="hawker-logo">
+        </button>
     </div>
     <div class="button-container" id="button-container">
-      <button class="sub-button">Concept</button>
+      <button class="sub-button" data-translate="Concept">Concept</button>
       <button class="sub-button" id="street-food-button">Street Food</button>
       <button class="sub-button">Team Hawker</button>
       <button class="sub-button" id="info-button">Info</button>
     </div>
     <button id="live-button" class="live-button-class">LIVE</button>
     <div class="switch-container" id="switch-container">
-      <div class="switch" id="three-state-switch">
+      <div class="switch" id="four-state-switch">
         <div class="indicator"></div>
-        <div class="label" data-state="main-dishes">Main Dishes</div>
+        <div class="label" data-state="main-dishes" data-translate="MainDishes">Main Dishes</div>
         <div class="label" data-state="specials">Specials</div>
-        <div class="label" data-state="sweets">Sweets</div>
+        <div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
+		<div class="label" data-state="extras">Extras</div>
       </div>
     </div>
     <div class="image-container" id="image-container">
        <div class="image-wrapper">
       <img src="https://i.imgur.com/W7oqYuc.jpg" alt="Image Pad Kra Pao Gai" class="food-image">
-                    <div class="description">  <h3>Pad Kra Pao Gai</h3>
-Hühnerbrustfilet, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Dark Soy Sauce, Light Soy Sauce, Hühnerfond, Palmsugar, Rapsöl</div>
+                    <div class="description">  <h3 data-translate="PadKraPaoGai">Pad Kra Pao Gai</h3>
+						<p data-translate="PadKraPaoGaiIngredients">Minced Chicken breast, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil</p></div>
 </div>
         <div class="image-wrapper">
-      <img src="https://i.imgur.com/f2cpBiJ.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
-                      <div class="description"><h3>Pad Kra Pao Moo</h3>
-                        Schweinehack, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Dark Soy Sauce, Light Soy Sauce, Hühnerfond, Palmsugar, Rapsöl</div>
+      <img src="https://i.imgur.com/xIAreGx.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
+                     <div class="description"><h3 data-translate="PadKraPaoMoo">Pad Kra Pao Moo</h3>
+                        <p data-translate="PadKraPaoMooIngredients">Minced Pork, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil</p></div>
 </div>
          <div class="image-wrapper">
          <img src="https://i.imgur.com/qQ1UzYa.jpg" alt="Image Fried Rice Shrimp" class="food-image">
-                       <div class="description"> <h3>Fried Rice Shrimp</h3>
-              Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
+                       <div class="description"> <h3 data-translate="FriedRiceShrimp">Fried Rice Shrimp</h3>
+						 <p data-translate="FriedRiceShrimpIngredients">Shrimp, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth</p></div>
        </div>
         <div class="image-wrapper">
          <img src="https://i.imgur.com/qQ1UzYa.jpg" alt="Image Fried Rice Chicken" class="food-image">
-                      <div class="description"> <h3>Fried Rice Chicken</h3>
-                        Hühnerbrustfilet, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Oyster Sauce, Light Soy Sauce, Rapsöl, Zucker (weiß), Hühnerfond</div>
+                      <div class="description"> <h3 data-translate="FriedRiceChicken">Fried Rice Chicken</h3>
+                       <p data-translate="FriedRiceChickenIngredients">Chicken breast, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth</p></div>
        </div>
            <div class="image-wrapper">
          <img src="https://i.imgur.com/cc2QMZ2.jpg" alt="Image Larb Gai" class="food-image">
-                         <div class="description"> <h3>Larb Gai</h3>
-                           Hühnerbrustfilet, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
+                         <div class="description"> <h3 data-translate="LarbGai">Larb Gai</h3>
+                          <p data-translate="LarbGaiIngredients">Minced Chicken breast, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar</p></div>
        </div>
         <div class="image-wrapper">
          <img src="https://i.imgur.com/dDJFaoG.jpg" alt="Image Larb Moo" class="food-image">
-                        <div class="description"> <h3>Larb Moo</h3>
-                          Schweinehack, langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir Lime Leaves, Sticky Rice, Chilipulver, Hühnerfond, Zucker (weiß).</div>
+                        <div class="description"> <h3 data-translate="LarbMoo">Larb Moo</h3>
+                         <p data-translate="LarbMooIngredients">Minced Pork, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar</p></div>
        </div>
              <div class="image-wrapper">
          <img src="https://i.imgur.com/jx69cEj.jpg" alt="Image Thai Red Curry Chicken" class="food-image">
-                                         <div class="description"><h3>Thai Red Curry Chicken</h3>
-                                           Kaffir Lime Leaves, Palmsugar, Fischsoße, Chili Rot, Hühnerfond, Thai Basil, Kokosmilch, Bambus, Thai Aubergine, Curry Paste Red, Hühnerbrustfilet</div>
+                                         <div class="description"><h3 data-translate="ThaiRedCurryChicken">Thai Red Curry Chicken</h3>
+                                         <p data-translate="ThaiRedCurryChickenIngredients">Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Red Curry Paste</p></div>
       </div>
                <div class="image-wrapper">
          <img src="https://i.imgur.com/Y9Hq87m.jpg" alt="Image Thai Green Curry Chicken" class="food-image">
-                  <div class="description"> <h3>Thai Green Curry Chicken</h3>
-                    Kaffir Lime Leaves, Palmsugar, Fischsoße, Chili Rot, Hühnerfond, Thai Basil, Kokosmilch, Bambus, Thai Aubergine, Curry Paste Green, Hühnerbrustfilet</div>
+                  <div class="description"> <h3 data-translate="ThaiGreenCurryChicken">Thai Green Curry Chicken</h3>
+                   <p data-translate="ThaiGreenCurryChickenIngredients">Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Green Curry Paste</p></div>
      </div>
                  <div class="image-wrapper">
         <img src="https://i.imgur.com/Bp41HS6.jpg" alt="Image Pad Thai" class="food-image">
-                    <div class="description"><h3>Pad Thai Chicken/Shrimp</h3>
-                      Hühnerbrustfilet/Garnelen, Chilipulver, Tofu, Reisbandnudeln (5mm), Dried Shrimp, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmsugar, Wasser, Fischsoße, Tamarind</div>
+                    <div class="description"><h3 data-translate="PadThai">Pad Thai Chicken/Shrimp</h3>
+                     <p data-translate="PadThaiIngredients">Chicken breast/Shrimp, Chili powder, Tofu, Rice noodles, Dried Shrimp, Garlic, Shallots, Yellow radish, Chili flakes, Peanuts, Bean sprouts, Long coriander (culantro), Lime, Eggs, Canola oil, Chicken broth, Palm sugar, Water, Fish Sauce, Tamarind</p></div>
       </div>
                    <div class="image-wrapper">
        <img src="https://i.imgur.com/4AfIr0S.jpg" alt="Image Pan Eggs" class="food-image">
-                      <div class="description"> <h3>Pan Eggs</h3>
-                        Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Oyster Sauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen</div>
+                      <div class="description"> <h3 data-translate="PanEggs">Pan Eggs</h3>
+                       <p data-translate="PanEggsIngredients">Minced Pork, Thai pork sausage, Chinese sausage, Eggs, Green onions, Canola oil, Shallots, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Chicken broth, Butter, White pepper, Cucumber, Bun</p></div>
       </div>
                            <div class="image-wrapper">
         <img src="https://i.imgur.com/wp318nF.jpg" alt="Image Fried Pork Belly" class="food-image">
-                        <div class="description"><h3>Fried Pork Belly</h3>
-                          Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke</div>
+                        <div class="description"><h3 data-translate="FriedPorkBelly">Fried Pork Belly</h3>
+                         <p data-translate="FriedPorkBellyIngredients">Pork belly, Fish Sauce, White pepper, Rice flour, Canola oil, Tapioca starch</p></div>
      </div>
                      <div class="image-wrapper">
         <img src="https://i.imgur.com/GqMqPYb.jpg" alt="Image Chicken Wings" class="food-image">
-                        <div class="description"> <h3>Chicken Wings</h3>
-                          Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl</div>
+                        <div class="description"> <h3 data-translate="ChickenWings">Chicken Wings</h3>
+                          <p data-translate="ChickenWingsIngredients">Chicken wings, Fish Sauce, White pepper, Rice flour, Canola oil</p></div>
      </div>
                        <div class="image-wrapper">
         <img src="https://i.imgur.com/X33Atck.jpg" alt="Image Sticky Pancakes" class="food-image">
-                          <div class="description"><h3>Sticky Pancakes</h3>
-                            Glutinous Rice Flour, Frozen Banane, Kokosmilch, Kokosraspeln, Palmsugar, Salz, Kokosnussfleisch gefroren</div>
+                          <div class="description"><h3 data-translate="StickyPancakes">Sticky Pancakes</h3>
+                            <p data-translate="StickyPancakesIngredients">Glutinous Rice Flour, Frozen Banana, Coconut milk, Desiccated coconut, Palm sugar, Salt, Coconut meat</p></div>
       </div>
                          <div class="image-wrapper">
         <img src="https://i.imgur.com/tTZoHUb.jpg" alt="Image Mango Sticky Rice" class="food-image">
-                            <div class="description"><h3>Mango Sticky Rice</h3>
-                              Mango, Sticky Rice, Kokosmilch, Salz, Wasser, Palmsugar, Mungbohnen</div>
+                            <div class="description"><h3 data-translate="MangoStickyRice">Mango Sticky Rice</h3>
+                              <p data-translate="MangoStickyRiceIngredients">Mango, Sticky Rice, Coconut Milk, Salt, Palm Sugar, Mung Beans</p></div>
       </div>
                            <div class="image-wrapper">
         <img src="https://i.imgur.com/gWHjl6X.jpg" alt="Image Fried Bananas" class="food-image">
-                              <div class="description"><h3>Fried Bananas</h3>
-                                Reismehl, Kochbanane, Kokosraspeln, Salz, Rapsöl, Wasser, Zucker (weiß), Backpulver</div>
+                              <div class="description"><h3 data-translate="FriedBananas">Fried Bananas</h3>
+                               <p data-translate="FriedBananasIngredients">Rice Flour, Plantains, Coconut Flakes, Salt, Canola Oil, Water, Sugar, Baking Powder</p></div>
       </div>
                              <div class="image-wrapper">
         <img src="https://i.imgur.com/ZtkxYQJ.jpg" alt="Image Pandan Pancakes" class="food-image">
-                                <div class="description"> <h3>Pandan Pancakes</h3>Weizenmehl 550, Milch 3,5 %, Zucker (weiß), Backpulver, Eier, Salz, Pandan, Filling, Kokosmilch, Maisstärke, Zucker (weiß), Eier</div>
+                                <div class="description"> <h3 data-translate="PandanPancakes">Pandan Pancakes</h3>
+								<p data-translate="PandanPancakesIngredients">Wheat Flour, 3.5% Milk, Sugar, Baking Powder, Eggs, Salt, Pandan, Coconut Milk, Cornstarch, Sugar, Eggs</p></div>
     </div>
-  </div>
+	  <div class="image-wrapper">
+        <img src="https://i.imgur.com/rGlXnYb.jpg" alt="Image Korean Cucumber Salad" class="food-image">
+                                <div class="description"> <h3 data-translate="KoreanCucumberSalad">Korean Cucumber Salad</h3>
+								<p data-translate="KoreanCucumberSaladIngredients">Cucumber, Garlic, Spring Onions, Sesame Seeds, Sesame Oil, Soy Sauce, Salt, Chili Powder, Paprika Powder, Rice Vinegar</p></div>
+    </div>
+	 <div class="image-wrapper">
+        <img src="https://i.imgur.com/PWScF9x.jpg" alt="Image Morning Glory" class="food-image">
+                                <div class="description"> <h3 data-translate="MorningGlory">Morning Glory</h3>
+								<p data-translate="MorningGloryIngredients">Morning Glory, Garlic, Red Chili, Oyster Sauce, Soybean Paste, Palm Sugar, Canola Oil</p></div>
+    </div>
+	 <div class="image-wrapper">
+        <img src="https://i.imgur.com/h6IdPss.jpg" alt="Image Fried Egg" class="food-image">
+                                <div class="description"> <h3 data-translate="FriedEgg">Fried Egg</h3>
+								<p data-translate="FriedEggIngredients">Egg, Black Pepper, Canola Oil</p></div>
+    </div>
+	  </div>
     <div class="map-and-overlay-wrapper">
        <div class="overlay" id="overlay">
         <div class="info-box">
@@ -533,36 +650,151 @@ Hühnerbrustfilet, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chilifl
         </div>
         <div class="info-box">
             <div class="icon icon-payment"></div>
-            <br>Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash
+           <br><span data-translate="PaymentMethods">Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash</span>
         </div>
         <div class="info-box">
             <div class="icon icon-mail"></div>
              <br>
            <a href="mailto:test@hawker.com">test@hawker.com</a>
-		   <br><br><a href="#" id="contactUsLink">Contact Us</a>
+		  <br><br><a href="#" id="contactUsLink" data-translate="contactUsText">Contact Us</a>
         </div>
     </div>
        <div class="map-container" id="map-container">
-    <div id="map"></div>
+    <div id="map" ></div>
     </div>  
 </div>	
     <div class="opening-times-widget" id="opening-times-widget">
-    <strong>Opening Times:</strong><br>
-    <br>Monday-Friday:<br> 11:00 - 22:00
+   <strong data-translate="openingTimesTitle">Opening Times:<br></strong><br>
+    <span data-translate="daysWeek">Monday-Saturday:</span><br>11:00 - 22:00
 </div>
    
 </div>
 
 	 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
+ var translations = {
+    'en': {
+        'PadKraPaoGai': 'Pad Kra Pao Gai',
+		'PadKraPaoGaiIngredients': 'Minced Chicken breast, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil',
+		'PadKraPaoMoo': 'Pad Kra Pao Moo',
+		'PadKraPaoMooIngredients': 'Minced Pork, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil',
+		'FriedRiceShrimp': 'Fried Rice Shrimp',
+		'FriedRiceShrimpIngredients': 'Shrimp, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth',
+		'FriedRiceChicken': 'Fried Rice Chicken',
+		'FriedRiceChickenIngredients': 'Chicken breast, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth',
+		'LarbGai': 'Larb Gai',
+		'LarbGaiIngredients': 'Minced Chicken breast, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar',
+		'LarbMoo': 'Larb Moo',
+		'LarbMooIngredients': 'Minced Pork, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar',
+		'ThaiRedCurryChicken': 'Thai Red Curry Chicken',
+		'ThaiRedCurryChickenIngredients': 'Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Red Curry Paste',
+		'ThaiGreenCurryChicken': 'Thai Green Curry Chicken',
+		'ThaiGreenCurryChickenIngredients': 'Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Green Curry Paste',
+		'PadThai': 'Pad Thai',
+		'PadThaiIngredients': 'Chicken breast/Shrimp, Chili powder, Tofu, Rice noodles, Dried Shrimp, Garlic, Shallots, Yellow radish, Chili flakes, Peanuts, Bean sprouts, Long coriander (culantro), Lime, Eggs, Canola oil, Chicken broth, Palm sugar, Water, Fish Sauce, Tamarind',
+		'PanEggs': 'Pan Eggs',
+		'PanEggsIngredients': 'Minced Pork, Thai pork sausage, Chinese sausage, Eggs, Green onions, Canola oil, Shallots, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Chicken broth, Butter, White pepper, Cucumber, Bun',
+		'FriedPorkBelly': 'Fried Pork Belly',
+		'FriedPorkBellyIngredients': 'Pork belly, Fish Sauce, White pepper, Rice flour, Canola oil, Tapioca starch',
+		'ChickenWings': 'Chicken Wings',
+		'ChickenWingsIngredients': 'Chicken wings, Fish Sauce, White pepper, Rice flour, Canola oil',
+		'StickyPancakes': 'Sticky Pancakes',
+		'StickyPancakesIngredients': 'Glutinous Rice Flour, Banana, Coconut milk, Desiccated coconut, Palm sugar, Salt, Coconut meat',
+		'MangoStickyRice': 'Mango Sticky Rice',
+		'MangoStickyRiceIngredients': 'Mango, Sticky Rice, Coconut Milk, Salt, Palm Sugar, Mung Beans',
+		'FriedBananas': 'Fried Bananas',
+		'FriedBananasIngredients': 'Rice Flour, Plantains, Coconut Flakes, Salt, Canola Oil, Water, Sugar, Baking Powder',
+		'PandanPancakes': 'Pandan Pancakes',
+		'PandanPancakesIngredients': 'Wheat Flour, 3.5% Milk, Sugar, Baking Powder, Eggs, Salt, Pandan, Coconut Milk, Cornstarch, Sugar, Eggs',
+		'KoreanCucumberSalad': 'Korean Cucumber Salad',
+		'KoreanCucumberSaladIngredients': 'Cucumber, Garlic, Spring Onions, Sesame Seeds, Sesame Oil, Soy Sauce, Salt, Chili Powder, Paprika Powder, Rice Vinegar',
+		'MorningGlory': 'Morning Glory',
+		'MorningGloryIngredients': 'Morning Glory, Garlic, Red Chili, Oyster Sauce, Soybean Paste, Palm Sugar, Canola Oil',
+		'FriedEgg': 'Fried Egg',
+		'FriedEggIngredients': 'Egg, Black Pepper, Canola Oil',
+		'MainDishes': 'Main Dishes',
+		'Sweets': 'Sweets',
+		'Concept': 'Concept',
+		'PaymentMethods':'Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash',
+		'contactUsText': 'Contact Us',
+		'openingTimesTitle': 'Opening Times<br>',
+		'daysWeek': 'Monday - Saturday',
+		
+        // ... other English translations
+    },
+    'de': {
+        'PadKraPaoGai': 'Pad Kra Pao Gai',
+		'PadKraPaoGaiIngredients': 'Hühnerhack, Grüne Bohnen, Thai Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chiliflocken, Austernsoße, Fischsoße, Dunkle Sojasoße, Helle Sojasoße, Hühnerfond, Palmzucker, Rapsöl',
+		'PadKraPaoMoo': 'Pad Kra Pao Moo',
+		'PadKraPaoMooIngredients': 'Schweinehack, Grüne Bohnen, Thailändisches Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chili-Flocken, Austernsauce, Fischsauce, Dunkle Sojasauce, Helle Sojasauce, Hühnerbrühe, Palmzucker, Rapsöl',
+		'FriedRiceShrimp': 'Gebratener Reis mit Shrimps',
+		'FriedRiceShrimpIngredients': 'Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Austernsauce, Helle Sojasauce, Rapsöl, Zucker, Hühnerbrühe',
+		'FriedRiceChicken': 'Gebratener Reis mit Huhn',
+		'FriedRiceChickenIngredients': 'Hähnchenbrust, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Austernsauce, Helle Sojasauce, Rapsöl, Zucker, Hühnerbrühe',
+		'LarbGai': 'Larb Gai',
+		'LarbGaiIngredients': 'Hühnerhack, Langer Koriander (Kulantro), Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsauce, Kaffir-Limettenblätter, Klebreis, Chilipulver, Hühnerbrühe, Zucker',
+		'LarbMoo': 'Larb Moo',
+		'LarbMooIngredients': 'Schweinehack, Langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir-Limettenblätter, Klebreis, Chilipulver, Hühnerfond, Zucker',
+		'ThaiRedCurryChicken': 'Rotes Thai Curry Huhn',
+		'ThaiRedCurryChickenIngredients': 'Hähnchenbrust, Kaffir-Limettenblätter, Palmzucker, Fischsoße, Rote Chili, Hühnerfond, Thailändisches Basilikum, Kokosmilch, Bambus, Thailändische Aubergine, Rote Currypaste',
+		'ThaiGreenCurryChicken': 'Grünes Thai Curry Huhn',
+		'ThaiGreenCurryChickenIngredients': 'Hähnchenbrust, Kaffir-Limettenblätter, Palmzucker, Fischsoße, Rote Chili, Hühnerfond, Thailändisches Basilikum, Kokosmilch, Bambus, Thailändische Aubergine, Grüne Currypaste',
+		'PadThai': 'Pad Thai',
+		'PadThaiIngredients': 'Hähnchenbrust/Garnelen, Chilipulver, Tofu, Reisbandnudeln, Getrocknete Garnelen, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, Langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmzucker, Wasser, Fischsoße, Tamarinde',
+		'PanEggs': 'Asiatische Frühstückspfanne',
+		'PanEggsIngredients': 'Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Austernsauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen',
+		'FriedPorkBelly': 'Frittierter Schweinebauch',
+		'FriedPorkBellyIngredients': 'Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke',
+		'ChickenWings': 'Frittierte Hühnerflügel',
+		'ChickenWingsIngredients': 'Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl',
+		'StickyPancakes': 'Klebrige Pfannkuchen',
+		'StickyPancakesIngredients': 'Klebreismehl, Banane, Kokosmilch, Kokosraspeln, Palmzucker, Salz, Kokosnussfleisch',
+		'MangoStickyRice': 'Mango mit Klebreis',
+		'MangoStickyRiceIngredients': 'Mango, Klebreis, Kokosmilch, Salz, Palmzucker, Mungbohnen',
+		'FriedBananas': 'Frittierte Backbananen',
+		'FriedBananasIngredients': 'Reismehl, Kochbananen, Kokosraspeln, Salz, Rapsöl, Wasser, Zucker, Backpulver',
+		'PandanPancakes': 'Pandan Pfannkuchen',
+		'PandanPancakesIngredients': 'Weizenmehl, 3,5% Milch, Zucker, Backpulver, Eier, Salz, Pandan, Kokosmilch, Speisestärke, Zucker, Eier',
+		'KoreanCucumberSalad': 'Koreanischer Gurkensalat',
+		'KoreanCucumberSaladIngredients': 'Gurke, Knoblauch, Frühlingszwiebeln, Sesamsamen, Sesamöl, Sojasauce, Salz, Chilipulver, Paprikapulver, Reisessig',
+		'MorningGlory': 'Morning Glory',
+		'MorningGloryIngredients': 'Wasserspinat, Knoblauch, Rote Chili, Austernsauce, Sojabohnenpaste, Palmzucker, Rapsöl',
+		'FriedEgg': 'Frittiertes Spiegelei',
+		'FriedEggIngredients': 'Ei, Schwarzer Pfeffer, Rapsöl',
+		'MainDishes': 'Hauptgerichte',
+		'Sweets': 'Süßes',
+		'Concept': 'Konzept',
+		'PaymentMethods':'EC-Karte, Kreditkarte, GooglePay, ApplePay <br><br>Keine Barzahlung',
+		'contactUsText': 'Schreib uns',
+		'openingTimesTitle': 'Öffnungszeiten<br>',
+		'daysWeek': 'Montag - Samstag',
+        // ... other German translations
+    }
+};
+  document.querySelector(".language-toggle").addEventListener("click", function(event) {
+    if (event.target.tagName === 'IMG') {
+        var lang = event.target.id;
+        switchLanguage(lang);
+    }
+});
+
+function switchLanguage(lang) {
+    var translatableElements = document.querySelectorAll("[data-translate]");
+    
+    translatableElements.forEach(function(element) {
+        var key = element.getAttribute("data-translate");
+        element.innerHTML = translations[lang][key]; // Use innerHTML instead of textContent damit z.B. br tags nicht angezeigt werden nach translation
+    });
+}
+
   document.addEventListener("DOMContentLoaded", function () {
   const hawkerButton = document.getElementById("hawker-button");
   const buttonContainer = document.getElementById("button-container");
   const streetFoodButton = document.getElementById("street-food-button");
   const switchContainer = document.getElementById("switch-container");
-  const threeStateSwitch = document.getElementById("three-state-switch");
-  const indicator = threeStateSwitch.querySelector(".indicator");
-  const labels = Array.from(threeStateSwitch.querySelectorAll(".label"));
+  const fourStateSwitch = document.getElementById("four-state-switch");
+  const indicator = fourStateSwitch.querySelector(".indicator");
+  const labels = Array.from(fourStateSwitch.querySelectorAll(".label"));
   const liveButton = document.getElementById("live-button");
   const imageContainer = document.getElementById("image-container");
   const foodImages = Array.from(imageContainer.querySelectorAll(".food-image"));
@@ -588,13 +820,21 @@ Hühnerbrustfilet, Bohnen, Thai Basil, Holy Basil, Chili Rot, Knoblauch, Chilifl
         } else if (currentState === "sweets" && index >= 12 && index < 16) {
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
+		} else if (currentState === "extras" && index >= 16 && index < 19) {
+            img.style.display = "block";
+            imageWrappers[index].style.display = "block"; // Display the wrapper
         } else {
             img.style.display = "none";
         }
     });
 }
 
+ const hawkerLogo = document.querySelector(".hawker-button .hawker-logo");
+    const languageToggle = document.querySelector(".language-toggle");
 
+    hawkerLogo.addEventListener("click", function() {
+        languageToggle.style.display = (languageToggle.style.display === "none" || languageToggle.style.display === "") ? "block" : "none";
+    });
 
 
 hawkerButton.addEventListener("click", function () {
@@ -632,16 +872,16 @@ if (switchContainer.style.display === "none" || switchContainer.style.display ==
 });
 
 
-  threeStateSwitch.addEventListener("click", function (event) {
+  fourStateSwitch.addEventListener("click", function (event) {
     // Get the width of the switch and the clicked position within the switch
-    const switchWidth = threeStateSwitch.offsetWidth;
+    const switchWidth = fourStateSwitch.offsetWidth;
     const clickX =
-      event.clientX - threeStateSwitch.getBoundingClientRect().left;
+      event.clientX - fourStateSwitch.getBoundingClientRect().left;
 
     // Determine which third of the switch is clicked
-    const clickedThird = Math.floor((clickX / switchWidth) * 3);
-    currentStateIndex = clickedThird;
-indicator.style.left = `${currentStateIndex * 33.33}%`;
+    const clickedFourth = Math.floor((clickX / switchWidth) * 4);
+    currentStateIndex = clickedFourth;
+indicator.style.left = `${currentStateIndex * 25}%`;
 
     const currentState = labels[currentStateIndex].dataset.state;
     console.log(currentState);
