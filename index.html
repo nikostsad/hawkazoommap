@@ -324,35 +324,50 @@
             height: 220px;  /* Add a fixed height */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+			 height: 220px; /* Adjust if necessary */
             align-items: center;
             }
-
+.info-box > * {
+  flex: 1; 
+  display: flex; 
+  justify-content: center; /* This centers horizontally for flex items */
+  align-items: center; /* This centers vertically for flex items */
+  width: 100%; /* Full width of the parent */
+}
 .icon {
+   flex: none; /* Do not allow the icon to grow or shrink */
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  margin-bottom: 10px;
-  font-size: 30px;
 }
-
+.bottom-align-text {
+  align-self: flex-end; /* Aligns the text to the bottom */
+}
 .icon-location {
   background-image: url('https://i.imgur.com/NB50Mzo.png');
+  margin-top:40px;
 }
 
 .icon-phonenumber {
   background-image: url('https://i.imgur.com/WlUQyNK.png');
+  margin-top:40px;
 }
 
 .icon-payment {
   background-image: url('https://i.imgur.com/lTZP01s.png');
+  margin-top:40px;
 }
 
 .icon-mail {
   background-image: url('https://i.imgur.com/G2MvpfW.png');
+  width:55px;
+  height:55px;
+  margin-top:40px;
+  
 }
 
 
@@ -500,26 +515,24 @@
     order: 1;
 	top:-30px;
  }
- .icon-phonenumber {
+  .icon-phonenumber {
      position: relative;
-  bottom:30px;
-  width:50px;
-  height:50px;
-  margin-bottom:-25px;
+  top:25px;
+  width:70px;
+  height:70px;
+  margin-top:10px;
   }
  .icon-payment {
    	 position: relative;
-  	 top: 10px; /* Adjust this value to move down */
-	 width:47px;
-	 height:47px;
+  	 top: 5px; /* Adjust this value to move down */
+	 width:60px;
+	 height:60px;
   }
   .icon-mail {
 	 position: relative;
-width:40px;
-height:40px;
-margin-top:5px;
-top:5px;
-}
+	 width:45px;
+	 height:45px;
+	}
   .modal-content {
     width: 80%; /* making the modal wider on mobile */
   }
@@ -567,7 +580,7 @@ top:5px;
 						<p data-translate="PadKraPaoGaiIngredients">Minced Chicken breast, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil</p></div>
 </div>
         <div class="image-wrapper">
-      <img src="https://i.imgur.com/xIAreGx.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
+      <img src="https://i.imgur.com/bUfQYhW.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
                      <div class="description"><h3 data-translate="PadKraPaoMoo">Pad Kra Pao Moo</h3>
                         <p data-translate="PadKraPaoMooIngredients">Minced Pork, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil</p></div>
 </div>
@@ -612,7 +625,7 @@ top:5px;
                        <p data-translate="PanEggsIngredients">Minced Pork, Thai pork sausage, Chinese sausage, Eggs, Green onions, Canola oil, Shallots, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Chicken broth, Butter, White pepper, Cucumber, Bun</p></div>
       </div>
                            <div class="image-wrapper">
-        <img src="https://i.imgur.com/wp318nF.jpg" alt="Image Fried Pork Belly" class="food-image">
+        <img src="https://i.imgur.com/20Z0DvQ.jpg" alt="Image Fried Pork Belly" class="food-image">
                         <div class="description"><h3 data-translate="FriedPorkBelly">Fried Pork Belly</h3>
                          <p data-translate="FriedPorkBellyIngredients">Pork belly, Fish Sauce, White pepper, Rice flour, Canola oil, Tapioca starch</p></div>
      </div>
@@ -642,7 +655,7 @@ top:5px;
 								<p data-translate="PandanPancakesIngredients">Wheat Flour, 3.5% Milk, Sugar, Baking Powder, Eggs, Salt, Pandan, Coconut Milk, Cornstarch, Sugar, Eggs</p></div>
     </div>
 	  <div class="image-wrapper">
-        <img src="https://i.imgur.com/rGlXnYb.jpg" alt="Image Korean Cucumber Salad" class="food-image">
+        <img src="https://i.imgur.com/ZlTZ7Vm.jpg" alt="Image Korean Cucumber Salad" class="food-image">
                                 <div class="description"> <h3 data-translate="KoreanCucumberSalad">Korean Cucumber Salad</h3>
 								<p data-translate="KoreanCucumberSaladIngredients">Cucumber, Garlic, Spring Onions, Sesame Seeds, Sesame Oil, Soy Sauce, Salt, Chili Powder, Paprika Powder, Rice Vinegar</p></div>
     </div>
@@ -661,21 +674,21 @@ top:5px;
        <div class="overlay" id="overlay">
         <div class="info-box">
             <div class="icon icon-location"></div>
-          <br>Bertoldstr. 4, 79187 Freiburg
+         <p class="bottom-align-text"> <br>Bertoldstr. 4, 79187 Freiburg</p>
         </div>
         <div class="info-box">
             <div class="icon icon-phonenumber"></div>
-           <br>187187187
+            <p class="bottom-align-text"><br>187187187</p>
         </div>
         <div class="info-box">
             <div class="icon icon-payment"></div>
-           <br><span data-translate="PaymentMethods">Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash</span>
+           <p class="bottom-align-text"> <br><span data-translate="PaymentMethods">Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash</span></p>
         </div>
         <div class="info-box">
             <div class="icon icon-mail"></div>
-             <br>
-           <a href="mailto:test@hawker.com">test@hawker.com</a>
-		  <br><br><a href="#" id="contactUsLink" data-translate="contactUsText"><br>Contact Us</a>
+             
+           <a href="mailto:test@hawker.com"><br>test@hawker.com</a>
+		   <p class="bottom-align-text"><a href="#" id="contactUsLink" data-translate="contactUsText">&nbsp;<br>Contact Us</a></p>
         </div>
     </div>
        <div class="map-container" id="map-container">
@@ -735,7 +748,7 @@ top:5px;
 		'Sweets': 'Sweets',
 		'Concept': 'Concept',
 		'PaymentMethods':'Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash',
-		'contactUsText': '<br>Contact Us',
+		'contactUsText': '&nbsp;<br>Contact Us',
 		'openingTimesTitle': 'Opening Times<br>',
 		'daysWeek': 'Monday - Saturday',
 		
@@ -784,7 +797,7 @@ top:5px;
 		'Sweets': 'Süßes',
 		'Concept': 'Konzept',
 		'PaymentMethods':'EC-/Kreditkarte, GooglePay, ApplePay <br><br>Keine Barzahlung',
-		'contactUsText': '<br>Schreib uns',
+		'contactUsText': '&nbsp;<br>Schreib uns',
 		'openingTimesTitle': 'Öffnungszeiten<br>',
 		'daysWeek': 'Montag - Samstag',
         // ... other German translations
@@ -967,4 +980,3 @@ buttons.forEach(function(button) {
 </script>
 </body>
 </html>
-
