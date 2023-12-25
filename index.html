@@ -654,6 +654,11 @@
                                 <div class="description"> <h3 data-translate="PandanPancakes">Pandan Pancakes</h3>
 								<p data-translate="PandanPancakesIngredients">Wheat Flour, 3.5% Milk, Sugar, Baking Powder, Eggs, Salt, Pandan, Coconut Milk, Cornstarch, Sugar, Eggs</p></div>
     </div>
+	    <div class="image-wrapper">
+        <img src="https://i.imgur.com/ZtkxYQJ.jpg" alt="Image Macadamia Chocoloate Cookie" class="food-image">
+                                <div class="description"> <h3 data-translate="MacadamiaChocolateCookie">Macadamia Chocolate Cookie</h3>
+								<p data-translate="MacadamiaChocolateCookieIngredients">Butter, Brown sugar, Vanilla sugar, Eggs, Wheat flour, Baking powder, Saking soda, Macadamia Nuts, Dark Chocolate</p></div>
+    </div>
 	  <div class="image-wrapper">
         <img src="https://i.imgur.com/ZlTZ7Vm.jpg" alt="Image Korean Cucumber Salad" class="food-image">
                                 <div class="description"> <h3 data-translate="KoreanCucumberSalad">Korean Cucumber Salad</h3>
@@ -738,7 +743,9 @@
 		'FriedBananasIngredients': 'Rice Flour, Plantains, Coconut Flakes, Salt, Canola Oil, Water, Sugar, Baking Powder',
 		'PandanPancakes': 'Pandan Pancakes',
 		'PandanPancakesIngredients': 'Wheat Flour, 3.5% Milk, Sugar, Baking Powder, Eggs, Salt, Pandan, Coconut Milk, Cornstarch, Sugar, Eggs',
-		'KoreanCucumberSalad': 'Korean Cucumber Salad',
+		'MacadamiaChocolateCookie': 'Macadamia Chocolate Cookie',
+		'MacadamiaChocolateCookieIngredients': 'Butter, Brown sugar, Vanilla sugar, Eggs, Wheat flour, Baking powder, Saking soda, Macadamia Nuts, Dark Chocolate',
+	        'KoreanCucumberSalad': 'Korean Cucumber Salad',
 		'KoreanCucumberSaladIngredients': 'Cucumber, Garlic, Spring Onions, Sesame Seeds, Sesame Oil, Soy Sauce, Salt, Chili Powder, Paprika Powder, Rice Vinegar',
 		'MorningGlory': 'Morning Glory',
 		'MorningGloryIngredients': 'Morning Glory, Garlic, Red Chili, Oyster Sauce, Soybean Paste, Palm Sugar, Canola Oil',
@@ -787,7 +794,9 @@
 		'FriedBananasIngredients': 'Reismehl, Kochbananen, Kokosraspeln, Salz, Rapsöl, Wasser, Zucker, Backpulver',
 		'PandanPancakes': 'Pandan Pfannkuchen',
 		'PandanPancakesIngredients': 'Weizenmehl, 3,5% Milch, Zucker, Backpulver, Eier, Salz, Pandan, Kokosmilch, Speisestärke, Zucker, Eier',
-		'KoreanCucumberSalad': 'Koreanischer Gurkensalat',
+		'MacadamiaChocolateCookie': 'Macadamia Schoko Cookie',
+		'MacadamiaChocolateCookieIngredients': 'Butter, brauner Zucker, Vanillezucker, Eier, Weizenmehl, Backpulver, Natron, Macadamianüsse, Zartbitterschokolade',
+	        'KoreanCucumberSalad': 'Koreanischer Gurkensalat',
 		'KoreanCucumberSaladIngredients': 'Gurke, Knoblauch, Frühlingszwiebeln, Sesamsamen, Sesamöl, Sojasauce, Salz, Chilipulver, Paprikapulver, Reisessig',
 		'MorningGlory': 'Morning Glory',
 		'MorningGloryIngredients': 'Wasserspinat, Knoblauch, Rote Chili, Austernsauce, Sojabohnenpaste, Palmzucker, Rapsöl',
@@ -849,10 +858,10 @@ function switchLanguage(lang) {
         } else if (currentState === "specials" && index >= 8 && index < 12) { // Adjusted from index >= 4 to index >= 5
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
-        } else if (currentState === "sweets" && index >= 12 && index < 16) {
+        } else if (currentState === "sweets" && index >= 12 && index < 17) {
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
-		} else if (currentState === "extras" && index >= 16 && index < 19) {
+		} else if (currentState === "extras" && index >= 17 && index < 20) {
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
         } else {
