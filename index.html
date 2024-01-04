@@ -606,7 +606,7 @@ height:400px;
     </div>
     <div class="button-container" id="button-container">
       <button class="sub-button" id ="concept-button" data-translate="Concept">Concept</button>
-      <button class="sub-button" id="street-food-button">Street Food</button>
+      <button class="sub-button" id="good-food-button">Good Food</button>
       <button class="sub-button" id="teamHawkerButton">Team Hawker</button>
       <button class="sub-button" id="info-button">Info</button>
     </div>
@@ -626,7 +626,7 @@ height:400px;
         <div class="label" data-state="main-dishes" data-translate="MainDishes">Main Dishes</div>
         <div class="label" data-state="specials">Specials</div>
         <div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
-		<div class="label" data-state="extras">Extras</div>
+	<div class="label" data-state="extras" data-translate="Extras">Add-Ons</div>
       </div>
     </div>
     <div class="image-container" id="image-container">
@@ -807,9 +807,10 @@ height:400px;
 		'MorningGloryIngredients': 'Morning Glory, Garlic, Red Chili, Oyster Sauce, Soybean Paste, Palm Sugar, Canola Oil',
 		'FriedEgg': 'Fried Egg',
 		'FriedEggIngredients': 'Egg, Black Pepper, Canola Oil',
-		'MainDishes': 'Main Dishes',
+		'MainDishes': 'Spoons',
 		'Sweets': 'Sweets',
 		'Concept': 'Concept',
+	        'Extras': 'Add-Ons',
 		'PaymentMethods':'Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash',
 		'contactUsText': '&nbsp;<br>Contact Us',
 		'openingTimesTitle': 'Opening Times<br>',
@@ -858,9 +859,10 @@ height:400px;
 		'MorningGloryIngredients': 'Wasserspinat, Knoblauch, Rote Chili, Austernsauce, Sojabohnenpaste, Palmzucker, Rapsöl',
 		'FriedEgg': 'Frittiertes Spiegelei',
 		'FriedEggIngredients': 'Ei, Schwarzer Pfeffer, Rapsöl',
-		'MainDishes': 'Gerichte',
+		'MainDishes': 'Löffel',
 		'Sweets': 'Süßes',
 		'Concept': 'Konzept',
+	        'Extras': 'Extras',
 		'PaymentMethods':'EC-/Kreditkarte, GooglePay, ApplePay <br><br>Keine Barzahlung',
 		'contactUsText': '&nbsp;<br>Schreib uns',
 		'openingTimesTitle': 'Öffnungszeiten<br>',
@@ -887,7 +889,7 @@ function switchLanguage(lang) {
   document.addEventListener("DOMContentLoaded", function () {
   const hawkerButton = document.getElementById("hawker-button");
   const buttonContainer = document.getElementById("button-container");
-  const streetFoodButton = document.getElementById("street-food-button");
+  const goodFoodButton = document.getElementById("good-food-button");
   const switchContainer = document.getElementById("switch-container");
   const fourStateSwitch = document.getElementById("four-state-switch");
   const indicator = fourStateSwitch.querySelector(".indicator");
@@ -950,7 +952,7 @@ hawkerButton.addEventListener("click", function () {
 	document.getElementById('imageSlider').style.display = 'none';
 });
 
-streetFoodButton.addEventListener("click", function () {
+goodFoodButton.addEventListener("click", function () {
     // Toggle visibility of liveButton and switchContainer
    if (liveButton.style.display === "none" || liveButton.style.display === "") {
     liveButton.style.display = "block";
@@ -960,10 +962,10 @@ if (switchContainer.style.display === "none" || switchContainer.style.display ==
     switchContainer.style.display = "flex";
 }
     
-    // ONLY after clicking on "Street Food", update the image visibility
+    // ONLY after clicking on "Good Food", update the image visibility
     imageContainer.style.display = "grid";
   updateImageVisibility();
-   // Add this line to hide the map whenever Street Food is clicked.
+   // Add this line to hide the map whenever Good Food is clicked.
   document.getElementById('map-container').style.display = "none";
    document.getElementById('opening-times-widget').style.display = "none";
    document.getElementById('overlay').style.display = "none";
