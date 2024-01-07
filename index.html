@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Hawker Website</title>
+    <title>Your Hawka Website</title>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
 			body {
@@ -48,7 +48,7 @@
   border-radius: 10px;
 }
 
-.hawker-button button {
+.hawka-button button {
   top:-100px;
   margin: 10px;
   position: relative;
@@ -76,7 +76,7 @@
     border: none;              /* Removes any border */
     padding: 0;                /* Removes any padding */
 }
-.hawker-logo {
+.hawka-logo {
      width: 150px;    /* Ensure the image does not overflow the button */
     height: auto;
     display: block;   /* Makes the image a block-level element, removing extra space below it */
@@ -88,6 +88,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  right:25px;
 }
 
 .sub-button {
@@ -447,6 +448,26 @@
     background-color: #FF8C00
 ;
 }
+.buttons-wrapper {
+    display: flex;
+    align-items: center; /* This will vertically center align the items */
+}
+
+.info-button {
+    display: inline-block; /* Makes the div inline-block and it doesnt move buttons downwards*/
+    position: relative;    /* Needed for absolute positioning of child elements */
+    height: 50px;          /* Adjust as needed */
+    width: 50px;           /* Adjust as needed */
+}
+
+#info-icon {
+    display: none; /* Make the icon visible */
+    height: 100%;   /* Use full height of parent */
+    width: 100%;    /* Use full width of parent */
+    position: absolute; /* Position it within the .info-button */
+	left:1482px;
+	top:75px;
+}
 @media only screen and (max-width: 768px) {
  
 	 .language-toggle {
@@ -457,7 +478,7 @@
     width: 50px;
     height: 30px;
 }
-    .hawker-button button {
+    .hawka-button button {
    top:-110px;
     width: 130px;
 	right: -28%;
@@ -585,12 +606,20 @@
   height: 330px;
   margin-top:10px;
   }
-}
 #imageSlider img {
       margin-top:15px; 
-height:400px;	  
+      height:400px;	  
     }
-		  </style>
+	#info-icon {
+	top:150px;
+	left:280px;
+	width: 40px; /* Explicit width */
+    height: 40px; /* Explicit height */
+}
+}
+
+
+	  </style>
 </head>
 <body>
 <div id="fixed-background"></div>
@@ -599,17 +628,22 @@ height:400px;
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1920px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English" id="en" />
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png" alt="German" id="de" />
 </div>
-      <div class="hawker-button">
-     <button class="sub-button" id="hawker-button">
-	    <img src="https://i.imgur.com/enJh6iH.png" alt="Hawker Logo" class="hawker-logo">
+      <div class="hawka-button">
+     <button class="sub-button" id="hawka-button">
+	    <img src="https://i.imgur.com/enJh6iH.png" alt="Hawka Logo" class="hawka-logo">
         </button>
     </div>
+	  <div class="buttons-wrapper">
+	  <div class="info-button">
+	  <img src="https://i.imgur.com/fACl4hw.png" id="info-icon">
+	  </div>
     <div class="button-container" id="button-container">
       <button class="sub-button" id ="concept-button" data-translate="Concept">Concept</button>
       <button class="sub-button" id="good-food-button">Good Food</button>
-      <button class="sub-button" id="teamHawkerButton">Team Hawker</button>
+      <button class="sub-button" id="teamHawkaButton">Team Hawka</button>
       <button class="sub-button" id="info-button">Info</button>
     </div>
+	</div>
 	<div id="imageSlider" style="display:none;">
     <img id="sliderImage" alt="Slide 1">
      <div id="dotContainer">
@@ -626,7 +660,7 @@ height:400px;
         <div class="label" data-state="main-dishes" data-translate="MainDishes">Spoons</div>
         <div class="label" data-state="specials">Specials</div>
         <div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
-	<div class="label" data-state="extras" data-translate="Extras">Add-Ons</div>
+		<div class="label" data-state="extras" data-translate="Extras">Add-Ons </div>
       </div>
     </div>
     <div class="image-container" id="image-container">
@@ -721,7 +755,7 @@ height:400px;
 								<p data-translate="KoreanCucumberSaladIngredients">Cucumber, Garlic, Spring Onions, Sesame Seeds, Sesame Oil, Soy Sauce, Salt, Chili Powder, Paprika Powder, Rice Vinegar</p></div>
     </div>
 	 <div class="image-wrapper">
-        <img src="https://i.imgur.com/PWScF9x.jpg" alt="Image Morning Glory" class="food-image">
+        <img src="https://i.imgur.com/0l5Crgx.jpg" alt="Image Morning Glory" class="food-image">
                                 <div class="description"> <h3 data-translate="MorningGlory">Morning Glory</h3>
 								<p data-translate="MorningGloryIngredients">Morning Glory, Garlic, Red Chili, Oyster Sauce, Soybean Paste, Palm Sugar, Canola Oil</p></div>
     </div>
@@ -748,7 +782,7 @@ height:400px;
         <div class="info-box">
             <div class="icon icon-mail"></div>
              
-           <a href="mailto:test@hawker.com"><br>test@hawker.com</a>
+           <a href="mailto:test@hawka.com"><br>test@hawka.com</a>
 		   <p class="bottom-align-text"><a href="#" id="contactUsLink" data-translate="contactUsText"><br>Contact Us</a></p>
         </div>
     </div>
@@ -810,7 +844,7 @@ height:400px;
 		'MainDishes': 'Spoons',
 		'Sweets': 'Sweets',
 		'Concept': 'Concept',
-	        'Extras': 'Add-Ons',
+		'Extras':'Add-Ons',
 		'PaymentMethods':'Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash',
 		'contactUsText': '&nbsp;<br>Contact Us',
 		'openingTimesTitle': 'Opening Times<br>',
@@ -862,7 +896,7 @@ height:400px;
 		'MainDishes': 'Löffel',
 		'Sweets': 'Süßes',
 		'Concept': 'Konzept',
-	        'Extras': 'Extras',
+		'Extras': 'Extras',
 		'PaymentMethods':'EC-/Kreditkarte, GooglePay, ApplePay <br><br>Keine Barzahlung',
 		'contactUsText': '&nbsp;<br>Schreib uns',
 		'openingTimesTitle': 'Öffnungszeiten<br>',
@@ -887,7 +921,7 @@ function switchLanguage(lang) {
 }
 
   document.addEventListener("DOMContentLoaded", function () {
-  const hawkerButton = document.getElementById("hawker-button");
+  const hawkaButton = document.getElementById("hawka-button");
   const buttonContainer = document.getElementById("button-container");
   const goodFoodButton = document.getElementById("good-food-button");
   const switchContainer = document.getElementById("switch-container");
@@ -928,15 +962,15 @@ function switchLanguage(lang) {
     });
 }
 
- const hawkerLogo = document.querySelector(".hawker-button .hawker-logo");
+ const hawkaLogo = document.querySelector(".hawka-button .hawka-logo");
     const languageToggle = document.querySelector(".language-toggle");
 
-    hawkerLogo.addEventListener("click", function() {
+    hawkaLogo.addEventListener("click", function() {
         languageToggle.style.display = (languageToggle.style.display === "none" || languageToggle.style.display === "") ? "block" : "none";
     });
 
 
-hawkerButton.addEventListener("click", function () {
+hawkaButton.addEventListener("click", function () {
    const computedStyle = getComputedStyle(buttonContainer);
    const isButtonContainerVisible = computedStyle.display === "flex";
         
@@ -945,7 +979,7 @@ hawkerButton.addEventListener("click", function () {
     switchContainer.style.display = "none";
     liveButton.style.display = "none"; 
     imageContainer.style.display = "none";   
-   // Add this line to hide the map whenever Hawker is clicked.
+   // Add this line to hide the map whenever Hawka is clicked.
     document.getElementById('map-container').style.display = "none";
    document.getElementById('opening-times-widget').style.display = "none";
     document.getElementById('overlay').style.display = "none";
@@ -971,9 +1005,9 @@ if (switchContainer.style.display === "none" || switchContainer.style.display ==
    document.getElementById('overlay').style.display = "none";
    document.getElementById('imageSlider').style.display = 'none';
 });
-document.getElementById('teamHawkerButton').addEventListener('click', function() {
+document.getElementById('teamHawkaButton').addEventListener('click', function() {
     document.getElementById('imageSlider').style.display = 'none';
-    // Add any other actions you want to perform when the Team Hawker button is clicked
+    // Add any other actions you want to perform when the Team Hawka button is clicked
 });
 
   fourStateSwitch.addEventListener("click", function (event) {
@@ -1005,7 +1039,7 @@ indicator.style.left = `${currentStateIndex * 25}%`;
 };
 
 const conceptButton = buttonContainer.querySelector('button:nth-child(1)');
-const teamHawkerButton = buttonContainer.querySelector('button:nth-child(3)');
+const teamHawkaButton = buttonContainer.querySelector('button:nth-child(3)');
 const infoButton = buttonContainer.querySelector('button:nth-child(4)');
 
 conceptButton.addEventListener("click", function() {
@@ -1021,7 +1055,7 @@ conceptButton.addEventListener("click", function() {
     document.getElementById('imageSlider').style.display = 'block';
 });
 
-teamHawkerButton.addEventListener("click", hideEverything);
+teamHawkaButton.addEventListener("click", hideEverything);
 infoButton.addEventListener("click", hideEverything);
   let mapInitialized = false; // Flag to ensure we only initialize the map once
     function initializeMap() {
@@ -1034,7 +1068,7 @@ infoButton.addEventListener("click", hideEverything);
             }).addTo(map);
 
             L.marker([47.99495, 7.84919]).addTo(map)
-                .bindPopup('Hawker SJ')
+                .bindPopup('Hawka SJ')
                 .openPopup();
 
             mapInitialized = true;
@@ -1128,7 +1162,23 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
-
+document.getElementById('good-food-button').addEventListener('click', function() {
+    var infoIcon = document.getElementById('info-icon');
+     infoIcon.style.display = infoIcon.style.display === 'none' || infoIcon.style.display === '' ? 'block' : 'none';
+	  document.getElementById('info-icon').style.display = 'block';
+});
+document.getElementById('concept-button').addEventListener('click', function() {
+    document.getElementById('info-icon').style.display = 'none';
+});
+document.getElementById('teamHawkaButton').addEventListener('click', function() {
+    document.getElementById('info-icon').style.display = 'none';
+});
+document.getElementById('info-button').addEventListener('click', function() {
+    document.getElementById('info-icon').style.display = 'none';
+});
+document.querySelector('.hawka-logo').addEventListener('click', function() {
+    document.getElementById('info-icon').style.display = 'none';
+});
 </script>
 </body>
 </html>
