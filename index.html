@@ -240,20 +240,23 @@
   display: none;
 }
 
-.image-wrapper:nth-of-type(6),
-.image-wrapper:nth-of-type(2) {
+.image-wrapper:nth-of-type(2),
+.image-wrapper:nth-of-type(7) {
   border: 9px solid red;
 }
 
 .image-wrapper:nth-of-type(1),
 .image-wrapper:nth-of-type(3),
 .image-wrapper:nth-of-type(4),
-.image-wrapper:nth-of-type(5) {
+.image-wrapper:nth-of-type(5),
+.image-wrapper:nth-of-type(6),
+.image-wrapper:nth-of-type(10) {
   border: 9px solid yellow;
 }
 
-.image-wrapper:nth-of-type(7),
-.image-wrapper:nth-of-type(8) {
+.image-wrapper:nth-of-type(8),
+.image-wrapper:nth-of-type(9),
+.image-wrapper:nth-of-type(11) {
   border: 9px solid green;
 }
 
@@ -616,6 +619,10 @@
 	width: 40px; /* Explicit width */
     height: 40px; /* Explicit height */
 }
+.active, .dot:hover {
+    background-color: #f1c44d
+;
+}
 }
 
 
@@ -659,110 +666,125 @@
         <div class="indicator"></div>
         <div class="label" data-state="main-dishes" data-translate="MainDishes">Spoons</div>
         <div class="label" data-state="specials">Specials</div>
-        <div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
-		<div class="label" data-state="extras" data-translate="Extras">Add-Ons </div>
+       		<div class="label" data-state="extras" data-translate="Extras">Add-Ons </div>
+			 <div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
       </div>
     </div>
     <div class="image-container" id="image-container">
        <div class="image-wrapper">
-      <img src="https://i.imgur.com/W7oqYuc.jpg" alt="Image Pad Kra Pao Gai" class="food-image">
+      <img src="https://i.imgur.com/7ATF07F.png" alt="Image Pad Kra Pao Gai" class="food-image">
                     <div class="description">  <h3 data-translate="PadKraPaoGai">Pad Kra Pao Gai</h3>
-						<p data-translate="PadKraPaoGaiIngredients">Minced Chicken breast, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil</p></div>
+						<p data-translate="PadKraPaoGaiIngredients">minced chicken breast, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil</p></div>
 </div>
         <div class="image-wrapper">
       <img src="https://i.imgur.com/bUfQYhW.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
                      <div class="description"><h3 data-translate="PadKraPaoMoo">Pad Kra Pao Moo</h3>
-                        <p data-translate="PadKraPaoMooIngredients">Minced Pork, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil</p></div>
+                        <p data-translate="PadKraPaoMooIngredients">minced pork, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil</p></div>
 </div>
          <div class="image-wrapper">
+        <img src="https://i.imgur.com/0l5Crgx.jpg" alt="Image Morning Glory" class="food-image">
+                                <div class="description"> <h3 data-translate="MorningGlory">Morning Glory</h3>
+								<p data-translate="MorningGloryIngredients">morning glory, garlic, red chili, oyster sauce, soybean paste, palm sugar, canola oil</p></div>
+		</div>
+		 <div class="image-wrapper">
          <img src="https://i.imgur.com/qQ1UzYa.jpg" alt="Image Fried Rice Shrimp" class="food-image">
                        <div class="description"> <h3 data-translate="FriedRiceShrimp">Fried Rice Shrimp</h3>
-						 <p data-translate="FriedRiceShrimpIngredients">Shrimp, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth</p></div>
+						 <p data-translate="FriedRiceShrimpIngredients">shrimp, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth</p></div>
        </div>
         <div class="image-wrapper">
          <img src="https://i.imgur.com/qQ1UzYa.jpg" alt="Image Fried Rice Chicken" class="food-image">
                       <div class="description"> <h3 data-translate="FriedRiceChicken">Fried Rice Chicken</h3>
-                       <p data-translate="FriedRiceChickenIngredients">Chicken breast, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth</p></div>
+                       <p data-translate="FriedRiceChickenIngredients">chicken breast, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth</p></div>
        </div>
            <div class="image-wrapper">
-         <img src="https://i.imgur.com/cc2QMZ2.jpg" alt="Image Larb Gai" class="food-image">
+         <img src="https://i.imgur.com/JsO9U4J.png" alt="Image Larb Gai" class="food-image">
                          <div class="description"> <h3 data-translate="LarbGai">Larb Gai</h3>
-                          <p data-translate="LarbGaiIngredients">Minced Chicken breast, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar</p></div>
+                          <p data-translate="LarbGaiIngredients">minced chicken breast, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar</p></div>
        </div>
         <div class="image-wrapper">
-         <img src="https://i.imgur.com/dDJFaoG.jpg" alt="Image Larb Moo" class="food-image">
+         <img src="https://i.imgur.com/G3HY01J.png" alt="Image Larb Moo" class="food-image">
                         <div class="description"> <h3 data-translate="LarbMoo">Larb Moo</h3>
-                         <p data-translate="LarbMooIngredients">Minced Pork, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar</p></div>
+                         <p data-translate="LarbMooIngredients">minced pork, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar</p></div>
        </div>
              <div class="image-wrapper">
-         <img src="https://i.imgur.com/jx69cEj.jpg" alt="Image Thai Red Curry Chicken" class="food-image">
+         <img src="https://i.imgur.com/h0iLbSz.png" alt="Image Thai Red Curry Chicken" class="food-image">
                                          <div class="description"><h3 data-translate="ThaiRedCurryChicken">Thai Red Curry Chicken</h3>
-                                         <p data-translate="ThaiRedCurryChickenIngredients">Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Red Curry Paste</p></div>
+                                         <p data-translate="ThaiRedCurryChickenIngredients">chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, red curry paste</p></div>
       </div>
                <div class="image-wrapper">
-         <img src="https://i.imgur.com/Y9Hq87m.jpg" alt="Image Thai Green Curry Chicken" class="food-image">
+         <img src="https://i.imgur.com/vtf7Q24.png" alt="Image Thai Green Curry Chicken" class="food-image">
                   <div class="description"> <h3 data-translate="ThaiGreenCurryChicken">Thai Green Curry Chicken</h3>
-                   <p data-translate="ThaiGreenCurryChickenIngredients">Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Green Curry Paste</p></div>
+                   <p data-translate="ThaiGreenCurryChickenIngredients">chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, green curry paste</p></div>
+     </div>
+	 <div class="image-wrapper">
+        <img src="https://i.imgur.com/csI1joQ.png" alt="Image Fried Pork Belly" class="food-image">
+                        <div class="description"><h3 data-translate="FriedPorkBelly">Fried Pork Belly</h3>
+                         <p data-translate="FriedPorkBellyIngredients">pork belly, fish sauce, white pepper, rice flour, canola oil, tapioca starch</p></div>
+     </div>
+	    <div class="image-wrapper">
+        <img src="https://i.imgur.com/RVmsZcd.png" alt="Image Chicken Wings" class="food-image">
+                        <div class="description"> <h3 data-translate="ChickenWings">Chicken Wings</h3>
+                          <p data-translate="ChickenWingsIngredients">chicken wings, fish sauce, white pepper, rice flour, canola oil</p></div>
      </div>
                  <div class="image-wrapper">
         <img src="https://i.imgur.com/Bp41HS6.jpg" alt="Image Pad Thai" class="food-image">
                     <div class="description"><h3 data-translate="PadThai">Pad Thai Chicken/Shrimp</h3>
-                     <p data-translate="PadThaiIngredients">Chicken breast/Shrimp, Chili powder, Tofu, Rice noodles, Dried Shrimp, Garlic, Shallots, Yellow radish, Chili flakes, Peanuts, Bean sprouts, Long coriander (culantro), Lime, Eggs, Canola oil, Chicken broth, Palm sugar, Water, Fish Sauce, Tamarind</p></div>
+                     <p data-translate="PadThaiIngredients">chicken breast/shrimp, chili powder, tofu, rice noodles, dried shrimp, garlic, shallots, yellow radish, chili flakes, peanuts, bean sprouts, long coriander (culantro), lime, eggs, canola oil, chicken broth, palm sugar, water, fish sauce, tamarind</p></div>
       </div>
                    <div class="image-wrapper">
        <img src="https://i.imgur.com/4AfIr0S.jpg" alt="Image Pan Eggs" class="food-image">
                       <div class="description"> <h3 data-translate="PanEggs">Pan Eggs</h3>
-                       <p data-translate="PanEggsIngredients">Minced Pork, Thai pork sausage, Chinese sausage, Eggs, Green onions, Canola oil, Shallots, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Chicken broth, Butter, White pepper, Cucumber, Bun</p></div>
+                       <p data-translate="PanEggsIngredients">minced pork, Thai pork sausage, Chinese sausage, eggs, green onions, canola oil, shallots, garlic, chili flakes, oyster sauce, fish sauce, chicken broth, butter, white pepper, cucumber, bun</p></div>
       </div>
                            <div class="image-wrapper">
-        <img src="https://i.imgur.com/20Z0DvQ.jpg" alt="Image Fried Pork Belly" class="food-image">
-                        <div class="description"><h3 data-translate="FriedPorkBelly">Fried Pork Belly</h3>
-                         <p data-translate="FriedPorkBellyIngredients">Pork belly, Fish Sauce, White pepper, Rice flour, Canola oil, Tapioca starch</p></div>
+        <img src="https://i.imgur.com/AZdfUjk.png" alt="Image Rice Soup" class="food-image">
+                        <div class="description"><h3 data-translate="RiceSoup">Rice Soup</h3>
+                         <p data-translate="RiceSoupIngredients">fish sauce, fried garlic, green onions, light soy sauce, chicken breast, chicken broth, ginger, jasmine rice, garlic, coriander, lime, white pepper, shallots, soybean sprouts, lemongrass</p></div>
      </div>
                      <div class="image-wrapper">
-        <img src="https://i.imgur.com/GqMqPYb.jpg" alt="Image Chicken Wings" class="food-image">
-                        <div class="description"> <h3 data-translate="ChickenWings">Chicken Wings</h3>
-                          <p data-translate="ChickenWingsIngredients">Chicken wings, Fish Sauce, White pepper, Rice flour, Canola oil</p></div>
+        <img src="https://i.imgur.com/dsKTe7Q.png" alt="Image Hawka Breakfast Bun" class="food-image">
+                        <div class="description"> <h3 data-translate="BreakfastBun">Breakfast Bun</h3>
+                          <p data-translate="BreakfastBunIngredients">bread roll, butter, fried egg, light soy sauce, coriander, liverwurst, moo yoo</p></div>
      </div>
                        <div class="image-wrapper">
         <img src="https://i.imgur.com/X33Atck.jpg" alt="Image Sticky Pancakes" class="food-image">
                           <div class="description"><h3 data-translate="StickyPancakes">Sticky Pancakes</h3>
-                            <p data-translate="StickyPancakesIngredients">Glutinous Rice Flour, Frozen Banana, Coconut milk, Desiccated coconut, Palm sugar, Salt, Coconut meat</p></div>
+                            <p data-translate="StickyPancakesIngredients">glutinous rice flour, frozen banana, coconut milk, desiccated coconut, palm sugar, salt, coconut meatt</p></div>
       </div>
                          <div class="image-wrapper">
         <img src="https://i.imgur.com/tTZoHUb.jpg" alt="Image Mango Sticky Rice" class="food-image">
                             <div class="description"><h3 data-translate="MangoStickyRice">Mango Sticky Rice</h3>
-                              <p data-translate="MangoStickyRiceIngredients">Mango, Sticky Rice, Coconut Milk, Salt, Palm Sugar, Mung Beans</p></div>
+                              <p data-translate="MangoStickyRiceIngredients">mango, sticky rice, coconut milk, salt, palm sugar, mung beans</p></div>
       </div>
                            <div class="image-wrapper">
         <img src="https://i.imgur.com/gWHjl6X.jpg" alt="Image Fried Bananas" class="food-image">
                               <div class="description"><h3 data-translate="FriedBananas">Fried Bananas</h3>
-                               <p data-translate="FriedBananasIngredients">Rice Flour, Plantains, Coconut Flakes, Salt, Canola Oil, Water, Sugar, Baking Powder</p></div>
+                               <p data-translate="FriedBananasIngredients">rice flour, plantains, coconut flakes, salt, canola oil, water, sugar, baking powder</p></div>
       </div>
                              <div class="image-wrapper">
         <img src="https://i.imgur.com/ZtkxYQJ.jpg" alt="Image Pandan Pancakes" class="food-image">
                                 <div class="description"> <h3 data-translate="PandanPancakes">Pandan Pancakes</h3>
-								<p data-translate="PandanPancakesIngredients">Wheat Flour, 3.5% Milk, Sugar, Baking Powder, Eggs, Salt, Pandan, Coconut Milk, Cornstarch, Sugar, Eggs</p></div>
+								<p data-translate="PandanPancakesIngredients">wheat flour, 3.5% milk, sugar, baking powder, eggs, salt, pandan, coconut milk, cornstarch, sugar, eggs</p></div>
     </div>
 	  <div class="image-wrapper">
-        <img src="https://i.imgur.com/mugMHt6.jpg" alt="Image Macadamia Chocoloate Cookie" class="food-image">
+        <img src="https://i.imgur.com/4gr8hBN.jpg" alt="Image Macadamia Chocoloate Cookie" class="food-image">
                                 <div class="description"> <h3 data-translate="MacadamiaChocolateCookie">Macadamia Chocolate Cookie</h3>
-								<p data-translate="MacadamiaChocolateCookieIngredients">Butter, Brown sugar, Vanilla sugar, Eggs, Wheat flour, Baking powder, Saking soda, Macadamia Nuts, Dark Chocolate</p></div>
+								<p data-translate="MacadamiaChocolateCookieIngredients">butter, brown sugar, vanilla sugar, eggs, wheat flour, baking powder, saking soda, macadamia nuts, dark chocolate</p></div>
     </div>
 	  <div class="image-wrapper">
         <img src="https://i.imgur.com/ZlTZ7Vm.jpg" alt="Image Korean Cucumber Salad" class="food-image">
                                 <div class="description"> <h3 data-translate="KoreanCucumberSalad">Korean Cucumber Salad</h3>
-								<p data-translate="KoreanCucumberSaladIngredients">Cucumber, Garlic, Spring Onions, Sesame Seeds, Sesame Oil, Soy Sauce, Salt, Chili Powder, Paprika Powder, Rice Vinegar</p></div>
+								<p data-translate="KoreanCucumberSaladIngredients">cucumber, garlic, spring onions, sesame seeds, sesame oil, soy sauce, salt, chili powder, paprika powder, rice vinegar</p></div>
     </div>
 	 <div class="image-wrapper">
-        <img src="https://i.imgur.com/0l5Crgx.jpg" alt="Image Morning Glory" class="food-image">
-                                <div class="description"> <h3 data-translate="MorningGlory">Morning Glory</h3>
-								<p data-translate="MorningGloryIngredients">Morning Glory, Garlic, Red Chili, Oyster Sauce, Soybean Paste, Palm Sugar, Canola Oil</p></div>
+        <img src="https://i.imgur.com/23DbLad.jpg" alt="Image Boiled Egg" class="food-image">
+                                <div class="description"> <h3 data-translate="KRBoiledEgg">Korean Boiled Egg</h3>
+								<p data-translate="KRBoildEggIngredients">boiled egg, scallions, red chili, garlic, light soy sauce, rice vinegar, honey</p></div>
     </div>
 	 <div class="image-wrapper">
         <img src="https://i.imgur.com/h6IdPss.jpg" alt="Image Fried Egg" class="food-image">
                                 <div class="description"> <h3 data-translate="FriedEgg">Fried Egg</h3>
-								<p data-translate="FriedEggIngredients">Egg, Black Pepper, Canola Oil</p></div>
+								<p data-translate="FriedEggIngredients">egg, black pepper, canola oil</p></div>
     </div>
 	  </div>
     <div class="map-and-overlay-wrapper">
@@ -801,46 +823,52 @@
   <script>
  var translations = {
     'en': {
-        'PadKraPaoGai': 'Pad Kra Pao Gai',
-		'PadKraPaoGaiIngredients': 'Minced Chicken breast, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil',
-		'PadKraPaoMoo': 'Pad Kra Pao Moo',
-		'PadKraPaoMooIngredients': 'Minced Pork, Green Beans, Thai Basil, Holy Basil, Red Chili, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Dark Soy Sauce, Light Soy Sauce, Chicken broth, Palm sugar, Canola oil',
-		'FriedRiceShrimp': 'Fried Rice Shrimp',
-		'FriedRiceShrimpIngredients': 'Shrimp, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth',
-		'FriedRiceChicken': 'Fried Rice Chicken',
-		'FriedRiceChickenIngredients': 'Chicken breast, Chili powder, Eggs, Rice, Lime, Spinach, Garlic, Chili flakes, Green onions, Shallots, Oyster Sauce, Light Soy Sauce, Canola oil, Sugar, Chicken broth',
-		'LarbGai': 'Larb Gai',
-		'LarbGaiIngredients': 'Minced Chicken breast, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar',
-		'LarbMoo': 'Larb Moo',
-		'LarbMooIngredients': 'Minced Pork, Culantro, Lime, Shallots, Green onions, Mint, Chili flakes, Fish Sauce, Kaffir Lime Leaves, Sticky Rice, Chili powder, Chicken broth, Sugar',
-		'ThaiRedCurryChicken': 'Thai Red Curry Chicken',
-		'ThaiRedCurryChickenIngredients': 'Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Red Curry Paste',
-		'ThaiGreenCurryChicken': 'Thai Green Curry Chicken',
-		'ThaiGreenCurryChickenIngredients': 'Chicken breast, Kaffir Lime Leaves, Palm sugar, Fish Sauce, Red Chili, Chicken broth, Thai Basil, Coconut milk, Bamboo, Thai Eggplant, Green Curry Paste',
-		'PadThai': 'Pad Thai',
-		'PadThaiIngredients': 'Chicken breast/Shrimp, Chili powder, Tofu, Rice noodles, Dried Shrimp, Garlic, Shallots, Yellow radish, Chili flakes, Peanuts, Bean sprouts, Long coriander (culantro), Lime, Eggs, Canola oil, Chicken broth, Palm sugar, Water, Fish Sauce, Tamarind',
-		'PanEggs': 'Pan Eggs',
-		'PanEggsIngredients': 'Minced Pork, Thai pork sausage, Chinese sausage, Eggs, Green onions, Canola oil, Shallots, Garlic, Chili flakes, Oyster Sauce, Fish Sauce, Chicken broth, Butter, White pepper, Cucumber, Bun',
-		'FriedPorkBelly': 'Fried Pork Belly',
-		'FriedPorkBellyIngredients': 'Pork belly, Fish Sauce, White pepper, Rice flour, Canola oil, Tapioca starch',
-		'ChickenWings': 'Chicken Wings',
-		'ChickenWingsIngredients': 'Chicken wings, Fish Sauce, White pepper, Rice flour, Canola oil',
-		'StickyPancakes': 'Sticky Pancakes',
-		'StickyPancakesIngredients': 'Glutinous Rice Flour, Banana, Coconut milk, Desiccated coconut, Palm sugar, Salt, Coconut meat',
-		'MangoStickyRice': 'Mango Sticky Rice',
-		'MangoStickyRiceIngredients': 'Mango, Sticky Rice, Coconut Milk, Salt, Palm Sugar, Mung Beans',
-		'FriedBananas': 'Fried Bananas',
-		'FriedBananasIngredients': 'Rice Flour, Plantains, Coconut Flakes, Salt, Canola Oil, Water, Sugar, Baking Powder',
-		'PandanPancakes': 'Pandan Pancakes',
-		'PandanPancakesIngredients': 'Wheat Flour, 3.5% Milk, Sugar, Baking Powder, Eggs, Salt, Pandan, Coconut Milk, Cornstarch, Sugar, Eggs',
-		'MacadamiaChocolateCookie': 'Macadamia Chocolate Cookie',
-		'MacadamiaChocolateCookieIngredients': 'Butter, Brown sugar, Vanilla sugar, Eggs, Wheat flour, Baking powder, Saking soda, Macadamia Nuts, Dark Chocolate',
-		'KoreanCucumberSalad': 'Korean Cucumber Salad',
-		'KoreanCucumberSaladIngredients': 'Cucumber, Garlic, Spring Onions, Sesame Seeds, Sesame Oil, Soy Sauce, Salt, Chili Powder, Paprika Powder, Rice Vinegar',
-		'MorningGlory': 'Morning Glory',
-		'MorningGloryIngredients': 'Morning Glory, Garlic, Red Chili, Oyster Sauce, Soybean Paste, Palm Sugar, Canola Oil',
-		'FriedEgg': 'Fried Egg',
-		'FriedEggIngredients': 'Egg, Black Pepper, Canola Oil',
+       'PadKraPaoGai': 'Pad Kra Pao Gai',
+        'PadKraPaoGaiIngredients': 'minced chicken breast, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil',
+        'PadKraPaoMoo': 'Pad Kra Pao Moo',
+        'PadKraPaoMooIngredients': 'minced pork, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil',
+        'MorningGlory': 'Morning Glory',
+        'MorningGloryIngredients': 'morning glory, garlic, red chili, oyster sauce, soybean paste, palm sugar, canola oil',
+        'FriedRiceShrimp': 'Fried Rice Shrimp',
+        'FriedRiceShrimpIngredients': 'shrimp, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth',
+        'FriedRiceChicken': 'Fried Rice Chicken',
+        'FriedRiceChickenIngredients': 'chicken breast, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth',
+        'LarbGai': 'Larb Gai',
+        'LarbGaiIngredients': 'minced chicken breast, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar',
+        'LarbMoo': 'Larb Moo',
+        'LarbMooIngredients': 'minced pork, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar',
+        'ThaiRedCurryChicken': 'Thai Red Curry Chicken',
+        'ThaiRedCurryChickenIngredients': 'chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, red curry paste',
+        'ThaiGreenCurryChicken': 'Thai Green Curry Chicken',
+        'ThaiGreenCurryChickenIngredients': 'chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, green curry paste',
+        'FriedPorkBelly': 'Fried Pork Belly',
+        'FriedPorkBellyIngredients': 'pork belly, fish sauce, white pepper, rice flour, canola oil, tapioca starch',
+        'ChickenWings': 'Chicken Wings',
+        'ChickenWingsIngredients': 'chicken wings, fish sauce, white pepper, rice flour, canola oil',
+        'PadThai': 'Pad Thai',
+        'PadThaiIngredients': 'chicken breast/shrimp, chili powder, tofu, rice noodles, dried shrimp, garlic, shallots, yellow radish, chili flakes, peanuts, bean sprouts, long coriander (culantro), lime, eggs, canola oil, chicken broth, palm sugar, water, fish sauce, tamarind',
+        'PanEggs': 'Pan Eggs',
+        'PanEggsIngredients': 'minced pork, Thai pork sausage, Chinese sausage, eggs, green onions, canola oil, shallots, garlic, chili flakes, oyster sauce, fish sauce, chicken broth, butter, white pepper, cucumber, bun',
+        'RiceSoup': 'Chicken and Rice Soup',
+        'RiceSoupIngredients': 'fish sauce, fried garlic, green onions, light soy sauce, chicken breast, chicken broth, ginger, jasmine rice, garlic, coriander, lime, white pepper, shallots, soybean sprouts, lemongrass',
+        'BreakfastBun': 'Hawka Breakfast Bun',
+        'BreakfastBunIngredients': 'bread roll, butter, fried egg, light soy sauce, coriander, liverwurst, moo yoo',
+        'StickyPancakes': 'Sticky Pancakes',
+        'StickyPancakesIngredients': 'glutinous rice flour, banana, coconut milk, desiccated coconut, palm sugar, salt, coconut meat',
+        'MangoStickyRice': 'Mango Sticky Rice',
+        'MangoStickyRiceIngredients': 'mango, sticky rice, coconut milk, salt, palm sugar, mung beans',
+        'FriedBananas': 'Fried Bananas',
+        'FriedBananasIngredients': 'rice flour, plantains, coconut flakes, salt, canola oil, water, sugar, baking powder',
+        'PandanPancakes': 'Pandan Pancakes',
+        'PandanPancakesIngredients': 'wheat flour, 3.5% milk, sugar, baking powder, eggs, salt, pandan, coconut milk, cornstarch, sugar, eggs',
+        'MacadamiaChocolateCookie': 'Macadamia Chocolate Cookie',
+        'MacadamiaChocolateCookieIngredients': 'butter, brown sugar, vanilla sugar, eggs, wheat flour, baking powder, saking soda, macadamia nuts, dark chocolate',
+        'KoreanCucumberSalad': 'Korean Cucumber Salad',
+        'KoreanCucumberSaladIngredients': 'cucumber, garlic, spring onions, sesame seeds, sesame oil, soy sauce, salt, chili powder, paprika powder, rice vinegar',
+        'KRBoiledEgg': 'Korean Boiled Egg',
+        'KRBoildEggIngredients': 'boiled egg, scallions, red chili, garlic, light soy sauce, rice vinegar, honey, sesame',
+        'FriedEgg': 'Fried Egg',
+        'FriedEggIngredients': 'egg, black pepper, canola oil',
 		'MainDishes': 'Spoons',
 		'Sweets': 'Sweets',
 		'Concept': 'Concept',
@@ -857,6 +885,8 @@
 		'PadKraPaoGaiIngredients': 'Hühnerhack, Grüne Bohnen, Thai Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chiliflocken, Austernsoße, Fischsoße, Dunkle Sojasoße, Helle Sojasoße, Hühnerfond, Palmzucker, Rapsöl',
 		'PadKraPaoMoo': 'Pad Kra Pao Moo',
 		'PadKraPaoMooIngredients': 'Schweinehack, Grüne Bohnen, Thailändisches Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chili-Flocken, Austernsauce, Fischsauce, Dunkle Sojasauce, Helle Sojasauce, Hühnerbrühe, Palmzucker, Rapsöl',
+		'MorningGlory': 'Morning Glory',
+		'MorningGloryIngredients': 'Wasserspinat, Knoblauch, Rote Chili, Austernsauce, Sojabohnenpaste, Palmzucker, Rapsöl',
 		'FriedRiceShrimp': 'Gebratener Reis mit Shrimps',
 		'FriedRiceShrimpIngredients': 'Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Austernsauce, Helle Sojasauce, Rapsöl, Zucker, Hühnerbrühe',
 		'FriedRiceChicken': 'Gebratener Reis mit Huhn',
@@ -869,14 +899,18 @@
 		'ThaiRedCurryChickenIngredients': 'Hähnchenbrust, Kaffir-Limettenblätter, Palmzucker, Fischsoße, Rote Chili, Hühnerfond, Thailändisches Basilikum, Kokosmilch, Bambus, Thailändische Aubergine, Rote Currypaste',
 		'ThaiGreenCurryChicken': 'Grünes Thai Curry Huhn',
 		'ThaiGreenCurryChickenIngredients': 'Hähnchenbrust, Kaffir-Limettenblätter, Palmzucker, Fischsoße, Rote Chili, Hühnerfond, Thailändisches Basilikum, Kokosmilch, Bambus, Thailändische Aubergine, Grüne Currypaste',
-		'PadThai': 'Pad Thai',
-		'PadThaiIngredients': 'Hähnchenbrust/Garnelen, Chilipulver, Tofu, Reisbandnudeln, Getrocknete Garnelen, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, Langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmzucker, Wasser, Fischsoße, Tamarinde',
-		'PanEggs': 'Asiatische Frühstückspfanne',
-		'PanEggsIngredients': 'Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Austernsauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen',
 		'FriedPorkBelly': 'Frittierter Schweinebauch',
 		'FriedPorkBellyIngredients': 'Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke',
 		'ChickenWings': 'Frittierte Hühnerflügel',
 		'ChickenWingsIngredients': 'Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl',
+		'PadThai': 'Pad Thai',
+		'PadThaiIngredients': 'Hähnchenbrust/Garnelen, Chilipulver, Tofu, Reisbandnudeln, Getrocknete Garnelen, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, Langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmzucker, Wasser, Fischsoße, Tamarinde',
+		'PanEggs': 'Asiatische Frühstückspfanne',
+		'PanEggsIngredients': 'Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Austernsauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen',
+		'RiceSoup': 'Reisuppe mit Huhn',
+		'RiceSoupIngredients': 'Fischsoße, Frittierter Knoblauch, Frühlingszwiebeln, Helle Sojasoße, Hühnerbrustfilet, Hühnerfond, Ingwer, Jasminreis, Knoblauch, Koriander, Limette, Pfeffer (weiß), Schalotten, Sojasprossen, Zitronengras',
+		'BreakfastBun': 'Hawka Frühstücksbrötchen',
+		'BreakfastBunIngredients': 'Brötchen, Butter, Frittiertes Ei, Helle Sojasoße, Koriander, Leberwurst, Moo Yoo',
 		'StickyPancakes': 'Klebrige Pfannkuchen',
 		'StickyPancakesIngredients': 'Klebreismehl, Banane, Kokosmilch, Kokosraspeln, Palmzucker, Salz, Kokosnussfleisch',
 		'MangoStickyRice': 'Mango mit Klebreis',
@@ -889,8 +923,8 @@
 		'MacadamiaChocolateCookieIngredients': 'Butter, brauner Zucker, Vanillezucker, Eier, Weizenmehl, Backpulver, Natron, Macadamianüsse, Zartbitterschokolade',
 		'KoreanCucumberSalad': 'Koreanischer Gurkensalat',
 		'KoreanCucumberSaladIngredients': 'Gurke, Knoblauch, Frühlingszwiebeln, Sesamsamen, Sesamöl, Sojasauce, Salz, Chilipulver, Paprikapulver, Reisessig',
-		'MorningGlory': 'Morning Glory',
-		'MorningGloryIngredients': 'Wasserspinat, Knoblauch, Rote Chili, Austernsauce, Sojabohnenpaste, Palmzucker, Rapsöl',
+		'KRBoiledEgg': 'Koreanisches Gekochtes Ei',
+		'KRBoildEggIngredients': 'Gekochtes Ei, Frühlingszwiebeln, Rote Chili, Knoblauch, Helle Sojasauce, Reisessig, Honig, Sesam',
 		'FriedEgg': 'Frittiertes Spiegelei',
 		'FriedEggIngredients': 'Ei, Schwarzer Pfeffer, Rapsöl',
 		'MainDishes': 'Löffel',
@@ -944,16 +978,16 @@ function switchLanguage(lang) {
     imageWrappers.forEach(wrapper => wrapper.style.display = "none");
 
     foodImages.forEach((img, index) => {
-        if (currentState === "main-dishes" && index < 8) { // Adjusted to < 5
+        if (currentState === "main-dishes" && index < 11) { // Adjusted to < 5
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
-        } else if (currentState === "specials" && index >= 8 && index < 12) { // Adjusted from index >= 4 to index >= 5
+        } else if (currentState === "specials" && index >= 11 && index < 15) { // Adjusted from index >= 4 to index >= 5
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
-        } else if (currentState === "sweets" && index >= 12 && index < 17) {
+        } else if (currentState === "extras" && index >= 20 && index < 23) {
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
-		} else if (currentState === "extras" && index >= 17 && index < 20) {
+		} else if (currentState === "sweets" && index >= 15 && index < 20) {
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
         } else {
