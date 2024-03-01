@@ -720,7 +720,7 @@
                    <p data-translate="ThaiGreenCurryChickenIngredients">chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, green curry paste</p></div>
      </div>
 	 <div class="image-wrapper">
-        <img src="https://i.imgur.com/vi4SasL.png" alt="Image Fried Pork Belly" class="food-image">
+        <img src="https://i.imgur.com/YgGuFHF.png" alt="Image Fried Pork Belly" class="food-image">
                         <div class="description"><h3 data-translate="FriedPorkBelly">Fried Pork Belly</h3>
                          <p data-translate="FriedPorkBellyIngredients">pork belly, fish sauce, white pepper, rice flour, canola oil, tapioca starch</p></div>
      </div>
@@ -730,7 +730,7 @@
                           <p data-translate="ChickenWingsIngredients">chicken wings, fish sauce, white pepper, rice flour, canola oil</p></div>
      </div>
                  <div class="image-wrapper">
-        <img src="https://i.imgur.com/YhQMyQz.jpg" alt="Image Pad Thai" class="food-image">
+        <img src="https://i.imgur.com/6yyJTLF.png" alt="Image Pad Thai" class="food-image">
                     <div class="description"><h3 data-translate="PadThai">Pad Thai Chicken/Shrimp</h3>
                      <p data-translate="PadThaiIngredients">chicken breast/shrimp, chili powder, tofu, rice noodles, dried shrimp, garlic, shallots, yellow radish, chili flakes, peanuts, bean sprouts, long coriander (culantro), lime, eggs, canola oil, chicken broth, palm sugar, water, fish sauce, tamarind</p></div>
       </div>
@@ -794,7 +794,7 @@
        <div class="overlay" id="overlay">
         <div class="info-box">
             <div class="icon icon-location"></div>
-         <p class="bottom-align-text"> <br>Bertoldstr. 4, 79187 Freiburg</p>
+         <p class="bottom-align-text"> <br>Marktplatz 12/k, 78120 Furtwangen</p>
         </div>
         <div class="info-box">
             <div class="icon icon-phonenumber"></div>
@@ -802,7 +802,7 @@
         </div>
         <div class="info-box">
             <div class="icon icon-payment"></div>
-           <p class="bottom-align-text"> <br><span data-translate="PaymentMethods">Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash</span></p>
+           <p class="bottom-align-text"> <br><span data-translate="PaymentMethods">Debit, Creditcard, Cash <br>GooglePay, ApplePay</span></p>
         </div>
         <div class="info-box">
             <div class="icon icon-mail"></div>
@@ -1097,14 +1097,14 @@ infoButton.addEventListener("click", hideEverything);
   let mapInitialized = false; // Flag to ensure we only initialize the map once
     function initializeMap() {
         if (!mapInitialized) {
-            var map = L.map('map').setView([47.99495, 7.84919], 17);
+            var map = L.map('map').setView([48.05182617457829, 8.20579469203949], 17);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            L.marker([47.99495, 7.84919]).addTo(map)
+            L.marker([48.05182617457829, 8.20579469203949]).addTo(map)
                 .bindPopup('Hawka SJ')
                 .openPopup();
 
