@@ -52,7 +52,7 @@
   top:170px;
   margin: 10px;
   position: relative;
-  right: -45.296%;
+  right: -40%;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -77,10 +77,29 @@
     padding: 0;                /* Removes any padding */
 }
 .hawka-logo {
-     width: 150px;    /* Ensure the image does not overflow the button */
+     width: 350px;    /* Ensure the image does not overflow the button */
     height: auto;
     display: block;   /* Makes the image a block-level element, removing extra space below it */
     margin: 0 auto;   /* Centers the image horizontally */
+}
+.hawka-logo-center {
+    transform: scale(0.5); /* Das Logo ist 20% größer in der Mitte */
+    transition: transform 0.5s ease; /* Weiche Animation für die Transformation */
+	margin-top:-110px;
+}
+
+.hawka-logo-top {
+    transform: scale(1); /* Standardgröße, wenn es nach oben fährt */
+    transition: transform 0.5s ease; /* Weiche Animation für die Transformation */
+}
+#click-me-image {
+    display: none;
+    width: 150px; /* Default width */
+    position: fixed;
+    top: 39%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 }
 .button-container {
   display: none;
@@ -177,7 +196,7 @@
 .indicator {
   position: absolute;
   height: 100%;
-  width: 25%;
+  width: 33.3333333%; 
   box-shadow: 0px 0px 14px -7px #f09819;
   background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
   transition: left 0.3s ease-in-out;
@@ -238,26 +257,6 @@
 .food-image {
   width: 100%;
   display: none;
-}
-
-.image-wrapper:nth-of-type(2),
-.image-wrapper:nth-of-type(7) {
-  border: 9px solid red;
-}
-
-.image-wrapper:nth-of-type(1),
-.image-wrapper:nth-of-type(3),
-.image-wrapper:nth-of-type(4),
-.image-wrapper:nth-of-type(5),
-.image-wrapper:nth-of-type(6),
-.image-wrapper:nth-of-type(10) {
-  border: 9px solid yellow;
-}
-
-.image-wrapper:nth-of-type(8),
-.image-wrapper:nth-of-type(9),
-.image-wrapper:nth-of-type(11) {
-  border: 9px solid green;
 }
 
 .opening-times-widget {
@@ -481,11 +480,28 @@
     width: 50px;
     height: 30px;
 }
+ #click-me-image {
+        width: 50px; 
+		margin-left:-25px;
+		}
     .hawka-button button {
-   top:-110px;
-    width: 130px;
-	right: -28%;
+    left: 8%;
   }
+  .hawka-logo {
+  width: 300px;
+  margin-top:-100px;
+  }
+  .hawka-logo-center {
+  margin-top:-80px;
+  }
+  .hawka-logo-top {
+  margin-top:-100px;
+  }
+  #click-me-image {
+        width: 100px; /* Smaller width for mobile devices */
+		top: 35%; /* Center vertically on mobile */
+		left: 88%; /* Center horizontally on mobile */
+   }
   .switch-container {
            top: -50px; /* adjust this value for mobile */
 		   left: 0;
@@ -524,25 +540,6 @@
   .image-wrapper {
   width:180px;
   height:180px;
-}
-.image-wrapper:nth-of-type(2),
-.image-wrapper:nth-of-type(7) {
-  border: 4.5px solid red;
-}
-
-.image-wrapper:nth-of-type(1),
-.image-wrapper:nth-of-type(3),
-.image-wrapper:nth-of-type(4),
-.image-wrapper:nth-of-type(5),
-.image-wrapper:nth-of-type(6),
-.image-wrapper:nth-of-type(10) {
-  border: 4.5px solid yellow;
-}
-
-.image-wrapper:nth-of-type(8),
-.image-wrapper:nth-of-type(9),
-.image-wrapper:nth-of-type(11) {
-  border: 4.5px solid green;
 }
 .opening-times-widget {
     width: 100%; /* testen auf verschiedenen Geräten */
@@ -643,6 +640,7 @@
 	    <img src="https://i.imgur.com/enJh6iH.png" alt="Hawka Logo" class="hawka-logo">
         </button>
     </div>
+	<img id="click-me-image" src="https://imgur.com/pahUilW.png" alt="Click me" />
 	  <div class="buttons-wrapper">
 	  <div class="info-button">
 	  <img src="https://i.imgur.com/fACl4hw.png" id="info-icon">
@@ -665,12 +663,11 @@
 </div>
     <button id="live-button" class="live-button-class">LIVE</button>
     <div class="switch-container" id="switch-container">
-      <div class="switch" id="four-state-switch">
+      <div class="switch" id="three-state-switch">
         <div class="indicator"></div>
-        <div class="label" data-state="main-dishes" data-translate="MainDishes">Spoons</div>
-        <div class="label" data-state="specials">Specials</div>
-       		<div class="label" data-state="extras" data-translate="Extras">Add-Ons </div>
-			 <div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
+        <div class="label" data-state="main-dishes" data-translate="MainDishes">Main Dishes</div>
+       	<div class="label" data-state="extras" data-translate="Extras">Add-Ons </div>
+		<div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
       </div>
     </div>
     <div class="image-container" id="image-container">
@@ -685,11 +682,6 @@
                         <p data-translate="PadKraPaoMooIngredients">minced pork, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil</p></div>
 </div>
          <div class="image-wrapper">
-        <img src="https://i.imgur.com/DchqgqA.jpg" alt="Image Morning Glory" class="food-image">
-                                <div class="description"> <h3 data-translate="MorningGlory">Morning Glory</h3>
-								<p data-translate="MorningGloryIngredients">morning glory, garlic, red chili, oyster sauce, soybean paste, palm sugar, canola oil</p></div>
-		</div>
-		 <div class="image-wrapper">
          <img src="https://i.imgur.com/FW3ZDbO.png" alt="Image Fried Rice Shrimp" class="food-image">
                        <div class="description"> <h3 data-translate="FriedRiceShrimp">Fried Rice Shrimp</h3>
 						 <p data-translate="FriedRiceShrimpIngredients">shrimp, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth</p></div>
@@ -699,56 +691,21 @@
                       <div class="description"> <h3 data-translate="FriedRiceChicken">Fried Rice Chicken</h3>
                        <p data-translate="FriedRiceChickenIngredients">chicken breast, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth</p></div>
        </div>
-           <div class="image-wrapper">
-         <img src="https://i.imgur.com/JsO9U4J.png" alt="Image Larb Gai" class="food-image">
-                         <div class="description"> <h3 data-translate="LarbGai">Larb Gai</h3>
-                          <p data-translate="LarbGaiIngredients">minced chicken breast, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar</p></div>
-       </div>
-        <div class="image-wrapper">
-         <img src="https://i.imgur.com/G3HY01J.png" alt="Image Larb Moo" class="food-image">
-                        <div class="description"> <h3 data-translate="LarbMoo">Larb Moo</h3>
-                         <p data-translate="LarbMooIngredients">minced pork, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar</p></div>
-       </div>
-             <div class="image-wrapper">
-         <img src="https://i.imgur.com/h0iLbSz.png" alt="Image Thai Red Curry Chicken" class="food-image">
-                                         <div class="description"><h3 data-translate="ThaiRedCurryChicken">Thai Red Curry Chicken</h3>
-                                         <p data-translate="ThaiRedCurryChickenIngredients">chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, red curry paste</p></div>
-      </div>
-               <div class="image-wrapper">
-         <img src="https://i.imgur.com/1akELiS.png" alt="Image Thai Green Curry Chicken" class="food-image">
-                  <div class="description"> <h3 data-translate="ThaiGreenCurryChicken">Thai Green Curry Chicken</h3>
-                   <p data-translate="ThaiGreenCurryChickenIngredients">chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, green curry paste</p></div>
-     </div>
 	 <div class="image-wrapper">
-        <img src="https://i.imgur.com/YgGuFHF.png" alt="Image Fried Pork Belly" class="food-image">
+        <img src="https://imgur.com/2da2YIB.png" alt="Image Fried Pork Belly" class="food-image">
                         <div class="description"><h3 data-translate="FriedPorkBelly">Fried Pork Belly</h3>
                          <p data-translate="FriedPorkBellyIngredients">pork belly, fish sauce, white pepper, rice flour, canola oil, tapioca starch</p></div>
      </div>
 	    <div class="image-wrapper">
-        <img src="https://i.imgur.com/RVmsZcd.png" alt="Image Chicken Wings" class="food-image">
-                        <div class="description"> <h3 data-translate="ChickenWings">Chicken Wings</h3>
-                          <p data-translate="ChickenWingsIngredients">chicken wings, fish sauce, white pepper, rice flour, canola oil</p></div>
+        <img src="https://imgur.com/2da2YIB.png" alt="Image Bulgogi" class="food-image">
+                        <div class="description"> <h3 data-translate="Bulgogi">Bulgogi</h3>
+                          <p data-translate="BulgogiIngredients">chicken wings, fish sauce, white pepper, rice flour, canola oil</p></div>
      </div>
                  <div class="image-wrapper">
-        <img src="https://i.imgur.com/6yyJTLF.png" alt="Image Pad Thai" class="food-image">
+        <img src="https://imgur.com/ELWALHg.png" alt="Image Pad Thai" class="food-image">
                     <div class="description"><h3 data-translate="PadThai">Pad Thai Chicken/Shrimp</h3>
                      <p data-translate="PadThaiIngredients">chicken breast/shrimp, chili powder, tofu, rice noodles, dried shrimp, garlic, shallots, yellow radish, chili flakes, peanuts, bean sprouts, long coriander (culantro), lime, eggs, canola oil, chicken broth, palm sugar, water, fish sauce, tamarind</p></div>
-      </div>
-                   <div class="image-wrapper">
-       <img src="https://i.imgur.com/vG0jLgI.jpg" alt="Image Pan Eggs" class="food-image">
-                      <div class="description"> <h3 data-translate="PanEggs">Pan Eggs</h3>
-                       <p data-translate="PanEggsIngredients">minced pork, Thai pork sausage, Chinese sausage, eggs, green onions, canola oil, shallots, garlic, chili flakes, oyster sauce, fish sauce, chicken broth, butter, white pepper, cucumber, bun</p></div>
-      </div>
-                           <div class="image-wrapper">
-        <img src="https://i.imgur.com/tVYUuX6.jpg" alt="Image Rice Soup" class="food-image">
-                        <div class="description"><h3 data-translate="RiceSoup">Rice Soup</h3>
-                         <p data-translate="RiceSoupIngredients">fish sauce, fried garlic, green onions, light soy sauce, chicken breast, chicken broth, ginger, jasmine rice, garlic, coriander, lime, white pepper, shallots, soybean sprouts, lemongrass</p></div>
-     </div>
-                     <div class="image-wrapper">
-        <img src="https://i.imgur.com/dsKTe7Q.png" alt="Image Hawka Breakfast Bun" class="food-image">
-                        <div class="description"> <h3 data-translate="BreakfastBun">Breakfast Bun</h3>
-                          <p data-translate="BreakfastBunIngredients">bread roll, butter, fried egg, light soy sauce, coriander, liverwurst, moo yoo</p></div>
-     </div>
+      </div>              
                        <div class="image-wrapper">
         <img src="https://i.imgur.com/DnCM3SL.jpg" alt="Image Sticky Pancakes" class="food-image">
                           <div class="description"><h3 data-translate="StickyPancakes">Sticky Pancakes</h3>
@@ -763,12 +720,7 @@
         <img src="https://i.imgur.com/Xgip4jIm.jpg" alt="Image Fried Bananas" class="food-image">
                               <div class="description"><h3 data-translate="FriedBananas">Fried Bananas</h3>
                                <p data-translate="FriedBananasIngredients">rice flour, plantains, coconut flakes, salt, canola oil, water, sugar, baking powder</p></div>
-      </div>
-                             <div class="image-wrapper">
-        <img src="https://i.imgur.com/Cpcjffl.png" alt="Image Pandan Pancakes" class="food-image">
-                                <div class="description"> <h3 data-translate="PandanPancakes">Pandan Pancakes</h3>
-								<p data-translate="PandanPancakesIngredients">wheat flour, 3.5% milk, sugar, baking powder, eggs, salt, pandan, coconut milk, cornstarch, sugar, eggs</p></div>
-    </div>
+      </div>                            
 	  <div class="image-wrapper">
         <img src="https://i.imgur.com/DEj0XBu.jpg" alt="Image Macadamia Chocoloate Cookie" class="food-image">
                                 <div class="description"> <h3 data-translate="MacadamiaChocolateCookie">Macadamia Chocolate Cookie</h3>
@@ -807,7 +759,7 @@
         <div class="info-box">
             <div class="icon icon-mail"></div>
              
-           <a href="mailto:test@hawka.com"><br>test@hawka.com</a>
+           <a href="mailto:teamhawka@gmail.com"><br>teamhawka@gmail.com</a>
 		   <p class="bottom-align-text"><a href="#" id="contactUsLink" data-translate="contactUsText"><br>Contact Us</a></p>
         </div>
     </div>
@@ -830,40 +782,22 @@
         'PadKraPaoGaiIngredients': 'minced chicken breast, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil',
         'PadKraPaoMoo': 'Pad Kra Pao Moo',
         'PadKraPaoMooIngredients': 'minced pork, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil',
-        'MorningGlory': 'Morning Glory',
-        'MorningGloryIngredients': 'morning glory, garlic, red chili, oyster sauce, soybean paste, palm sugar, canola oil',
         'FriedRiceShrimp': 'Fried Rice Shrimp',
         'FriedRiceShrimpIngredients': 'shrimp, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth',
         'FriedRiceChicken': 'Fried Rice Chicken',
         'FriedRiceChickenIngredients': 'chicken breast, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth',
-        'LarbGai': 'Larb Gai',
-        'LarbGaiIngredients': 'minced chicken breast, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar',
-        'LarbMoo': 'Larb Moo',
-        'LarbMooIngredients': 'minced pork, culantro, lime, shallots, green onions, mint, chili flakes, fish sauce, kaffir lime leaves, sticky rice, chili powder, chicken broth, sugar',
-        'ThaiRedCurryChicken': 'Thai Red Curry Chicken',
-        'ThaiRedCurryChickenIngredients': 'chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, red curry paste',
-        'ThaiGreenCurryChicken': 'Thai Green Curry Chicken',
-        'ThaiGreenCurryChickenIngredients': 'chicken breast, kaffir lime leaves, palm sugar, fish sauce, red chili, chicken broth, Thai basil, coconut milk, bamboo, Thai eggplant, green curry paste',
         'FriedPorkBelly': 'Fried Pork Belly',
         'FriedPorkBellyIngredients': 'pork belly, fish sauce, white pepper, rice flour, canola oil, tapioca starch',
-        'ChickenWings': 'Chicken Wings',
-        'ChickenWingsIngredients': 'chicken wings, fish sauce, white pepper, rice flour, canola oil',
+        'Bulgogi': 'Bulgogi',
+        'BulgogiIngredients': 'chicken wings, fish sauce, white pepper, rice flour, canola oil',
         'PadThai': 'Pad Thai',
         'PadThaiIngredients': 'chicken breast/shrimp, chili powder, tofu, rice noodles, dried shrimp, garlic, shallots, yellow radish, chili flakes, peanuts, bean sprouts, long coriander (culantro), lime, eggs, canola oil, chicken broth, palm sugar, water, fish sauce, tamarind',
-        'PanEggs': 'Pan Eggs',
-        'PanEggsIngredients': 'minced pork, Thai pork sausage, Chinese sausage, eggs, green onions, canola oil, shallots, garlic, chili flakes, oyster sauce, fish sauce, chicken broth, butter, white pepper, cucumber, bun',
-        'RiceSoup': 'Chicken and Rice Soup',
-        'RiceSoupIngredients': 'fish sauce, fried garlic, green onions, light soy sauce, chicken breast, chicken broth, ginger, jasmine rice, garlic, coriander, lime, white pepper, shallots, soybean sprouts, lemongrass',
-        'BreakfastBun': 'Hawka Breakfast Bun',
-        'BreakfastBunIngredients': 'bread roll, butter, fried egg, light soy sauce, coriander, liverwurst, moo yoo',
         'StickyPancakes': 'Sticky Pancakes',
         'StickyPancakesIngredients': 'glutinous rice flour, banana, coconut milk, desiccated coconut, palm sugar, salt, coconut meat',
         'MangoStickyRice': 'Mango Sticky Rice',
         'MangoStickyRiceIngredients': 'mango, sticky rice, coconut milk, salt, palm sugar, mung beans',
         'FriedBananas': 'Fried Bananas',
         'FriedBananasIngredients': 'rice flour, plantains, coconut flakes, salt, canola oil, water, sugar, baking powder',
-        'PandanPancakes': 'Pandan Pancakes',
-        'PandanPancakesIngredients': 'wheat flour, 3.5% milk, sugar, baking powder, eggs, salt, pandan, coconut milk, cornstarch, sugar, eggs',
         'MacadamiaChocolateCookie': 'Macadamia Chocolate Cookie',
         'MacadamiaChocolateCookieIngredients': 'butter, brown sugar, vanilla sugar, eggs, wheat flour, baking powder, saking soda, macadamia nuts, dark chocolate',
         'KoreanCucumberSalad': 'Korean Cucumber Salad',
@@ -872,11 +806,11 @@
         'KRBoildEggIngredients': 'boiled egg, scallions, red chili, garlic, light soy sauce, rice vinegar, honey, sesame',
         'FriedEgg': 'Fried Egg',
         'FriedEggIngredients': 'egg, black pepper, canola oil',
-		'MainDishes': 'Spoons',
+		'MainDishes': 'Main Dishes',
 		'Sweets': 'Sweets',
 		'Concept': 'Concept',
 		'Extras':'Add-Ons',
-		'PaymentMethods':'Debit, Creditcard, <br>GooglePay, ApplePay <br><br>No Cash',
+		'PaymentMethods':'Debit, Creditcard, <br>GooglePay, ApplePay',
 		'contactUsText': '&nbsp;<br>Contact Us',
 		'openingTimesTitle': 'Opening Times<br>',
 		'daysWeek': 'Monday - Saturday',
@@ -888,40 +822,22 @@
 		'PadKraPaoGaiIngredients': 'Hühnerhack, Grüne Bohnen, Thai Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chiliflocken, Austernsoße, Fischsoße, Dunkle Sojasoße, Helle Sojasoße, Hühnerfond, Palmzucker, Rapsöl',
 		'PadKraPaoMoo': 'Pad Kra Pao Moo',
 		'PadKraPaoMooIngredients': 'Schweinehack, Grüne Bohnen, Thailändisches Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chili-Flocken, Austernsauce, Fischsauce, Dunkle Sojasauce, Helle Sojasauce, Hühnerbrühe, Palmzucker, Rapsöl',
-		'MorningGlory': 'Morning Glory',
-		'MorningGloryIngredients': 'Wasserspinat, Knoblauch, Rote Chili, Austernsauce, Sojabohnenpaste, Palmzucker, Rapsöl',
 		'FriedRiceShrimp': 'Gebratener Reis mit Shrimps',
 		'FriedRiceShrimpIngredients': 'Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Austernsauce, Helle Sojasauce, Rapsöl, Zucker, Hühnerbrühe',
 		'FriedRiceChicken': 'Gebratener Reis mit Huhn',
 		'FriedRiceChickenIngredients': 'Hähnchenbrust, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Austernsauce, Helle Sojasauce, Rapsöl, Zucker, Hühnerbrühe',
-		'LarbGai': 'Larb Gai',
-		'LarbGaiIngredients': 'Hühnerhack, Langer Koriander (Kulantro), Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsauce, Kaffir-Limettenblätter, Klebreis, Chilipulver, Hühnerbrühe, Zucker',
-		'LarbMoo': 'Larb Moo',
-		'LarbMooIngredients': 'Schweinehack, Langer Koriander, Limette, Schalotten, Frühlingszwiebeln, Minze, Chiliflocken, Fischsoße, Kaffir-Limettenblätter, Klebreis, Chilipulver, Hühnerfond, Zucker',
-		'ThaiRedCurryChicken': 'Rotes Thai Curry Huhn',
-		'ThaiRedCurryChickenIngredients': 'Hähnchenbrust, Kaffir-Limettenblätter, Palmzucker, Fischsoße, Rote Chili, Hühnerfond, Thailändisches Basilikum, Kokosmilch, Bambus, Thailändische Aubergine, Rote Currypaste',
-		'ThaiGreenCurryChicken': 'Grünes Thai Curry Huhn',
-		'ThaiGreenCurryChickenIngredients': 'Hähnchenbrust, Kaffir-Limettenblätter, Palmzucker, Fischsoße, Rote Chili, Hühnerfond, Thailändisches Basilikum, Kokosmilch, Bambus, Thailändische Aubergine, Grüne Currypaste',
 		'FriedPorkBelly': 'Frittierter Schweinebauch',
 		'FriedPorkBellyIngredients': 'Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke',
-		'ChickenWings': 'Frittierte Hühnerflügel',
-		'ChickenWingsIngredients': 'Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl',
+		'Bulgogi': 'Bulgogi',
+		'BulgogiIngredients': 'Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl',
 		'PadThai': 'Pad Thai',
 		'PadThaiIngredients': 'Hähnchenbrust/Garnelen, Chilipulver, Tofu, Reisbandnudeln, Getrocknete Garnelen, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, Langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmzucker, Wasser, Fischsoße, Tamarinde',
-		'PanEggs': 'Asiatische Frühstückspfanne',
-		'PanEggsIngredients': 'Schweinehack, Moo Yoo, Gun Chiang, Eier, Frühlingszwiebeln, Rapsöl, Schalotten, Knoblauch, Chiliflocken, Austernsauce, Fischsoße, Hühnerfond, Butter, Weißer Pfeffer, Gurke, Brötchen',
-		'RiceSoup': 'Reisuppe mit Huhn',
-		'RiceSoupIngredients': 'Fischsoße, Frittierter Knoblauch, Frühlingszwiebeln, Helle Sojasoße, Hühnerbrustfilet, Hühnerfond, Ingwer, Jasminreis, Knoblauch, Koriander, Limette, Pfeffer (weiß), Schalotten, Sojasprossen, Zitronengras',
-		'BreakfastBun': 'Hawka Frühstücksbrötchen',
-		'BreakfastBunIngredients': 'Brötchen, Butter, Frittiertes Ei, Helle Sojasoße, Koriander, Leberwurst, Moo Yoo',
 		'StickyPancakes': 'Klebrige Pfannkuchen',
 		'StickyPancakesIngredients': 'Klebreismehl, Banane, Kokosmilch, Kokosraspeln, Palmzucker, Salz, Kokosnussfleisch',
 		'MangoStickyRice': 'Mango mit Klebreis',
 		'MangoStickyRiceIngredients': 'Mango, Klebreis, Kokosmilch, Salz, Palmzucker, Mungbohnen',
 		'FriedBananas': 'Frittierte Backbananen',
 		'FriedBananasIngredients': 'Reismehl, Kochbananen, Kokosraspeln, Salz, Rapsöl, Wasser, Zucker, Backpulver',
-		'PandanPancakes': 'Pandan Pfannkuchen',
-		'PandanPancakesIngredients': 'Weizenmehl, 3,5% Milch, Zucker, Backpulver, Eier, Salz, Pandan, Kokosmilch, Speisestärke, Zucker, Eier',
 		'MacadamiaChocolateCookie': 'Macadamia Schoko Cookie',
 		'MacadamiaChocolateCookieIngredients': 'Butter, brauner Zucker, Vanillezucker, Eier, Weizenmehl, Backpulver, Natron, Macadamianüsse, Zartbitterschokolade',
 		'KoreanCucumberSalad': 'Koreanischer Gurkensalat',
@@ -930,11 +846,11 @@
 		'KRBoildEggIngredients': 'Gekochtes Ei, Frühlingszwiebeln, Rote Chili, Knoblauch, Helle Sojasauce, Reisessig, Honig, Sesam',
 		'FriedEgg': 'Frittiertes Spiegelei',
 		'FriedEggIngredients': 'Ei, Schwarzer Pfeffer, Rapsöl',
-		'MainDishes': 'Löffel',
+		'MainDishes': 'Gerichte',
 		'Sweets': 'Süßes',
 		'Concept': 'Konzept',
 		'Extras': 'Extras',
-		'PaymentMethods':'EC-/Kreditkarte, GooglePay, ApplePay <br><br>Keine Barzahlung',
+		'PaymentMethods':'EC-/Kreditkarte, GooglePay, ApplePay',
 		'contactUsText': '&nbsp;<br>Schreib uns',
 		'openingTimesTitle': 'Öffnungszeiten<br>',
 		'daysWeek': 'Montag - Samstag',
@@ -962,9 +878,9 @@ function switchLanguage(lang) {
   const buttonContainer = document.getElementById("button-container");
   const goodFoodButton = document.getElementById("good-food-button");
   const switchContainer = document.getElementById("switch-container");
-  const fourStateSwitch = document.getElementById("four-state-switch");
-  const indicator = fourStateSwitch.querySelector(".indicator");
-  const labels = Array.from(fourStateSwitch.querySelectorAll(".label"));
+  const threeStateSwitch = document.getElementById("three-state-switch");
+  const indicator = threeStateSwitch.querySelector(".indicator");
+  const labels = Array.from(threeStateSwitch.querySelectorAll(".label"));
   const liveButton = document.getElementById("live-button");
   const imageContainer = document.getElementById("image-container");
   const foodImages = Array.from(imageContainer.querySelectorAll(".food-image"));
@@ -981,16 +897,13 @@ function switchLanguage(lang) {
     imageWrappers.forEach(wrapper => wrapper.style.display = "none");
 
     foodImages.forEach((img, index) => {
-        if (currentState === "main-dishes" && index < 11) { // Adjusted to < 5
+        if (currentState === "main-dishes" && index < 7) { // Adjusted to < 5
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
-        } else if (currentState === "specials" && index >= 11 && index < 15) { // Adjusted from index >= 4 to index >= 5
+        } else if (currentState === "extras" && index >= 11 && index < 14) {
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
-        } else if (currentState === "extras" && index >= 20 && index < 23) {
-            img.style.display = "block";
-            imageWrappers[index].style.display = "block"; // Display the wrapper
-		} else if (currentState === "sweets" && index >= 15 && index < 20) {
+		} else if (currentState === "sweets" && index >= 7 && index < 11) {
             img.style.display = "block";
             imageWrappers[index].style.display = "block"; // Display the wrapper
         } else {
@@ -1012,6 +925,8 @@ function switchLanguage(lang) {
         buttonContainer.style.display = "none";
         languageToggle.style.display = "none";
         document.getElementById('hawka-button').style.top = "170px"; // Logo zurücksetzen
+		hawkaLogo.classList.remove('hawka-logo-center');
+        hawkaLogo.classList.add('hawka-logo-top');
         // Alle weiteren Elemente sofort ausblenden
         switchContainer.style.display = "none";
         liveButton.style.display = "none"; 
@@ -1023,7 +938,9 @@ function switchLanguage(lang) {
     } else {
         // Verzögert einblenden, wenn nicht sichtbar
         document.getElementById('hawka-button').style.top = "-110px"; // Logo verschieben
-        setTimeout(function() {
+        hawkaLogo.classList.remove('hawka-logo-top');
+        hawkaLogo.classList.add('hawka-logo-center');
+		setTimeout(function() {
             buttonContainer.style.display = "flex";
             languageToggle.style.display = "block";
         }, 500);
@@ -1053,16 +970,15 @@ document.getElementById('teamHawkaButton').addEventListener('click', function() 
     // Add any other actions you want to perform when the Team Hawka button is clicked
 });
 
-  fourStateSwitch.addEventListener("click", function (event) {
+  threeStateSwitch.addEventListener("click", function (event) {
     // Get the width of the switch and the clicked position within the switch
-    const switchWidth = fourStateSwitch.offsetWidth;
-    const clickX =
-      event.clientX - fourStateSwitch.getBoundingClientRect().left;
+    const switchWidth = threeStateSwitch.offsetWidth;
+    const clickX = event.clientX - threeStateSwitch.getBoundingClientRect().left;
 
     // Determine which third of the switch is clicked
-    const clickedFourth = Math.floor((clickX / switchWidth) * 4);
-    currentStateIndex = clickedFourth;
-indicator.style.left = `${currentStateIndex * 25}%`;
+    const clickedThird = Math.floor((clickX / switchWidth) * 3);
+    currentStateIndex = clickedThird;
+indicator.style.left = `${currentStateIndex * 33.333333333333333333333333333}%`;
 
     const currentState = labels[currentStateIndex].dataset.state;
     console.log(currentState);
@@ -1221,6 +1137,39 @@ document.getElementById('info-button').addEventListener('click', function() {
 });
 document.querySelector('.hawka-logo').addEventListener('click', function() {
     document.getElementById('info-icon').style.display = 'none';
+});
+
+// Make sure the DOM content is fully loaded before executing the script
+document.addEventListener('DOMContentLoaded', (event) => {
+    const clickMeImage = document.getElementById('click-me-image');
+    let logoClicked = false;
+
+    // Logic to show the "Click me!" image after 5 seconds
+    setTimeout(() => {
+        if (!logoClicked) {
+            clickMeImage.style.display = 'block';
+        }
+    }, 3000);
+
+    // Event listener for logo click
+    const hawkaLogo = document.querySelector('.hawka-logo');
+    if (hawkaLogo) {
+        hawkaLogo.addEventListener('click', () => {
+            logoClicked = true;
+            clickMeImage.style.display = 'none';
+        });
+    } else {
+        console.error("Hawka logo not found");
+    }
+
+    // Optional: hide the "Click me!" image when it is clicked
+    if (clickMeImage) {
+        clickMeImage.addEventListener('click', () => {
+            clickMeImage.style.display = 'none';
+        });
+    } else {
+        console.error("'Click me' image not found");
+    }
 });
 </script>
 </body>
