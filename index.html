@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +49,7 @@
 }
 
 .hawka-button button {
-  top:-100px;
+  top:170px;
   margin: 10px;
   position: relative;
   right: -45.296%;
@@ -1003,26 +1003,32 @@ function switchLanguage(lang) {
     const languageToggle = document.querySelector(".language-toggle");
 
     hawkaLogo.addEventListener("click", function() {
-        languageToggle.style.display = (languageToggle.style.display === "none" || languageToggle.style.display === "") ? "block" : "none";
-    });
+    // Direkte Abfrage des aktuellen Zustands, ohne getComputedStyle
+    const isButtonContainerVisible = buttonContainer.style.display === "flex";
+    const isLanguageToggleVisible = languageToggle.style.display === "block";
 
-
-hawkaButton.addEventListener("click", function () {
-   const computedStyle = getComputedStyle(buttonContainer);
-   const isButtonContainerVisible = computedStyle.display === "flex";
-        
-    buttonContainer.style.display = isButtonContainerVisible ? "none" : "flex";
-    // Hide everything else when showing buttonContainer
-    switchContainer.style.display = "none";
-    liveButton.style.display = "none"; 
-    imageContainer.style.display = "none";   
-   // Add this line to hide the map whenever Hawka is clicked.
-    document.getElementById('map-container').style.display = "none";
-   document.getElementById('opening-times-widget').style.display = "none";
-    document.getElementById('overlay').style.display = "none";
-	document.getElementById('imageSlider').style.display = 'none';
+    if (isButtonContainerVisible || isLanguageToggleVisible) {
+        // Sofort ausblenden, wenn sichtbar
+        buttonContainer.style.display = "none";
+        languageToggle.style.display = "none";
+        document.getElementById('hawka-button').style.top = "170px"; // Logo zurücksetzen
+        // Alle weiteren Elemente sofort ausblenden
+        switchContainer.style.display = "none";
+        liveButton.style.display = "none"; 
+        imageContainer.style.display = "none";   
+        document.getElementById('map-container').style.display = "none";
+        document.getElementById('opening-times-widget').style.display = "none";
+        document.getElementById('overlay').style.display = "none";
+        document.getElementById('imageSlider').style.display = 'none';
+    } else {
+        // Verzögert einblenden, wenn nicht sichtbar
+        document.getElementById('hawka-button').style.top = "-110px"; // Logo verschieben
+        setTimeout(function() {
+            buttonContainer.style.display = "flex";
+            languageToggle.style.display = "block";
+        }, 500);
+    }
 });
-
 goodFoodButton.addEventListener("click", function () {
     // Toggle visibility of liveButton and switchContainer
    if (liveButton.style.display === "none" || liveButton.style.display === "") {
