@@ -6,6 +6,9 @@
     <title>Your Hawka Website</title>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
+	html {
+            font-size: 16px; /* Standardwert: 1rem = 16px */
+        }
 			body {
   margin: 0;
   padding: 0;
@@ -26,49 +29,52 @@
     opacity: 0.95;
     pointer-events: none; /* Ensure it doesn't block interactions */
 }
-.language-toggle img {
-    width: 60px;
-    height: 40px;
-    cursor: pointer;
-    margin-right: 10px;
-	z-index:10;
-}
+
 .language-toggle {
     display: none;
-	 position: absolute;
-    top: 105px; 
-    right: 300px; 
-    z-index: 10;
+}
+.language-toggle img {
+    width: 3.75rem; /* 60px */
+            height: 2.5rem; /* 40px */
+    cursor: pointer;
+	position: relative;
+	z-index: 1;
+	 right: -34.375rem; /* 550px */
+            top: 3.6875rem; /* 59px */
 }
 .container {
   position: relative;
   text-align: center;
-  top: 100px;
-  padding: 20px;
-  border-radius: 10px;
+  top: 6.25rem; /* 100px */
+            padding: 1.25rem; /* 20px */
+            border-radius: 0.625rem; /* 10px */
 }
-
+.hawka-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   margin-bottom: 1.25rem; /* 20px */
+}
 .hawka-button button {
-  top:170px;
-  margin: 10px;
   position: relative;
-  right: -40%;
+  top: 3.125rem; /* 50px */
+            right: 5.625rem; /* 90px */
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  border-radius: 10px;
+  border-radius: 0.625rem; /* 10px */
   display: block;
-  border: 0px;
+  border: 0;
   font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #f09819;
+  box-shadow: 0 0 0.875rem -0.4375rem #f09819; /* 14px - 7px */
   background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  padding: 0px 0px;
-  font-size: 28px;
+  padding: 0;
+  font-size: 1.75rem; /* 28px */
   cursor: pointer;
   outline: none;
     background: transparent;   /* Makes the button's background transparent */
@@ -77,29 +83,35 @@
     padding: 0;                /* Removes any padding */
 }
 .hawka-logo {
-     width: 350px;    /* Ensure the image does not overflow the button */
-    height: auto;
+     width: 21.875rem; /* 350px */
+	height: auto;
     display: block;   /* Makes the image a block-level element, removing extra space below it */
     margin: 0 auto;   /* Centers the image horizontally */
 }
 .hawka-logo-center {
-    transform: scale(0.5); /* Das Logo ist 20% größer in der Mitte */
+    transform: scale(0.6); /* Das Logo ist 20% größer in der Mitte */
     transition: transform 0.5s ease; /* Weiche Animation für die Transformation */
-	margin-top:-110px;
 }
 
 .hawka-logo-top {
     transform: scale(1); /* Standardgröße, wenn es nach oben fährt */
     transition: transform 0.5s ease; /* Weiche Animation für die Transformation */
 }
+.click-me-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #click-me-image {
-    display: none;
-    width: 150px; /* Default width */
-    position: fixed;
-    top: 39%;
-    left: 58%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
+     display: none;
+            width: 9.375rem; /* 150px */
+            position: relative;
+            top: -1.225rem; /* 10px */
+            right: -9.375rem; /* 150px */
+}
+.buttons-wrapper {
+    display: flex;
+    align-items: center; /* This will vertically center align the items */
 }
 .button-container {
   display: none;
@@ -107,26 +119,25 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  right:25px;
 }
 
 .sub-button {
-  padding: 0px 0px;
-  font-size: 19px;
-  cursor: pointer;
-  width: 160px;
-  height: 50px;
-  margin: 10px;
+  padding: 0;
+ font-size: 1.1875rem; /* 19px */
+            cursor: pointer;
+            width: 10rem; /* 160px */
+            height: 3.125rem; /* 50px */
+            margin: 0.625rem; /* 10px */
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  border-radius: 10px;
+   border-radius: 0.625rem; /* 10px */
   display: block;
-  border: 0px;
+  border: 0;
   font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #f09819;
+  box-shadow: 0 0 0.875rem -0.4375rem #f09819; /* 14px - 7px */
   background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
   cursor: pointer;
   user-select: none;
@@ -143,34 +154,9 @@
 .sub-button:active {
   transform: scale(0.95);
 }
-#live-button {
-  display: none;
-  padding: 10px 20px;
-  font-size: 19px;
-  top: 5px;
-  width:100px;
-  position: relative;
-  left: 200px;
-  margin: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 10px;
-  border: 0px;
-  font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #f09819;
-  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
 .switch-container {
   display: none;
-  top:-60px;
+  top: 0.625rem; /* 10px */
   position: relative;
   width: 100%;
   justify-content: center;
@@ -182,14 +168,14 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  width: 700px;
-  height:75px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+ width: 43.75rem; /* 700px */
+            height: 4.6875rem; /* 75px */
+            border: 0.0625rem solid #ccc;
+            border-radius: 0.625rem; /* 10px */
   overflow: hidden;
   font-weight: 700;
-  font-size:20px;
-  box-shadow: 0px 0px 14px -7px #f09819;
+  font-size: 1.25rem; /* 20px */
+            box-shadow: 0 0 0.875rem -0.4375rem #f09819; /* 14px - 7px */
   background-image: linear-gradient(45deg, #FFA65F 0%, #FFA65F  51%, #FFA65F  100%);
 }
 
@@ -197,7 +183,7 @@
   position: absolute;
   height: 100%;
   width: 33.3333333%; 
-  box-shadow: 0px 0px 14px -7px #f09819;
+  box-shadow: 0 0 0.875rem -0.4375rem #f09819; /* 14px - 7px */
   background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
   transition: left 0.3s ease-in-out;
   z-index: 1;
@@ -207,28 +193,30 @@
 .label {
   flex: 1;
   text-align: center;
-  padding: 10px;
+ padding: 0.625rem; /* 10px */
   color: white;
   z-index: 2;
 }
 
 #image-container {
+  position:relative;
   display: none;
-  margin: -10px auto 0 auto;
+   top: 3.125rem; /* 50px */
+            margin: 0 auto;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1700px;
+  gap: 1.875rem; /* 30px */
+            max-width: 106.25rem; /* 1700px */
 }
 
 .image-wrapper {
   display: none;
-  border-radius: 70px;
+   border-radius: 4.375rem; /* 70px */
   overflow: hidden;
   position: relative;
   transform: scale(1);
   transition: transform 0.2s ease;
-  width:370px;
-  height:370px;
+  width: 23.125rem; /* 370px */
+            height: 23.125rem; /* 370px */
 }
 
 .description {
@@ -236,7 +224,7 @@
   width: 100%;  /* Set the width to 100% */
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 5px 0; /* Adjust the padding to only have top and bottom padding */
+   padding: 0.3125rem 0; /* 5px 0 */
   border-radius: 0; /* Set border-radius to 0 since it's spanning the entire width */
   text-align: center;  /* Center the text */
   visibility: hidden;
@@ -262,18 +250,20 @@
 .opening-times-widget {
   display: none;
   position: relative;
-  left: 49.7%;
-  top: -730px;
+   right: -57.8125rem; /* 925px */
+            top: -33.125rem; /* 530px */
   transform: translateX(-50%);
-  padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2); /* 10px */
   z-index: 1000;
-  width: 1145px;
-  height: 100px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 10px;
+ 
+   width: 100%; /* Use 90% of the screen width */
+    max-width: 74.0625rem; /* 350px */
+            height: 9.375rem; /* 150px */
+            font-size: 1.25rem; /* 20px */
+            text-align: center;
+            border-radius: 0.625rem; /* 10px */
+
 }
 
 .map-and-overlay-wrapper {
@@ -281,25 +271,25 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
-  width: 800px;
-  height: 550px;
+  width: 50rem; /* 800px */
+            height: 34.375rem; /* 550px */
+            top: 12.5rem; /* 200px */
 }
 
 .overlay {
+  position: relative;
   display: none;
   flex: 1;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 0px;
-  column-gap: 10px;
+  row-gap: 0;
+  column-gap: 0.625rem; /* 10px */
   justify-content: center;
-  align-items: center;
-  position: relative;
+  align-items: center;  
   background-size: cover;
-  padding: 10px;
-  height: 550px;
-  left: 65%;
-  top:-9%;
+  padding: 0.625rem; /* 10px */
+            height: 34.375rem; /* 550px */
+            right: -32.5rem; /* 520px */
+            top: -3.125rem; /* 50px */
 }
 
 .map-container {
@@ -307,81 +297,144 @@
   flex: 1;
   position: relative;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  width: 650px;
-  height: 515px;
-  top: -6%;
-  left: 65%;
+ padding: 1.25rem; /* 20px */
+            border-radius: 0.625rem; /* 10px */
+            
+            height: 92%; /* 505px */
+            top: -1.125rem; /* 18px */
+            right: -32.5rem; /* 520px */
   z-index: 10;
 }
 
 .info-box {
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.9);
-           margin-top: 15px; 
-        
+            position: relative;
+			top: 1.875rem; /* 30px */
+            background: rgba(255, 255, 255, 0.9);      
             text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-size: 20px;
-            width: 300px;   /* Add a fixed width */
-            height: 220px;  /* Add a fixed height */
+            border-radius: 0.625rem; /* 10px */
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); /* 8px */
+            font-size: 1.25rem; /* 20px */
+            width: 21.875rem; /* 350px */
+            height: 16.875rem; /* 270px */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-			 height: 220px; /* Adjust if necessary */
+            justify-content: center;
             align-items: center;
             }
 .info-box > * {
-  flex: 1; 
-  display: flex; 
-  justify-content: center; /* This centers horizontally for flex items */
-  align-items: center; /* This centers vertically for flex items */
+  flex: none; 
+  text-align: center; /* This centers vertically for flex items */
   width: 100%; /* Full width of the parent */
 }
 .icon {
-   flex: none; /* Do not allow the icon to grow or shrink */
+  
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 3.75rem; /* 60px */
+            height: 3.75rem; /* 60px */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
-.bottom-align-text {
-  align-self: flex-end; /* Aligns the text to the bottom */
+  margin-bottom:20%; /* 40px */
+  margin-top:1%;
 }
 .icon-location {
   background-image: url('https://i.imgur.com/N5o7QXp.png');
-  margin-top:40px;
+  
 }
 
-.icon-phonenumber {
-  background-image: url('https://i.imgur.com/uIlPRfp.png');
-  margin-top:40px;
+.icon-instagram {
+  background-image: url('https://imgur.com/n8kNKKL.png');
+ 
+ margin-top:-5%;
 }
 
 .icon-payment {
   background-image: url('https://i.imgur.com/hIsUstt.png');
-  margin-top:40px;
+ 
 }
 
 .icon-mail {
   background-image: url('https://i.imgur.com/kfJYp9u.png');
-  width:55px;
-  height:55px;
-  margin-top:40px;
+margin-top:-5%;
+   width: 3.4375rem; /* 55px */
+    height: 3.4375rem; /* 55px */
+  
   
 }
 
 
 #map {
-    margin-top: 80px; /* Adjust this value to shift the map content upwards */
-	width: 425px;
-	height: 350px;
+    position: relative;
+	top: 2.5rem; /* 40px */
+            width: 26.5625rem; /* 425px */
+            height: 21.875rem; /* 350px */
+}
+.links-container {
+  display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
 }
 
+.links-container a {
+  
+  margin: 0 1.25rem; /* 20px */
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Add link color */
+}
+
+.links-container a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+#impressum-link {
+    display: block; /* Ensure it's treated as a block element */
+    margin-top: 5.625rem; /* 90px */
+	color: black;
+}
+#datenschutzerklaerung-link {
+	margin-top: 5.625rem; /* 90px */
+	color: black;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1001; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+   padding-top: 5rem; /* 80px */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; 
+  border: 0.0625rem solid #888;
+  width: 37.5rem; /* 600px */
+  max-height: 80vh; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrolling */
+   position: relative; /* Ensure absolute positioned children are relative to this */
+   border-radius: 0.625rem; /* 10px */
+}
+
+.close {
+  color: #aaa;
+  position: fixed; /* Position relative to the modal content */
+  top: 5.3125rem; /* 85px */
+            right: 42.1875rem; /* 675px */
+            font-size: 1.75rem; /* 28px */
+  font-weight: bold;
+  z-index:2000;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 .info-box a {
   color: black;
   text-decoration: none;
@@ -392,54 +445,25 @@
 }
 
 .info-box p {
-  margin: 20px 0;
+  margin: 0;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-}
 
-.modal-content {
-  width: 600px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.modal-content img {
-  max-width: 100%;
-  height: auto;
-}
-
-.modal-content .close {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 24px;
-  cursor: pointer;
-}
   #imageSlider img {
         max-width: 100%; /* This ensures the image is not bigger than its container */
-        height: 500px; /* This keeps the image aspect ratio intact */
-		width: 500px;
+        height: 31.25rem; /* 500px */
+            width: 31.25rem; /* 500px */
         display: block; /* This removes any extra space below the image */
         margin: 0 auto; /* This centers the image */
+		
+		position:relative;
+		 top: 0.625rem; /* 10px */
     }
 	.dot {
-    height: 30px;
-    width: 30px;
-    margin: 10px 10px;
+	position:relative;
+	top: 1.25rem; /* 20px */
+            height: 1.875rem; /* 30px */
+            width: 1.875rem; /* 30px */
     background-color: #FFFFFF;
     border-radius: 50%;
     display: inline-block;
@@ -448,177 +472,146 @@
 
 .active, .dot:hover {
     background-color: #FF8C00
+
 ;
 }
-.buttons-wrapper {
-    display: flex;
-    align-items: center; /* This will vertically center align the items */
-}
 
-.info-button {
-    display: inline-block; /* Makes the div inline-block and it doesnt move buttons downwards*/
-    position: relative;    /* Needed for absolute positioning of child elements */
-    height: 50px;          /* Adjust as needed */
-    width: 50px;           /* Adjust as needed */
-}
 
-#info-icon {
-    display: none; /* Make the icon visible */
-    height: 100%;   /* Use full height of parent */
-    width: 100%;    /* Use full width of parent */
-    position: absolute; /* Position it within the .info-button */
-	left:1482px;
-	top:75px;
-}
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 48rem) {
  
-	 .language-toggle {
-        right: 0px; /* Adjusting the position for mobile screens */
-        top: -80px;   /* You can adjust this value based on your needs */
-    }
+	
 	.language-toggle img {
-    width: 50px;
-    height: 30px;
+   width: 3.125rem; /* 50px */
+                height: 1.875rem; /* 30px */
+                top: -9.375rem; /* 150px */
+                left: 7.5rem; /* 120px */
 }
  #click-me-image {
-        width: 50px; 
-		margin-left:-25px;
+        width: 5.625rem; /* 90px */
+                right: -7rem; /* 40px */
+                top: -0.2rem; /* 190px */
 		}
     .hawka-button button {
-    left: 8%;
+    right: 5rem; /* 80px */
+                top: 0.625rem; /* 10px */
   }
   .hawka-logo {
-  width: 300px;
-  margin-top:-100px;
-  }
-  .hawka-logo-center {
-  margin-top:-80px;
-  }
-  .hawka-logo-top {
-  margin-top:-100px;
-  }
-  #click-me-image {
-        width: 100px; /* Smaller width for mobile devices */
-		top: 35%; /* Center vertically on mobile */
-		left: 88%; /* Center horizontally on mobile */
-   }
+  position:relative;
+    top: 0.625rem; /* 10px */
+                width: 18.75rem; /* 300px */
+                right: 1.5625rem; /* 25px */
+    }  
+	.hawka-logo-center {
+    margin-top: 1.875rem; /* 30px */
+}
   .switch-container {
-           top: -50px; /* adjust this value for mobile */
-		   left: 0;
+           top: 3.125rem; /* 50px */		  
   }
   .switch {
   width:100%;
-  font-size:16px;
+   font-size: 1rem; /* 16px */
   font-weight: 300;
 }
   
   .button-container {
-    left: 0;
+     top: 0.625rem; /* 10px */
   }
   .sub-button {
-    font-size:16px;
-    margin: 0 2.53px;
-    width:100px;
+    font-size: 1rem; /* 16px */
+      margin: 0 0.158125rem; /* 2.53px */
+                width: 6.25rem; /* 100px */
   }
-  #live-button {
-    top: 90px;
-    left: 35%;
-	
-  }
+  
 
   #image-container {
-    gap: 5px;
-	border-radius:4px;
-	margin-top:20px;
-	margin-left:-10px;
+      gap: 0.3125rem; /* 5px */
+                border-radius: 0.25rem; /* 4px */
+                margin-top: 1.25rem; /* 20px */
+                margin-left: -0.625rem; /* 10px */
 	max-width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
   .description {
-  font-size: 11px;
+  font-size: 0.6875rem; /* 11px */
   }
   .image-wrapper {
-  width:180px;
-  height:180px;
+   width: 11.25rem; /* 180px */
+                height: 11.25rem; /* 180px */
 }
 .opening-times-widget {
-    width: 100%; /* testen auf verschiedenen Geräten */
-   margin-top:-310px;
-    height: auto;
-	left:50%;
+position:relative;
+ left: 50%; /* 175px */
+                top: -53.7rem; /* 890px */
+                
   }
   .map-and-overlay-wrapper {
     flex-direction: column;
     width: 100%;
     height: auto;
+	 top: 11.25rem; /* 180px */
   }
 
   .overlay {
     width: 100%;
     height: auto;
-	margin-top:-10px;
-	left: 0%;
+	top: 2.8125rem; /* 45px */
+                left: 0;
   }
 
   .map-container {
     order: 2; /* ensure it comes after the info-box */
-    width: 350px;
-    height: 340px;
-    top: -50px; /* optional: add a little spacing */
-    left: 0%; /* Resetting left position */
-    padding: 10px;
-	padding-top: 0px;
+   width: 90%; /* 310px */
+                left: 0;
+                top: -1.125rem; /* 10px */
   }
 
    .info-box {
-    width: 90%;
+    width: 100%;
     position: relative;
-    min-height: 150px; /* Set a minimum height for consistency */
+    height: 12.5rem; /* 200px */
     display: flex;     /* Use flexbox for centering */
     flex-direction: column; /* Stack content vertically */
     justify-content: center; /* Center content vertically */
-    padding: 10px;
-   margin: -10px 0 20px;
-    font-size: 18px;
-    order: 1;
-	top:-30px;
+   
+   margin: -0.625rem 0 1.25rem; /* -10px 0 10px */
+                font-size: 1.125rem; /* 18px */
+                order: 1;
+                top: -3.125rem; /* 50px */
  }
-  .icon-phonenumber {
+  .icon-instagram {
      position: relative;
-  top:25px;
-  width:70px;
-  height:70px;
-  margin-top:10px;
+  
+                width: 4.375rem; /* 70px */
+                height: 4.375rem; /* 70px */
+               
   }
  .icon-payment {
    	 position: relative;
-  	 top: 5px; /* Adjust this value to move down */
-	 width:60px;
-	 height:60px;
+  	 top: 0.3125rem; /* 5px */
+                width: 3.5rem; /* 60px */
+                height: 3.5rem; /* 60px */
+				 
   }
   .icon-mail {
 	 position: relative;
-	 width:45px;
-	 height:45px;
+	 width: 3.5rem; /* 45px */
+                height: 3.5rem; /* 45px */
+				 
 	}
-  .modal-content {
-    width: 80%; /* making the modal wider on mobile */
-  }
+  
   #map {
-  width: 350px;
-  height: 330px;
-  margin-top:10px;
+  width: 100%; /* 300px */
+                height: 20.625rem; /* 330px */
+                margin-top: -2.5rem; /* 10px */
+				
   }
-#imageSlider img {
-      margin-top:15px; 
-      height:400px;	  
+#imageSlider img { 
+       height: 25rem; /* 400px */
+                top: 4.375rem; /* 70px */
     }
-	#info-icon {
-	top:150px;
-	left:280px;
-	width: 40px; /* Explicit width */
-    height: 40px; /* Explicit height */
-}
+	.dot {
+	 top: 5rem; /* 80px */
+	}
 .active, .dot:hover {
     background-color: #f1c44d
 ;
@@ -630,23 +623,22 @@
 </head>
 <body>
 <div id="fixed-background"></div>
-    <div class="container">
-	    <div class="language-toggle">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1920px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English" id="en" />
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png" alt="German" id="de" />
-</div>
+    <div class="container">	   
       <div class="hawka-button">
      <button class="sub-button" id="hawka-button">
-	    <img src="https://i.imgur.com/enJh6iH.png" alt="Hawka Logo" class="hawka-logo">
+	    <img src="https://imgur.com/TBDbFwY.png" alt="Hawka Logo" class="hawka-logo">
         </button>
     </div>
+	 <div class="language-toggle">
+	 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png" alt="German" id="de" />
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1920px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English" id="en" />    
+</div>
+	<div class="click-me-wrapper">
 	<img id="click-me-image" src="https://imgur.com/pahUilW.png" alt="Click me" />
+	</div>
 	  <div class="buttons-wrapper">
-	  <div class="info-button">
-	  <img src="https://i.imgur.com/fACl4hw.png" id="info-icon">
-	  </div>
     <div class="button-container" id="button-container">
-      <button class="sub-button" id ="concept-button" data-translate="Concept">Concept</button>
+      <button class="sub-button" id ="concept-button" data-translate="Concept">Konzept</button>
       <button class="sub-button" id="good-food-button">Good Food</button>
       <button class="sub-button" id="teamHawkaButton">Team Hawka</button>
       <button class="sub-button" id="info-button">Info</button>
@@ -661,115 +653,197 @@
         <span class="dot" onclick="currentSlide(4)"></span>
     </div>
 </div>
-    <button id="live-button" class="live-button-class">LIVE</button>
     <div class="switch-container" id="switch-container">
       <div class="switch" id="three-state-switch">
         <div class="indicator"></div>
-        <div class="label" data-state="main-dishes" data-translate="MainDishes">Main Dishes</div>
-       	<div class="label" data-state="extras" data-translate="Extras">Add-Ons </div>
-		<div class="label" data-state="sweets" data-translate="Sweets">Sweets</div>
+        <div class="label" data-state="main-dishes" data-translate="MainDishes">Gerichte</div>
+       	<div class="label" data-state="extras" data-translate="Extras">Extras</div>
+		<div class="label" data-state="sweets" data-translate="Sweets">Süßes</div>
       </div>
     </div>
     <div class="image-container" id="image-container">
        <div class="image-wrapper">
-      <img src="https://i.imgur.com/7ATF07F.png" alt="Image Pad Kra Pao Gai" class="food-image">
+      <img src="https://imgur.com/SnduCnS.png" alt="Image Pad Kra Pao Gai" class="food-image">
                     <div class="description">  <h3 data-translate="PadKraPaoGai">Pad Kra Pao Gai</h3>
-						<p data-translate="PadKraPaoGaiIngredients">minced chicken breast, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil</p></div>
+						<p data-translate="PadKraPaoGaiIngredients">Hühnerhack, Grüne Bohnen, Jasminreis, Thai Basilikum/Heiliges Basilikum, Chili, Knoblauch, Austernsoße, Fischsoße, Sojasoße, Zucker, Öl</p></div>
 </div>
         <div class="image-wrapper">
-      <img src="https://i.imgur.com/MRhZg5U.jpg" alt="Image Pad Kra Pao Moo" class="food-image">
+      <img src="https://imgur.com/SnduCnS.png" alt="Image Pad Kra Pao Moo" class="food-image">
                      <div class="description"><h3 data-translate="PadKraPaoMoo">Pad Kra Pao Moo</h3>
-                        <p data-translate="PadKraPaoMooIngredients">minced pork, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil</p></div>
+                        <p data-translate="PadKraPaoMooIngredients">Schweinehack, Grüne Bohnen, Jasminreis, Thail Basilikum/ Heiliges Basilikum, Chili, Knoblauch, Austernsauce, Fischsauce, Sojasauce, Zucker, Öl</p></div>
 </div>
          <div class="image-wrapper">
          <img src="https://i.imgur.com/FW3ZDbO.png" alt="Image Fried Rice Shrimp" class="food-image">
-                       <div class="description"> <h3 data-translate="FriedRiceShrimp">Fried Rice Shrimp</h3>
-						 <p data-translate="FriedRiceShrimpIngredients">shrimp, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth</p></div>
+                       <div class="description"> <h3 data-translate="FriedRiceShrimp">Gebratener Reis mit Shrimps</h3>
+						 <p data-translate="FriedRiceShrimpIngredients">Garnelen, Ei, Reis, Limette, Knoblauch, Chili, Frühlingszwiebeln, Schalotten, Austernsauce, Sojasauce, Öl, Zucker</p></div>
        </div>
         <div class="image-wrapper">
          <img src="https://i.imgur.com/imO65XU.png" alt="Image Fried Rice Chicken" class="food-image">
-                      <div class="description"> <h3 data-translate="FriedRiceChicken">Fried Rice Chicken</h3>
-                       <p data-translate="FriedRiceChickenIngredients">chicken breast, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth</p></div>
+                      <div class="description"> <h3 data-translate="FriedRiceChicken">Gebratener Reis mit Huhn</h3>
+                       <p data-translate="FriedRiceChickenIngredients">Hähnchenbrust, Ei, Jasminreis, Limette, Knoblauch, Chili, Frühlingszwiebeln, Schalotten, Austernsauce, Sojasauce, Öl, Zucker</p></div>
        </div>
 	 <div class="image-wrapper">
         <img src="https://imgur.com/2da2YIB.png" alt="Image Fried Pork Belly" class="food-image">
-                        <div class="description"><h3 data-translate="FriedPorkBelly">Fried Pork Belly</h3>
-                         <p data-translate="FriedPorkBellyIngredients">pork belly, fish sauce, white pepper, rice flour, canola oil, tapioca starch</p></div>
+                        <div class="description"><h3 data-translate="FriedPorkBelly">Knuspriger Schweinebauch</h3>
+                         <p data-translate="FriedPorkBellyIngredients">Schweinebauch, Jasminreis, Gurkensalat, Schalotten, Chili, Chinesisches Fünf Gewürz, Knoblauch, Pfeffer, Reisessig, Salz, Zucker</p></div>
      </div>
 	    <div class="image-wrapper">
-        <img src="https://imgur.com/2da2YIB.png" alt="Image Bulgogi" class="food-image">
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Bulgogi" class="food-image">
                         <div class="description"> <h3 data-translate="Bulgogi">Bulgogi</h3>
-                          <p data-translate="BulgogiIngredients">chicken wings, fish sauce, white pepper, rice flour, canola oil</p></div>
+                          <p data-translate="BulgogiIngredients">Schweinebauch/Rib-Eye, Blattsalat, Chili, Frühlingszwiebeln, GoChuJang, Gurke, Sojasoße, Ingwer, Jasminreis, Knoblauch, Pfeffer, Rinderfond, Schalotten, Sesamöl, Weißkohl, Zucker</p></div>
      </div>
                  <div class="image-wrapper">
         <img src="https://imgur.com/ELWALHg.png" alt="Image Pad Thai" class="food-image">
-                    <div class="description"><h3 data-translate="PadThai">Pad Thai Chicken/Shrimp</h3>
-                     <p data-translate="PadThaiIngredients">chicken breast/shrimp, chili powder, tofu, rice noodles, dried shrimp, garlic, shallots, yellow radish, chili flakes, peanuts, bean sprouts, long coriander (culantro), lime, eggs, canola oil, chicken broth, palm sugar, water, fish sauce, tamarind</p></div>
+                    <div class="description"><h3 data-translate="PadThai">Pad Thai Huhn/Shrimp</h3>
+                     <p data-translate="PadThaiIngredients">Hähnchenbrust/Garnelen, Chili, Tofu, Reisbandnudeln, Knoblauch, Schalotten, Gelber Rettich, Erdnüsse, Sojasprossen, Limette, Ei, Öl, Zucker, Fischsoße, Tamarinde</p></div>
       </div>              
                        <div class="image-wrapper">
-        <img src="https://i.imgur.com/DnCM3SL.jpg" alt="Image Sticky Pancakes" class="food-image">
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Sticky Pancakes" class="food-image">
                           <div class="description"><h3 data-translate="StickyPancakes">Sticky Pancakes</h3>
-                            <p data-translate="StickyPancakesIngredients">glutinous rice flour, frozen banana, coconut milk, desiccated coconut, palm sugar, salt, coconut meatt</p></div>
+                            <p data-translate="StickyPancakesIngredients">Klebreismehl, Banane, Kokosmilch, Zucker, Kokosnuss</p></div>
       </div>
                          <div class="image-wrapper">
-        <img src="https://i.imgur.com/tTZoHUb.jpg" alt="Image Mango Sticky Rice" class="food-image">
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Mango Sticky Rice" class="food-image">
                             <div class="description"><h3 data-translate="MangoStickyRice">Mango Sticky Rice</h3>
-                              <p data-translate="MangoStickyRiceIngredients">mango, sticky rice, coconut milk, salt, palm sugar, mung beans</p></div>
+                              <p data-translate="MangoStickyRiceIngredients">Mango, Klebreis, Kokosmilch, Salz, Zucker, Mungbohnen</p></div>
       </div>
                            <div class="image-wrapper">
-        <img src="https://i.imgur.com/Xgip4jIm.jpg" alt="Image Fried Bananas" class="food-image">
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Fried Bananas" class="food-image">
                               <div class="description"><h3 data-translate="FriedBananas">Fried Bananas</h3>
-                               <p data-translate="FriedBananasIngredients">rice flour, plantains, coconut flakes, salt, canola oil, water, sugar, baking powder</p></div>
+                               <p data-translate="FriedBananasIngredients">Reismehl, Kochbananen, Kokosnuss, Salz, Öl, Wasser, Zucker</p></div>
       </div>                            
 	  <div class="image-wrapper">
-        <img src="https://i.imgur.com/DEj0XBu.jpg" alt="Image Macadamia Chocoloate Cookie" class="food-image">
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Macadamia Chocoloate Cookie" class="food-image">
                                 <div class="description"> <h3 data-translate="MacadamiaChocolateCookie">Macadamia Chocolate Cookie</h3>
-								<p data-translate="MacadamiaChocolateCookieIngredients">butter, brown sugar, vanilla sugar, eggs, wheat flour, baking powder, saking soda, macadamia nuts, dark chocolate</p></div>
+								<p data-translate="MacadamiaChocolateCookieIngredients">Butter, Zucker, Ei, Weizenmehl, Macadamianüsse, Zartbitterschokolade, Bourbon-Vanille</p></div>
     </div>
 	  <div class="image-wrapper">
-        <img src="https://i.imgur.com/FFHnKWF.jpg" alt="Image Korean Cucumber Salad" class="food-image">
-                                <div class="description"> <h3 data-translate="KoreanCucumberSalad">Korean Cucumber Salad</h3>
-								<p data-translate="KoreanCucumberSaladIngredients">cucumber, garlic, spring onions, sesame seeds, sesame oil, soy sauce, salt, chili powder, paprika powder, rice vinegar</p></div>
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Korean Cucumber Salad" class="food-image">
+                                <div class="description"> <h3 data-translate="KoreanCucumberSalad">Koreanischer Gurkensalat</h3>
+								<p data-translate="KoreanCucumberSaladIngredients">Gurke, Knoblauch, Frühlingszwiebeln, Sesamsamen, Sesamöl, Sojasauce, Salz, Paprikapulver, Reisessig</p></div>
     </div>
 	 <div class="image-wrapper">
-        <img src="https://i.imgur.com/KpebPs2.jpg" alt="Image Boiled Egg" class="food-image">
-                                <div class="description"> <h3 data-translate="KRBoiledEgg">Korean Boiled Egg</h3>
-								<p data-translate="KRBoildEggIngredients">boiled egg, scallions, red chili, garlic, light soy sauce, rice vinegar, honey</p></div>
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Boiled Egg" class="food-image">
+                                <div class="description"> <h3 data-translate="KRBoiledEgg">Koreanisches Gekochtes Ei</h3>
+								<p data-translate="KRBoildEggIngredients">Ei, Frühlingszwiebeln, Chili, Knoblauch, Sojasauce, Reisessig, Zucker, Sesam</p></div>
     </div>
 	 <div class="image-wrapper">
-        <img src="https://i.imgur.com/g8NgTNa.jpg" alt="Image Fried Egg" class="food-image">
+        <img src="https://imgur.com/SnduCnS.png" alt="Image Fried Egg" class="food-image">
                                 <div class="description"> <h3 data-translate="FriedEgg">Fried Egg</h3>
-								<p data-translate="FriedEggIngredients">egg, black pepper, canola oil</p></div>
+								<p data-translate="FriedEggIngredients">Ei, Pfeffer, Öl</p></div>
     </div>
 	  </div>
     <div class="map-and-overlay-wrapper">
        <div class="overlay" id="overlay">
         <div class="info-box">
             <div class="icon icon-location"></div>
-         <p class="bottom-align-text"> <br>Marktplatz 12/k, 78120 Furtwangen</p>
+         <p>  Marktplatz 12<br> 78120 Furtwangen</p>
         </div>
-        <div class="info-box">
-            <div class="icon icon-phonenumber"></div>
-            <p class="bottom-align-text"><br>187187187</p>
-        </div>
+         <div class="info-box">
+        <a href="https://www.instagram.com/hawka.fuwa/?locale=de&hl=am-et" target="_blank">
+            <div class="icon icon-instagram"></div>
+            <p>@hawka.fuwa</p>
+        </a>
+    </div>
         <div class="info-box">
             <div class="icon icon-payment"></div>
-           <p class="bottom-align-text"> <br><span data-translate="PaymentMethods">Debit, Creditcard, Cash <br>GooglePay, ApplePay</span></p>
+           <p><span data-translate="PaymentMethods">EC-/Kreditkarte, bar,<br> GooglePay, ApplePay</span></p>
         </div>
         <div class="info-box">
-            <div class="icon icon-mail"></div>
-             
-           <a href="mailto:teamhawka@gmail.com"><br>teamhawka@gmail.com</a>
-		   <p class="bottom-align-text"><a href="#" id="contactUsLink" data-translate="contactUsText"><br>Contact Us</a></p>
+            <div class="icon icon-mail"></div>             
+           <a href="mailto:team@hawka.de">team@hawka.de</a>
         </div>
     </div>
        <div class="map-container" id="map-container">
     <div id="map" ></div>
-    </div>  
+	<div class="links-container">
+	 <a href="#" id="impressum-link">Impressum</a>
+	 <a href="#" id="datenschutzerklaerung-link">Datenschutzerklärung</a>
+    </div> 
+</div>	
+	<div id="impressum-modal" class="modal">
+	<span class="close">&times;</span>
+  <div class="modal-content">
+        <div class='impressum'><h1>Impressum</h1>
+<p>Angaben gemäß § 5 TMG</p>
+<p>Susanne und Julian Tomas GbR<br />
+Marktplatz 12<br />
+78120 Furtwangen</p>
+
+<p><strong>Vertreten durch:</strong><br />
+Susanne Tomas<br />
+Julian Tomas</p>
+
+<h2>Kontakt</h2>
+<p>Telefon: +49 (0) 761 38694561<br />
+E-Mail: <a href='mailto:team@hawka.de'>team@hawka.de</a></p>
+
+<h2>Umsatzsteuer-ID</h2>
+<p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a Umsatzsteuergesetz:<br />
+DE999999999</p>
+
+<h2>Aufsichtsbeh&ouml;rde</h2>
+<p>B&uuml;rgermeisteramt Furtwangen<br />
+Friedrichstraße 4<br />
+78120 Furtwangen</p>
+<h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+<p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+ </div>
+  </div>
+</div>
+<div id="datenschutzerklaerung-modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+        <div class='datenschutzerklaerung'><h1>Datenschutz&shy;erkl&auml;rung</h1>
+<h2>1. Datenschutz auf einen Blick</h2>
+<h3>Allgemeine Hinweise</h3> <p>Die folgenden Hinweise geben einen einfachen &Uuml;berblick dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Ausf&uuml;hrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgef&uuml;hrten Datenschutzerkl&auml;rung.</p>
+<h3>Datenerfassung auf dieser Website</h3> <h4>Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser Website?</h4> <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser Datenschutzerkl&auml;rung entnehmen.</p> <h4>Wie erfassen wir Ihre Daten?</h4> <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p> <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p> <h4>Wof&uuml;r nutzen wir Ihre Daten?</h4> <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gew&auml;hrleisten. Andere Daten k&ouml;nnen zur Analyse Ihres Nutzerverhaltens verwendet werden.</p> <h4>Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?</h4> <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft &uuml;ber Herkunft, Empf&auml;nger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben au&szlig;erdem ein Recht, die Berichtigung oder L&ouml;schung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, k&ouml;nnen Sie diese Einwilligung jederzeit f&uuml;r die Zukunft widerrufen. Au&szlig;erdem haben Sie das Recht, unter bestimmten Umst&auml;nden die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde zu.</p> <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
+<h3>Analyse-Tools und Tools von Dritt&shy;anbietern</h3> <p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.</p> <p>Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerkl&auml;rung.</p>
+<h2>2. Hosting</h2>
+<p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+<h3>Squarespace</h3> <p>Anbieter ist die Squarespace Ireland Ltd., Le Pole House, Ship Street Great, Dublin 8, Irland (nachfolgend Squarespace).</p> <p>Squarespace ein Tool zum Erstellen und zum Hosten von Webseiten. Wenn Sie unsere Website besuchen, werden Ihre Daten auf den Servern von Squarespace verarbeitet. Hierbei k&ouml;nnen auch personenbezogene Daten an das Mutterunternehmen von Squarespace, die Squarespace Inc., 8 Clarkson St, New York, NY 10014, USA &uuml;bermittelt werden. Squarespace speichert ferner Cookies, die f&uuml;r die Darstellung der Seite und zur Gew&auml;hrleistung der Sicherheit erforderlich sind (notwendige Cookies).</p> <p>Die Verwendung von Squarespace erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer m&ouml;glichst zuverl&auml;ssigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p> <p>Die Daten&uuml;bertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gest&uuml;tzt. Details finden Sie hier: <a href="https://support.squarespace.com/hc/de/articles/360000851908-DSGVO-und-Squarespace" target="_blank" rel="noopener noreferrer">https://support.squarespace.com/hc/de/articles/360000851908-DSGVO-und-Squarespace</a>.</p>
+<p>Das Unternehmen verf&uuml;gt &uuml;ber eine Zertifizierung nach dem &bdquo;EU-US Data Privacy Framework&ldquo; (DPF). Der DPF ist ein &Uuml;bereinkommen zwischen der Europ&auml;ischen Union und den USA, der die Einhaltung europ&auml;ischer Datenschutzstandards bei Datenverarbeitungen in den USA gew&auml;hrleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link: <a href="https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt0000000GnjcAAC&status=Active" target="_blank" rel="noopener noreferrer">https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt0000000GnjcAAC&status=Active</a></p>
+<h4>Auftragsverarbeitung</h4> <p>Wir haben einen Vertrag &uuml;ber Auftragsverarbeitung (AVV) zur Nutzung des oben genannten Dienstes geschlossen. Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gew&auml;hrleistet, dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.</p>
+<h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
+<h3>Datenschutz</h3> <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.</p> <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Die vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch, wie und zu welchem Zweck das geschieht.</p> <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.</p>
+<h3>Hinweis zur verantwortlichen Stelle</h3> <p>Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:</p> <p>Beispielfirma<br />
+Musterweg 10<br />
+90210 Musterstadt</p>
+
+<p>Telefon: +49 (0) 123 44 55 66<br />
+E-Mail: info@beispielfirma.de</p>
+ <p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
+
+<h3>Speicherdauer</h3> <p>Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt. Wenn Sie ein berechtigtes L&ouml;schersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gel&ouml;scht, sofern wir keine anderen rechtlich zul&auml;ssigen Gr&uuml;nde f&uuml;r die Speicherung Ihrer personenbezogenen Daten haben (z.&nbsp;B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die L&ouml;schung nach Fortfall dieser Gr&uuml;nde.</p>
+<h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3> <p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdr&uuml;cklichen Einwilligung in die &Uuml;bertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endger&auml;t (z.&nbsp;B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. &Uuml;ber die jeweils im Einzelfall einschl&auml;gigen Rechtsgrundlagen wird in den folgenden Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.</p>
+<h3>Empfänger von personenbezogenen Daten</h3> <p>Im Rahmen unserer Gesch&auml;ftst&auml;tigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei ist teilweise auch eine &Uuml;bermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserf&uuml;llung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z.&nbsp;B. Weitergabe von Daten an Steuerbeh&ouml;rden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines g&uuml;ltigen Vertrags &uuml;ber Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag &uuml;ber gemeinsame Verarbeitung geschlossen.</p>
+<h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3> <p>Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.</p>
+<h3>Widerspruchsrecht gegen die Datenerhebung in besonderen F&auml;llen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3> <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GR&Uuml;NDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH F&Uuml;R EIN AUF DIESE BESTIMMUNGEN GEST&Uuml;TZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKL&Auml;RUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR K&Ouml;NNEN ZWINGENDE SCHUTZW&Uuml;RDIGE GR&Uuml;NDE F&Uuml;R DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN &Uuml;BERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUS&Uuml;BUNG ODER VERTEIDIGUNG VON RECHTSANSPR&Uuml;CHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).</p> <p>WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH F&Uuml;R DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).</p>
+<h3>Beschwerde&shy;recht bei der zust&auml;ndigen Aufsichts&shy;beh&ouml;rde</h3> <p>Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde, insbesondere in dem Mitgliedstaat ihres gew&ouml;hnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutma&szlig;lichen Versto&szlig;es zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
+<h3>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h3> <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem g&auml;ngigen, maschinenlesbaren Format aush&auml;ndigen zu lassen. Sofern Sie die direkte &Uuml;bertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
+<h3>Auskunft, Berichtigung und L&ouml;schung</h3> <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empf&auml;nger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder L&ouml;schung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
+<h3>Recht auf Einschr&auml;nkung der Verarbeitung</h3> <p>Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der Verarbeitung besteht in folgenden F&auml;llen:</p> <ul> <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.</li> <li>Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> </ul> <p>Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer anderen nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+<h3>SSL- bzw. TLS-Verschl&uuml;sselung</h3> <p>Diese Seite nutzt aus Sicherheitsgr&uuml;nden und zum Schutz der &Uuml;bertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschl&uuml;sselung. Eine verschl&uuml;sselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &bdquo;http://&ldquo; auf &bdquo;https://&ldquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p> <p>Wenn die SSL- bzw. TLS-Verschl&uuml;sselung aktiviert ist, k&ouml;nnen die Daten, die Sie an uns &uuml;bermitteln, nicht von Dritten mitgelesen werden.</p>
+<h2>4. Datenerfassung auf dieser Website</h2>
+<h3>Cookies</h3> <p>Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;. Cookies sind kleine Datenpakete und richten auf Ihrem Endger&auml;t keinen Schaden an. Sie werden entweder vor&uuml;bergehend f&uuml;r die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endger&auml;t gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gel&ouml;scht. Permanente Cookies bleiben auf Ihrem Endger&auml;t gespeichert, bis Sie diese selbst l&ouml;schen oder eine automatische L&ouml;schung durch Ihren Webbrowser erfolgt.</p> <p>Cookies k&ouml;nnen von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies erm&ouml;glichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z.&nbsp;B. Cookies zur Abwicklung von Zahlungsdienstleistungen).</p> <p>Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren w&uuml;rden (z.&nbsp;B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies k&ouml;nnen zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.</p> <p>Cookies, die zur Durchf&uuml;hrung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erw&uuml;nschter Funktionen (z.&nbsp;B. f&uuml;r die Warenkorbfunktion) oder zur Optimierung der Website (z.&nbsp;B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.</p> <p>Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies f&uuml;r bestimmte F&auml;lle oder generell ausschlie&szlig;en sowie das automatische L&ouml;schen der Cookies beim Schlie&szlig;en des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.</p> <p>Welche Cookies und Dienste auf dieser Website eingesetzt werden, k&ouml;nnen Sie dieser Datenschutzerkl&auml;rung entnehmen.</p>
+<h3>Anfrage per E-Mail, Telefon oder Telefax</h3> <p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p> <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines Vertrags zusammenh&auml;ngt oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich ist. In allen &uuml;brigen F&auml;llen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.</p> <p>Die von Ihnen an uns per Kontaktanfragen &uuml;bersandten Daten verbleiben bei uns, bis Sie uns zur L&ouml;schung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck f&uuml;r die Datenspeicherung entf&auml;llt (z.&nbsp;B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen &ndash; insbesondere gesetzliche Aufbewahrungsfristen &ndash; bleiben unber&uuml;hrt.</p>
+<h2>5. Soziale Medien</h2>
+<h3>Instagram</h3> <p>Auf dieser Website sind Funktionen des Dienstes Instagram eingebunden. Diese Funktionen werden angeboten durch die Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland.</p> <p>Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endger&auml;t und dem Instagram-Server hergestellt. Instagram erh&auml;lt dadurch Informationen &uuml;ber den Besuch dieser Website durch Sie.</p> <p>Wenn Sie in Ihrem Instagram-Account eingeloggt sind, k&ouml;nnen Sie durch Anklicken des Instagram-Buttons die Inhalte dieser Website mit Ihrem Instagram-Profil verlinken. Dadurch kann Instagram den Besuch dieser Website Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der &uuml;bermittelten Daten sowie deren Nutzung durch Instagram erhalten.</p> <p>Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar.</p> <p>Soweit mit Hilfe des hier beschriebenen Tools personenbezogene Daten auf unserer Website erfasst und an Facebook bzw. Instagram weitergeleitet werden, sind wir und die Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland gemeinsam f&uuml;r diese Datenverarbeitung verantwortlich (Art. 26 DSGVO). Die gemeinsame Verantwortlichkeit beschr&auml;nkt sich dabei ausschlie&szlig;lich auf die Erfassung der Daten und deren Weitergabe an Facebook bzw. Instagram. Die nach der Weiterleitung erfolgende Verarbeitung durch Facebook bzw. Instagram ist nicht Teil der gemeinsamen Verantwortung. Die uns gemeinsam obliegenden Verpflichtungen wurden in einer Vereinbarung &uuml;ber gemeinsame Verarbeitung festgehalten. Den Wortlaut der Vereinbarung finden Sie unter: <a href="https://www.facebook.com/legal/controller_addendum" target="_blank" rel="noopener noreferrer">https://www.facebook.com/legal/controller_addendum</a>. Laut dieser Vereinbarung sind wir f&uuml;r die Erteilung der Datenschutzinformationen beim Einsatz des Facebook- bzw. Instagram-Tools und f&uuml;r die datenschutzrechtlich sichere Implementierung des Tools auf unserer Website verantwortlich. F&uuml;r die Datensicherheit der Facebook bzw. Instagram-Produkte ist Facebook verantwortlich. Betroffenenrechte (z.&nbsp;B. Auskunftsersuchen) hinsichtlich der bei Facebook bzw. Instagram verarbeiteten Daten k&ouml;nnen Sie direkt bei Facebook geltend machen. Wenn Sie die Betroffenenrechte bei uns geltend machen, sind wir verpflichtet, diese an Facebook weiterzuleiten.</p> <p>Die Daten&uuml;bertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gest&uuml;tzt. Details finden Sie hier: <a href="https://www.facebook.com/legal/EU_data_transfer_addendum" target="_blank" rel="noopener noreferrer">https://www.facebook.com/legal/EU_data_transfer_addendum</a>, <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer">https://privacycenter.instagram.com/policy/</a> und <a href="https://de-de.facebook.com/help/566994660333381" target="_blank" rel="noopener noreferrer">https://de-de.facebook.com/help/566994660333381</a>.</p> <p>Weitere Informationen hierzu finden Sie in der Datenschutzerkl&auml;rung von Instagram: <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer">https://privacycenter.instagram.com/policy/</a>.</p>
+<p>Das Unternehmen verf&uuml;gt &uuml;ber eine Zertifizierung nach dem &bdquo;EU-US Data Privacy Framework&ldquo; (DPF). Der DPF ist ein &Uuml;bereinkommen zwischen der Europ&auml;ischen Union und den USA, der die Einhaltung europ&auml;ischer Datenschutzstandards bei Datenverarbeitungen in den USA gew&auml;hrleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link: <a href="https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt0000000GnywAAC&status=Active" target="_blank" rel="noopener noreferrer">https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt0000000GnywAAC&status=Active</a></p>
+<h2>6. Plugins und Tools</h2>
+<h3>OpenStreetMap</h3> <p>Wir nutzen den Kartendienst von OpenStreetMap (OSM).</p> <p>Wir binden das Kartenmaterial von OpenStreetMap auf dem Server der OpenStreetMap Foundation, St John&rsquo;s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Gro&szlig;britannien, ein. Gro&szlig;britannien gilt als datenschutzrechtlich sicherer Drittstaat. Das bedeutet, dass Gro&szlig;britannien ein Datenschutzniveau aufweist, das dem Datenschutzniveau in der Europ&auml;ischen Union entspricht. Bei der Nutzung der OpenStreetMap-Karten wird eine Verbindung zu den Servern der OpenStreetMap-Foundation hergestellt. Dabei k&ouml;nnen u.&nbsp;a. Ihre IP-Adresse und weitere Informationen &uuml;ber Ihr Verhalten auf dieser Website an die OSMF weitergeleitet werden. OpenStreetMap speichert hierzu unter Umst&auml;nden Cookies in Ihrem Browser oder setzt vergleichbare Wiedererkennungstechnologien ein.</p>
+ <p>Die Nutzung von OpenStreetMap erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote und einer leichten Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
+
+<p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+        </div>
+    </div>
+</div>
 </div>	
     <div class="opening-times-widget" id="opening-times-widget">
-   <strong data-translate="openingTimesTitle">Opening Times:<br></strong><br>
-    <span data-translate="daysWeek">Monday - Saturday:</span><br>11:00 - 22:00
+   <strong data-translate="openingTimesTitle"><br>Öffnungszeiten<br></strong><br>
+    <span data-translate="daysWeek">Montag - Samstag<br></span><br>11:00 - 14:00 & 16:00 - 20:00
 </div>
    
 </div>
@@ -779,81 +853,79 @@
  var translations = {
     'en': {
        'PadKraPaoGai': 'Pad Kra Pao Gai',
-        'PadKraPaoGaiIngredients': 'minced chicken breast, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil',
+        'PadKraPaoGaiIngredients': 'minced chicken breast, green beans, jasmin rice, thai basil/holy basil, chili, garlic, oyster sauce, fish sauce, soy sauce, sugar, oil',
         'PadKraPaoMoo': 'Pad Kra Pao Moo',
-        'PadKraPaoMooIngredients': 'minced pork, green beans, Thai basil, holy basil, red chili, garlic, chili flakes, oyster sauce, fish sauce, dark soy sauce, light soy sauce, chicken broth, palm sugar, canola oil',
+        'PadKraPaoMooIngredients': 'minced pork, green beans, jasmin rice, thai basil/holy basil, chili, garlic, oyster sauce, fish sauce, soy sauce, sugar, oil',
         'FriedRiceShrimp': 'Fried Rice Shrimp',
-        'FriedRiceShrimpIngredients': 'shrimp, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth',
+        'FriedRiceShrimpIngredients': 'shrimp, chili, egg, jasmin rice, lime, garlic, green onions, shallots, oyster sauce, soy sauce, oil, sugar',
         'FriedRiceChicken': 'Fried Rice Chicken',
-        'FriedRiceChickenIngredients': 'chicken breast, chili powder, eggs, rice, lime, spinach, garlic, chili flakes, green onions, shallots, oyster sauce, light soy sauce, canola oil, sugar, chicken broth',
+        'FriedRiceChickenIngredients': 'chicken breast, chili, egg, jasmin rice, lime, garlic, green onions, shallots, oyster sauce, soy sauce, oil, sugar',
         'FriedPorkBelly': 'Fried Pork Belly',
-        'FriedPorkBellyIngredients': 'pork belly, fish sauce, white pepper, rice flour, canola oil, tapioca starch',
+        'FriedPorkBellyIngredients': 'pork belly, jasmine rice, cucumber salad, shallots, chili, Chinese five spice, garlic, pepper, rice vinegar, salt, sugar',
         'Bulgogi': 'Bulgogi',
-        'BulgogiIngredients': 'chicken wings, fish sauce, white pepper, rice flour, canola oil',
+        'BulgogiIngredients': 'pork belly/rib-eye, lettuce, chili, spring onions, GoChuJang, cucumber, soy sauce, ginger, jasmine rice, garlic, pepper, beef broth, shallots, sesame oil, white cabbage, sugar',
         'PadThai': 'Pad Thai',
-        'PadThaiIngredients': 'chicken breast/shrimp, chili powder, tofu, rice noodles, dried shrimp, garlic, shallots, yellow radish, chili flakes, peanuts, bean sprouts, long coriander (culantro), lime, eggs, canola oil, chicken broth, palm sugar, water, fish sauce, tamarind',
+        'PadThaiIngredients': 'chicken breast/shrimp, chili, tofu, rice noodles, garlic, shallots, yellow radish, peanuts, bean sprouts, lime, egg, oil, sugar, fish sauce, tamarind',
         'StickyPancakes': 'Sticky Pancakes',
-        'StickyPancakesIngredients': 'glutinous rice flour, banana, coconut milk, desiccated coconut, palm sugar, salt, coconut meat',
+        'StickyPancakesIngredients': 'glutinous rice flour, banana, coconut milk, sugar, coconut',
         'MangoStickyRice': 'Mango Sticky Rice',
-        'MangoStickyRiceIngredients': 'mango, sticky rice, coconut milk, salt, palm sugar, mung beans',
+        'MangoStickyRiceIngredients': 'mango, sticky rice, coconut milk, salt, sugar, mung beans',
         'FriedBananas': 'Fried Bananas',
-        'FriedBananasIngredients': 'rice flour, plantains, coconut flakes, salt, canola oil, water, sugar, baking powder',
+        'FriedBananasIngredients': 'rice flour, plantains, coconut, salt, oil, water, sugar',
         'MacadamiaChocolateCookie': 'Macadamia Chocolate Cookie',
-        'MacadamiaChocolateCookieIngredients': 'butter, brown sugar, vanilla sugar, eggs, wheat flour, baking powder, saking soda, macadamia nuts, dark chocolate',
+        'MacadamiaChocolateCookieIngredients': 'butter, sugar, egg, wheat flour, macadamia nuts, dark chocolate, bourbon vanilla',
         'KoreanCucumberSalad': 'Korean Cucumber Salad',
-        'KoreanCucumberSaladIngredients': 'cucumber, garlic, spring onions, sesame seeds, sesame oil, soy sauce, salt, chili powder, paprika powder, rice vinegar',
+        'KoreanCucumberSaladIngredients': 'cucumber, garlic, spring onions, sesame seeds, sesame oil, soy sauce, salt, paprika powder, rice vinegar',
         'KRBoiledEgg': 'Korean Boiled Egg',
-        'KRBoildEggIngredients': 'boiled egg, scallions, red chili, garlic, light soy sauce, rice vinegar, honey, sesame',
+        'KRBoildEggIngredients': 'egg, spring onions, chili, garlic, soy sauce, rice vinegar, sugar, sesame',
         'FriedEgg': 'Fried Egg',
-        'FriedEggIngredients': 'egg, black pepper, canola oil',
+        'FriedEggIngredients': 'egg, pepper, oil',
 		'MainDishes': 'Main Dishes',
 		'Sweets': 'Sweets',
 		'Concept': 'Concept',
 		'Extras':'Add-Ons',
-		'PaymentMethods':'Debit, Creditcard, <br>GooglePay, ApplePay',
-		'contactUsText': '&nbsp;<br>Contact Us',
-		'openingTimesTitle': 'Opening Times<br>',
-		'daysWeek': 'Monday - Saturday',
+		'PaymentMethods':'Debit, Creditcard, Cash <br>GooglePay, ApplePay',		
+		'openingTimesTitle': '<br>Opening Times<br>',
+		'daysWeek': 'Monday - Saturday<br>',
 		
         // ... other English translations
     },
     'de': {
         'PadKraPaoGai': 'Pad Kra Pao Gai',
-		'PadKraPaoGaiIngredients': 'Hühnerhack, Grüne Bohnen, Thai Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chiliflocken, Austernsoße, Fischsoße, Dunkle Sojasoße, Helle Sojasoße, Hühnerfond, Palmzucker, Rapsöl',
+		'PadKraPaoGaiIngredients': 'Hühnerhack, Grüne Bohnen, Jasminreis, Thai Basilikum/Heiliges Basilikum, Chili, Knoblauch, Austernsoße, Fischsoße, Sojasoße, Zucker, Öl',
 		'PadKraPaoMoo': 'Pad Kra Pao Moo',
-		'PadKraPaoMooIngredients': 'Schweinehack, Grüne Bohnen, Thailändisches Basilikum, Heiliges Basilikum, Rote Chili, Knoblauch, Chili-Flocken, Austernsauce, Fischsauce, Dunkle Sojasauce, Helle Sojasauce, Hühnerbrühe, Palmzucker, Rapsöl',
+		'PadKraPaoMooIngredients': 'Schweinehack, Grüne Bohnen, Jasminreis, Thail Basilikum/ Heiliges Basilikum, Chili, Knoblauch, Austernsauce, Fischsauce, Sojasauce, Zucker, Öl',
 		'FriedRiceShrimp': 'Gebratener Reis mit Shrimps',
-		'FriedRiceShrimpIngredients': 'Garnelen, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Austernsauce, Helle Sojasauce, Rapsöl, Zucker, Hühnerbrühe',
+		'FriedRiceShrimpIngredients': 'Garnelen, Ei, Jasminreis, Limette, Knoblauch, Chili, Frühlingszwiebeln, Schalotten, Austernsauce, Sojasauce, Öl, Zucker',
 		'FriedRiceChicken': 'Gebratener Reis mit Huhn',
-		'FriedRiceChickenIngredients': 'Hähnchenbrust, Chilipulver, Eier, Reis, Limette, Spinat, Knoblauch, Chiliflocken, Frühlingszwiebeln, Schalotten, Austernsauce, Helle Sojasauce, Rapsöl, Zucker, Hühnerbrühe',
-		'FriedPorkBelly': 'Frittierter Schweinebauch',
-		'FriedPorkBellyIngredients': 'Schweinebauch, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl, Tapiokastärke',
+		'FriedRiceChickenIngredients': 'Hähnchenbrust, Ei, Jasminreis, Limette, Knoblauch, Chili, Frühlingszwiebeln, Schalotten, Austernsauce, Sojasauce, Öl, Zucker',
+		'FriedPorkBelly': 'Knuspriger Schweinebauch',
+		'FriedPorkBellyIngredients': 'Schweinebauch, Jasminreis, Gurkensalat, Schalotten, Chili, Chinesisches Fünf Gewürz, Knoblauch, Pfeffer, Reisessig, Salz, Zucker',
 		'Bulgogi': 'Bulgogi',
-		'BulgogiIngredients': 'Hühnerflügel, Fischsoße, Weißer Pfeffer, Reismehl, Rapsöl',
-		'PadThai': 'Pad Thai',
-		'PadThaiIngredients': 'Hähnchenbrust/Garnelen, Chilipulver, Tofu, Reisbandnudeln, Getrocknete Garnelen, Knoblauch, Schalotten, Gelber Rettich, Chiliflocken, Erdnüsse, Sojasprossen, Langer Koriander, Limette, Eier, Rapsöl, Hühnerfond, Palmzucker, Wasser, Fischsoße, Tamarinde',
+		'BulgogiIngredients': 'Schweinebauch/Rib-Eye, Blattsalat, Chili, Frühlingszwiebeln, GoChuJang, Gurke, Sojasoße, Ingwer, Jasminreis, Knoblauch, Pfeffer, Rinderfond, Schalotten, Sesamöl, Weißkohl, Zucker',
+		'PadThai': 'Pad Thai Huhn/Shrimp',
+		'PadThaiIngredients': 'Hähnchenbrust/Garnelen, Chili, Tofu, Reisbandnudeln, Knoblauch, Schalotten, Gelber Rettich, Erdnüsse, Sojasprossen, Limette, Ei, Öl, Zucker, Fischsoße, Tamarinde',
 		'StickyPancakes': 'Klebrige Pfannkuchen',
-		'StickyPancakesIngredients': 'Klebreismehl, Banane, Kokosmilch, Kokosraspeln, Palmzucker, Salz, Kokosnussfleisch',
+		'StickyPancakesIngredients': 'Klebreismehl, Banane, Kokosmilch, Zucker, Kokosnuss',
 		'MangoStickyRice': 'Mango mit Klebreis',
-		'MangoStickyRiceIngredients': 'Mango, Klebreis, Kokosmilch, Salz, Palmzucker, Mungbohnen',
+		'MangoStickyRiceIngredients': 'Mango, Klebreis, Kokosmilch, Salz, Zucker, Mungbohnen',
 		'FriedBananas': 'Frittierte Backbananen',
-		'FriedBananasIngredients': 'Reismehl, Kochbananen, Kokosraspeln, Salz, Rapsöl, Wasser, Zucker, Backpulver',
+		'FriedBananasIngredients': 'Reismehl, Kochbananen, Kokosnuss, Salz, Öl, Wasser, Zucker',
 		'MacadamiaChocolateCookie': 'Macadamia Schoko Cookie',
-		'MacadamiaChocolateCookieIngredients': 'Butter, brauner Zucker, Vanillezucker, Eier, Weizenmehl, Backpulver, Natron, Macadamianüsse, Zartbitterschokolade',
+		'MacadamiaChocolateCookieIngredients': 'Butter, Zucker, Ei, Weizenmehl, Macadamianüsse, Zartbitterschokolade, Bourbon-Vanille',
 		'KoreanCucumberSalad': 'Koreanischer Gurkensalat',
-		'KoreanCucumberSaladIngredients': 'Gurke, Knoblauch, Frühlingszwiebeln, Sesamsamen, Sesamöl, Sojasauce, Salz, Chilipulver, Paprikapulver, Reisessig',
+		'KoreanCucumberSaladIngredients': 'Gurke, Knoblauch, Frühlingszwiebeln, Sesamsamen, Sesamöl, Sojasauce, Salz, Paprikapulver, Reisessig',
 		'KRBoiledEgg': 'Koreanisches Gekochtes Ei',
-		'KRBoildEggIngredients': 'Gekochtes Ei, Frühlingszwiebeln, Rote Chili, Knoblauch, Helle Sojasauce, Reisessig, Honig, Sesam',
+		'KRBoildEggIngredients': 'Ei, Frühlingszwiebeln, Chili, Knoblauch, Sojasauce, Reisessig, Zucker, Sesam',
 		'FriedEgg': 'Frittiertes Spiegelei',
-		'FriedEggIngredients': 'Ei, Schwarzer Pfeffer, Rapsöl',
+		'FriedEggIngredients': 'Ei, Pfeffer, Öl',
 		'MainDishes': 'Gerichte',
 		'Sweets': 'Süßes',
 		'Concept': 'Konzept',
 		'Extras': 'Extras',
-		'PaymentMethods':'EC-/Kreditkarte, GooglePay, ApplePay',
-		'contactUsText': '&nbsp;<br>Schreib uns',
-		'openingTimesTitle': 'Öffnungszeiten<br>',
-		'daysWeek': 'Montag - Samstag',
+		'PaymentMethods':'EC-/Kreditkarte, bar,<br> GooglePay, ApplePay',		
+		'openingTimesTitle': '<br>Öffnungszeiten<br>',
+		'daysWeek': 'Montag - Samstag<br>',
         // ... other German translations
     }
 };
@@ -881,7 +953,6 @@ function switchLanguage(lang) {
   const threeStateSwitch = document.getElementById("three-state-switch");
   const indicator = threeStateSwitch.querySelector(".indicator");
   const labels = Array.from(threeStateSwitch.querySelectorAll(".label"));
-  const liveButton = document.getElementById("live-button");
   const imageContainer = document.getElementById("image-container");
   const foodImages = Array.from(imageContainer.querySelectorAll(".food-image"));
 
@@ -924,12 +995,11 @@ function switchLanguage(lang) {
         // Sofort ausblenden, wenn sichtbar
         buttonContainer.style.display = "none";
         languageToggle.style.display = "none";
-        document.getElementById('hawka-button').style.top = "170px"; // Logo zurücksetzen
+        document.getElementById('hawka-button').style.top = "3.125rem"; // Logo zurücksetzen
 		hawkaLogo.classList.remove('hawka-logo-center');
         hawkaLogo.classList.add('hawka-logo-top');
         // Alle weiteren Elemente sofort ausblenden
-        switchContainer.style.display = "none";
-        liveButton.style.display = "none"; 
+        switchContainer.style.display = "none";        
         imageContainer.style.display = "none";   
         document.getElementById('map-container').style.display = "none";
         document.getElementById('opening-times-widget').style.display = "none";
@@ -937,7 +1007,7 @@ function switchLanguage(lang) {
         document.getElementById('imageSlider').style.display = 'none';
     } else {
         // Verzögert einblenden, wenn nicht sichtbar
-        document.getElementById('hawka-button').style.top = "-110px"; // Logo verschieben
+        document.getElementById('hawka-button').style.top = "-12.5rem"; // Logo verschieben
         hawkaLogo.classList.remove('hawka-logo-top');
         hawkaLogo.classList.add('hawka-logo-center');
 		setTimeout(function() {
@@ -947,11 +1017,7 @@ function switchLanguage(lang) {
     }
 });
 goodFoodButton.addEventListener("click", function () {
-    // Toggle visibility of liveButton and switchContainer
-   if (liveButton.style.display === "none" || liveButton.style.display === "") {
-    liveButton.style.display = "block";
-}
-
+    // Toggle visibility of switchContainer
 if (switchContainer.style.display === "none" || switchContainer.style.display === "") {
     switchContainer.style.display = "flex";
 }
@@ -989,7 +1055,6 @@ indicator.style.left = `${currentStateIndex * 33.333333333333333333333333333}%`;
   // Function to hide the switch if it is visible
   const hideEverything = function () {
     switchContainer.style.display = "none";
-    liveButton.style.display = "none";
     imageContainer.style.display = "none";
     document.getElementById('map-container').style.display = "none"; // hide the map
      document.getElementById('opening-times-widget').style.display = "none"; // hide the opening times widget
@@ -1004,7 +1069,6 @@ const infoButton = buttonContainer.querySelector('button:nth-child(4)');
 conceptButton.addEventListener("click", function() {
     // Other elements you want to hide
     switchContainer.style.display = "none";
-    liveButton.style.display = "none";
 	imageContainer.style.display = "none";
     document.getElementById('map-container').style.display = "none";
     document.getElementById('opening-times-widget').style.display = "none";
@@ -1027,7 +1091,7 @@ infoButton.addEventListener("click", hideEverything);
             }).addTo(map);
 
             L.marker([48.05182617457829, 8.20579469203949]).addTo(map)
-                .bindPopup('Hawka SJ')
+                .bindPopup('Hawka Imbiss Furtwangen')
                 .openPopup();
 
             mapInitialized = true;
@@ -1060,7 +1124,7 @@ document.getElementById("concept-button").addEventListener("click", function() {
 	 showSlides(currentImageIndex); // Initialize the slider
 });
 
-var images = ["https://i.imgur.com/xa5Okdh.png", "https://i.imgur.com/f6Dql2U.png", "https://i.imgur.com/1djL63A.png", "https://i.imgur.com/eczWuRf.png"];
+var images = ["https://imgur.com/SnduCnS.png", "https://imgur.com/SnduCnS.png", "https://imgur.com/SnduCnS.png", "https://imgur.com/SnduCnS.png"];
 var currentImageIndex = 0;
 
 function showSlides(n) {
@@ -1121,23 +1185,7 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
-document.getElementById('good-food-button').addEventListener('click', function() {
-    var infoIcon = document.getElementById('info-icon');
-     infoIcon.style.display = infoIcon.style.display === 'none' || infoIcon.style.display === '' ? 'block' : 'none';
-	  document.getElementById('info-icon').style.display = 'block';
-});
-document.getElementById('concept-button').addEventListener('click', function() {
-    document.getElementById('info-icon').style.display = 'none';
-});
-document.getElementById('teamHawkaButton').addEventListener('click', function() {
-    document.getElementById('info-icon').style.display = 'none';
-});
-document.getElementById('info-button').addEventListener('click', function() {
-    document.getElementById('info-icon').style.display = 'none';
-});
-document.querySelector('.hawka-logo').addEventListener('click', function() {
-    document.getElementById('info-icon').style.display = 'none';
-});
+
 
 // Make sure the DOM content is fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -1149,7 +1197,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (!logoClicked) {
             clickMeImage.style.display = 'block';
         }
-    }, 3000);
+    }, 1000);
 
     // Event listener for logo click
     const hawkaLogo = document.querySelector('.hawka-logo');
@@ -1169,6 +1217,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     } else {
         console.error("'Click me' image not found");
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    var impressumModal = document.getElementById("impressum-modal");
+    var datenschutzerklaerungModal = document.getElementById("datenschutzerklaerung-modal");
+
+    var impressumLink = document.getElementById("impressum-link");
+    var datenschutzerklaerungLink = document.getElementById("datenschutzerklaerung-link");
+
+    var closeButtons = document.getElementsByClassName("close");
+
+    impressumLink.onclick = function(event) {
+        event.preventDefault();
+        impressumModal.style.display = "block";
+    }
+
+    datenschutzerklaerungLink.onclick = function(event) {
+        event.preventDefault();
+        datenschutzerklaerungModal.style.display = "block";
+    }
+
+    for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].onclick = function() {
+            impressumModal.style.display = "none";
+            datenschutzerklaerungModal.style.display = "none";
+        }
+    }
+
+    window.onclick = function(event) {
+        if (event.target == impressumModal) {
+            impressumModal.style.display = "none";
+        }
+        if (event.target == datenschutzerklaerungModal) {
+            datenschutzerklaerungModal.style.display = "none";
+        }
     }
 });
 </script>
