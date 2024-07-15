@@ -654,8 +654,6 @@ width:95%;
      <div id="dotContainer">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
     </div>
 </div>
     <div class="switch-container" id="switch-container">
@@ -730,7 +728,7 @@ width:95%;
 	 <div class="image-wrapper">
         <img src="https://imgur.com/SnduCnS.png" alt="Image Boiled Egg" class="food-image">
                                 <div class="description"> <h3 data-translate="KRBoiledEgg">Koreanisches Gekochtes Ei</h3>
-								<p data-translate="KRBoildEggIngredients">Ei, Frühlingszwiebeln, Chili, Knoblauch, Sojasauce, Reisessig, Zucker, Sesam</p></div>
+								<p data-translate="KRBoiledEggIngredients">Ei, Frühlingszwiebeln, Chili, Knoblauch, Sojasauce, Reisessig, Zucker, Sesam</p></div>
     </div>
 	 <div class="image-wrapper">
         <img src="https://imgur.com/SnduCnS.png" alt="Image Fried Egg" class="food-image">
@@ -752,7 +750,7 @@ width:95%;
     </div>
         <div class="info-box">
             <div class="icon icon-payment"></div>
-           <p><span data-translate="PaymentMethods">EC-/Kreditkarte, bar,<br> GooglePay, ApplePay</span></p>
+           <p><span data-translate="PaymentMethods">ApplePay, bar, EC-/Kreditkarte,<br> GooglePay, NFC </span></p>
         </div>
         <div class="info-box">
             <div class="icon icon-mail"></div>             
@@ -785,7 +783,7 @@ E-Mail: <a href='mailto:team@hawka.de'>team@hawka.de</a></p>
 
 <h2>Umsatzsteuer-ID</h2>
 <p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a Umsatzsteuergesetz:<br />
-DE999999999</p>
+DE368301946</p>
 
 <h2>Aufsichtsbeh&ouml;rde</h2>
 <p>B&uuml;rgermeisteramt Furtwangen<br />
@@ -857,7 +855,7 @@ E-Mail: info@beispielfirma.de</p>
 </div>	
     <div class="opening-times-widget" id="opening-times-widget">
    <strong data-translate="openingTimesTitle"><br>Öffnungszeiten<br></strong><br>
-    <span data-translate="daysWeek">Montag - Samstag<br></span><br>11:00 - 14:00 & 16:00 - 20:00
+    <span data-translate="daysWeek">Mittwoch bis Montag<br></span><br>11:00 - 18:30
 </div>
    
 </div>
@@ -898,9 +896,9 @@ E-Mail: info@beispielfirma.de</p>
 		'Sweets': 'Sweets',
 		'Concept': 'Concept',
 		'Extras':'Add-Ons',
-		'PaymentMethods':'Debit, Creditcard, Cash <br>GooglePay, ApplePay',		
+		'PaymentMethods':'ApplePay, cash, creditcard, <br>debitcard, GooglePay, NFC',		
 		'openingTimesTitle': '<br>Opening Times<br>',
-		'daysWeek': 'Monday - Saturday<br>',
+		'daysWeek': 'Wednesday till Monday<br>',
 		
         // ... other English translations
     },
@@ -937,9 +935,9 @@ E-Mail: info@beispielfirma.de</p>
 		'Sweets': 'Süßes',
 		'Concept': 'Konzept',
 		'Extras': 'Extras',
-		'PaymentMethods':'EC-/Kreditkarte, bar,<br> GooglePay, ApplePay',		
+		'PaymentMethods':'ApplePay, bar, EC-/Kreditkarte,<br> GooglePay, NFC',		
 		'openingTimesTitle': '<br>Öffnungszeiten<br>',
-		'daysWeek': 'Montag - Samstag<br>',
+		'daysWeek': 'Mittwoch bis Montag<br>',
         // ... other German translations
     }
 };
@@ -1138,7 +1136,7 @@ document.getElementById("concept-button").addEventListener("click", function() {
 	 showSlides(currentImageIndex); // Initialize the slider
 });
 
-var images = ["https://imgur.com/SnduCnS.png", "https://imgur.com/SnduCnS.png", "https://imgur.com/SnduCnS.png", "https://imgur.com/SnduCnS.png"];
+var images = ["https://imgur.com/ETzT99C.jpg", "https://imgur.com/SnduCnS.png"];
 var currentImageIndex = 0;
 
 function showSlides(n) {
