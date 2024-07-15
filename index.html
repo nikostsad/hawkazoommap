@@ -40,7 +40,7 @@
 	border-radius: 0.5rem;
 	position: relative;
 	z-index: 1;
-	 right: -34.375rem; /* 550px */
+	 right: -31.5rem; /* 550px */
             top: 4.0rem; /* 59px */
 }
 .container {
@@ -124,18 +124,20 @@
 
 .sub-button {
   padding: 0;
- font-size: 1.1875rem; /* 19px */
-            cursor: pointer;
-            width: 10rem; /* 160px */
-            height: 3.125rem; /* 50px */
-            margin: 0.625rem; /* 10px */
+  font-size: 1.1875rem; /* 19px */
+  cursor: pointer;
+  width: 10rem; /* 160px */
+  height: 3.125rem; /* 50px */
+  margin: 0.625rem; /* 10px */
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-   border-radius: 0.625rem; /* 10px */
-  display: block;
+  border-radius: 0.625rem; /* 10px */
+  display: flex; /* Verwende flexbox für zentrierten Inhalt */
+  align-items: center; /* Vertikale Zentrierung */
+  justify-content: center; /* Horizontale Zentrierung */
   border: 0;
   font-weight: 700;
   box-shadow: 0 0 0.875rem -0.4375rem #f09819; /* 14px - 7px */
@@ -251,7 +253,7 @@
 .opening-times-widget {
   display: none;
   position: relative;
-   right: -57.8125rem; /* 925px */
+   right: -36.75rem; /* 925px */
             top: -33.125rem; /* 530px */
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.9);
@@ -264,6 +266,7 @@
             font-size: 1.25rem; /* 20px */
             text-align: center;
             border-radius: 0.625rem; /* 10px */
+			margin: 0 auto;
 
 }
 
@@ -275,6 +278,8 @@
   width: 50rem; /* 800px */
             height: 34.375rem; /* 550px */
             top: 12.5rem; /* 200px */
+			right:33rem;
+			margin: 0 auto;
 }
 
 .overlay {
@@ -542,13 +547,14 @@ margin-top:-5%;
 }
 .opening-times-widget {
 position:relative;
- left: 50%; /* 175px */
+width: 23rem;
+ left: 10.5rem; /* 175px */
                 top: -53.7rem; /* 890px */
                 
   }
   .map-and-overlay-wrapper {
     flex-direction: column;
-    width: 100%;
+    
     height: auto;
 	 top: 11.25rem; /* 180px */
   }
@@ -557,16 +563,16 @@ width:95%;
 }
 
   .overlay {
-    width: 100%;
+    width: 23rem;
     height: auto;
 	top: 2.8125rem; /* 45px */
-                left: 0;
+                left: 18.5rem;
   }
 
   .map-container {
     order: 2; /* ensure it comes after the info-box */
-   width: 90%; /* 310px */
-                left: 0;
+   width: 20.2rem; /* 310px */
+                left: 18.5rem;
                 top: -1.125rem; /* 10px */
   }
 
@@ -592,7 +598,7 @@ width:95%;
   }
  .icon-payment {
    	 position: relative;
-  	 top: 0.3125rem; /* 5px */
+  	 top: 1rem; /* 5px */
                 width: 3.5rem; /* 60px */
                 height: 3.5rem; /* 60px */
 				 
@@ -612,10 +618,10 @@ width:95%;
   }
 #imageSlider img { 
        height: 25rem; /* 400px */
-                top: 4.375rem; /* 70px */
+                top: 2rem; /* 70px */
     }
 	.dot {
-	 top: 5rem; /* 80px */
+	 top: 2.5rem; /* 80px */
 	}
 .active, .dot:hover {
     background-color: #f1c44d
@@ -958,6 +964,10 @@ function switchLanguage(lang) {
 }
 
   document.addEventListener("DOMContentLoaded", function () {
+   const isMobile = window.matchMedia("only screen and (max-width: 48rem)").matches;
+            if (isMobile) {
+                document.body.classList.add("mobile");
+            }
   const hawkaButton = document.getElementById("hawka-button");
   const buttonContainer = document.getElementById("button-container");
   const goodFoodButton = document.getElementById("good-food-button");
@@ -1007,7 +1017,7 @@ function switchLanguage(lang) {
         // Sofort ausblenden, wenn sichtbar
         buttonContainer.style.display = "none";
         languageToggle.style.display = "none";
-        document.getElementById('hawka-button').style.top = "3.125rem"; // Logo zurücksetzen
+        hawkaButton.style.top = isMobile ? "0.625rem" : "3.125rem"; // Logo zurücksetzen
 		hawkaLogo.classList.remove('hawka-logo-center');
         hawkaLogo.classList.add('hawka-logo-top');
         // Alle weiteren Elemente sofort ausblenden
@@ -1019,12 +1029,14 @@ function switchLanguage(lang) {
         document.getElementById('imageSlider').style.display = 'none';
     } else {
         // Verzögert einblenden, wenn nicht sichtbar
-        document.getElementById('hawka-button').style.top = "-12.5rem"; // Logo verschieben
+        hawkaButton.style.top = isMobile ? "-12rem" : "-11rem"; // Logo verschieben
         hawkaLogo.classList.remove('hawka-logo-top');
         hawkaLogo.classList.add('hawka-logo-center');
 		setTimeout(function() {
             buttonContainer.style.display = "flex";
             languageToggle.style.display = "block";
+        // Konzept-Button auslösen, nachdem die Buttons eingeblendet sind
+            setTimeout(() => document.getElementById("concept-button").click(), 100);
         }, 500);
     }
 });
@@ -1103,7 +1115,7 @@ infoButton.addEventListener("click", hideEverything);
             }).addTo(map);
 
             L.marker([48.05182617457829, 8.20579469203949]).addTo(map)
-                .bindPopup('Hawka Imbiss Furtwangen')
+                .bindPopup('Imbiss Hawka')
                 .openPopup();
 
             mapInitialized = true;
@@ -1130,13 +1142,35 @@ buttons.forEach(function(button) {
         });
     }
 });
+const imageWrappers = Array.from(document.querySelectorAll('.image-wrapper'));
+
+imageWrappers.forEach(wrapper => {
+    wrapper.addEventListener('click', function() {
+        const description = this.querySelector('.description');
+        
+        // Überprüfen, ob die Beschreibung bereits sichtbar ist
+        if (description.style.visibility === 'visible') {
+            description.style.visibility = 'hidden';
+            description.style.opacity = '0';
+        } else {
+            // Zuerst alle Beschreibungen verstecken
+            imageWrappers.forEach(w => {
+                w.querySelector('.description').style.visibility = 'hidden';
+                w.querySelector('.description').style.opacity = '0';
+            });
+            // Dann die aktuelle Beschreibung anzeigen
+            description.style.visibility = 'visible';
+            description.style.opacity = '1';
+        }
+    });
+});
 });
 document.getElementById("concept-button").addEventListener("click", function() {
     document.getElementById("imageSlider").style.display = "block";
 	 showSlides(currentImageIndex); // Initialize the slider
 });
 
-var images = ["https://imgur.com/ETzT99C.jpg", "https://imgur.com/SnduCnS.png"];
+var images = ["https://imgur.com/8dLNzpP.png", "https://imgur.com/SnduCnS.png"];
 var currentImageIndex = 0;
 
 function showSlides(n) {
